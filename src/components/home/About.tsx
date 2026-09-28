@@ -82,7 +82,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="w-full lg:w-1/2 relative"
+            className="w-full lg:w-1/2 relative pt-8 sm:pt-16 lg:pt-0"
           >
             <div className="relative h-[400px] sm:h-[550px] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
               <Image
@@ -115,7 +115,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="absolute top-3 right-3 sm:-top-14 sm:-right-6 bg-white p-4 sm:p-6 rounded-2xl shadow-2xl border-b-4 border-secondary max-w-[220px] sm:max-w-xs z-10"
+              className="absolute -top-8 right-4 sm:-top-14 sm:-right-6 bg-white p-4 sm:p-6 rounded-2xl shadow-2xl border-b-4 border-secondary max-w-[200px] sm:max-w-xs z-10"
             >
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-xl bg-secondary/15 flex items-center justify-center text-primary font-bold">
