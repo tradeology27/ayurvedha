@@ -2,7 +2,7 @@ import PageHeader from "@/components/PageHeader";
 import { doctorsData } from "@/data/doctors";
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Clock, MapPin, CheckCircle2, Award, Stethoscope, Sparkles, Calendar } from "lucide-react";
+import { Phone, Clock, MapPin, CheckCircle2, Stethoscope, Sparkles, Calendar } from "lucide-react";
 
 export default function DoctorsPage() {
   return (
