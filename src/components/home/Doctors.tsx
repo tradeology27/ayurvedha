@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { doctorsData } from "@/data/doctors";
-import { ArrowRight, Phone, CheckCircle2, Award, Calendar, Sparkles, MapPin, Clock } from "lucide-react";
+import { ArrowRight, Phone, CheckCircle2, Calendar, Sparkles, MapPin, Clock } from "lucide-react";
 
 export default function Doctors() {
   return (

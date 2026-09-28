@@ -1,7 +1,7 @@
 import PageHeader from "@/components/PageHeader";
 import Services from "@/components/home/Services";
 import TreatmentExplorer from "@/components/treatments/TreatmentExplorer";
-import { ShieldCheck, HeartPulse, Sparkles, Calendar, Phone } from "lucide-react";
+import { ShieldCheck, HeartPulse, Sparkles, Phone } from "lucide-react";
 import Link from "next/link";
 
 export default function TreatmentsPage() {

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2, Award, Sparkles } from "lucide-react";
+import { CheckCircle2, Award } from "lucide-react";
 
 export default function About() {
   return (

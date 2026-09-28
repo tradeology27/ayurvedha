@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { hospitalBranches } from "@/data/hospitals";
-import { MapPin, Phone, Clock, Bed, CheckCircle2, Stethoscope, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Clock, CheckCircle2, Stethoscope, ArrowRight } from "lucide-react";
 
 export default function HospitalsSection() {
   return (

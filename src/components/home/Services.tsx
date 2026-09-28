@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { specialisedTreatments } from "@/data/treatments";
-import { Sparkles, Clock, CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function Services({ hideExploreLink = false }: { hideExploreLink?: boolean } = {}) {
   return (
