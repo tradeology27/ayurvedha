@@ -38,8 +38,8 @@ export default function About() {
             </div>
 
             {/* Specialised Treatments List */}
-            <div className="bg-background rounded-2xl p-6 border border-gray-200/80 mb-8">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-primary mb-3">
+            <div className="bg-background rounded-2xl p-5 sm:p-6 border border-gray-200/80 mb-8">
+              <h3 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-primary mb-3.5">
                 We Do Offer Specialised Treatments Like:
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -53,7 +53,7 @@ export default function About() {
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-2.5">
                     <CheckCircle2 className="text-secondary shrink-0" size={18} />
-                    <span className="font-medium text-sm text-foreground/90">{item}</span>
+                    <span className="font-semibold text-sm sm:text-base text-foreground/90">{item}</span>
                   </div>
                 ))}
               </div>
@@ -63,13 +63,13 @@ export default function About() {
             <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 w-full">
               <Link
                 href="/about"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 bg-primary text-white hover:bg-primary/90 rounded-full font-medium transition-all shadow-md text-xs sm:text-sm text-center"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 bg-primary text-white hover:bg-primary/90 rounded-full font-bold transition-all shadow-md text-sm sm:text-base text-center"
               >
                 Discover Our Heritage
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-full font-medium transition-all text-xs sm:text-sm text-center"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-full font-bold transition-all text-sm sm:text-base text-center"
               >
                 Book Consultation
               </Link>

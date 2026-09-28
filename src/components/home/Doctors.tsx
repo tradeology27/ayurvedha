@@ -53,22 +53,22 @@ export default function Doctors() {
 
                     {/* Designation Badge Under Photo */}
                     <div className="text-center pt-0.5">
-                      <span className="inline-block bg-secondary text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                      <span className="inline-block bg-secondary text-white text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
                         {doc.designation}
                       </span>
-                      <p className="text-[11px] text-primary font-semibold mt-1">
+                      <p className="text-xs text-primary font-bold mt-1">
                         {doc.experience}
                       </p>
                     </div>
 
                     {/* Areas of Expertise (Moved to Left Column as requested) */}
-                    <div className="bg-white rounded-xl p-3 border border-gray-200/80 shadow-sm space-y-1.5">
-                      <p className="text-[11px] font-bold uppercase tracking-wider text-primary">
+                    <div className="bg-white rounded-xl p-3 sm:p-3.5 border border-gray-200/80 shadow-sm space-y-1.5">
+                      <p className="text-xs font-bold uppercase tracking-wider text-primary">
                         Areas of Expertise:
                       </p>
                       {doc.focusAreas.slice(0, 3).map((area, aIdx) => (
-                        <div key={aIdx} className="flex items-start gap-1.5 text-xs text-foreground/85 font-light leading-tight">
-                          <CheckCircle2 size={13} className="text-secondary shrink-0 mt-0.5" />
+                        <div key={aIdx} className="flex items-start gap-1.5 text-xs sm:text-sm text-foreground/85 font-medium leading-tight">
+                          <CheckCircle2 size={15} className="text-secondary shrink-0 mt-0.5" />
                           <span>{area}</span>
                         </div>
                       ))}
@@ -79,9 +79,9 @@ export default function Doctors() {
                   <div className="pt-3 mt-3 border-t border-gray-200/60">
                     <a
                       href={`tel:${doc.phone.replace(/\s+/g, '')}`}
-                      className="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white text-[11px] font-bold uppercase tracking-wider transition-all text-center shadow-sm"
+                      className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white text-xs sm:text-sm font-bold uppercase tracking-wider transition-all text-center shadow-sm"
                     >
-                      <Phone size={12} /> Call {doc.phone}
+                      <Phone size={14} /> Call {doc.phone}
                     </a>
                   </div>
                 </div>

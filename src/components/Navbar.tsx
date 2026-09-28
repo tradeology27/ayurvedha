@@ -94,15 +94,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between gap-2">
           
           {/* Logo with proper responsive text */}
-          <Link href="/" className="flex items-center gap-2 sm:gap-3 shrink min-w-0">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 shrink-0">
             <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden shadow-md shrink-0 border-2 border-white/20">
               <Image src="/images/knch_emblem.jpg" alt="KNCH Logo" fill sizes="48px" className="object-cover" />
             </div>
-            <div className="flex flex-col min-w-0">
-              <span className={`text-base sm:text-xl font-heading font-bold leading-tight ${isDarkNav ? 'text-primary' : 'text-white'}`}>
+            <div className="flex flex-col shrink-0">
+              <span className={`text-lg sm:text-xl font-heading font-bold leading-tight whitespace-nowrap ${isDarkNav ? 'text-primary' : 'text-white'}`}>
                 Kumar Hospital
               </span>
-              <span className={`text-[10px] sm:text-xs font-medium tracking-tight ${isDarkNav ? 'text-secondary' : 'text-secondary'}`}>
+              <span className={`text-xs sm:text-xs font-semibold tracking-tight whitespace-nowrap ${isDarkNav ? 'text-secondary' : 'text-secondary'}`}>
                 Nature Cure & Dental • Est. 2003
               </span>
             </div>
@@ -128,8 +128,8 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Direct Phone & CTA Button (Desktop) */}
-          <div className="hidden sm:flex items-center gap-3 shrink-0">
+          {/* Direct Phone & CTA Button (Desktop >= 1024px) */}
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
             {/* Custom Language Switcher */}
             <div className="relative shrink-0">
               <select
@@ -145,7 +145,7 @@ export default function Navbar() {
                 <option value="en" className="text-black">English</option>
                 <option value="ta" className="text-black">தமிழ் (Tamil)</option>
                 <option value="hi" className="text-black">हिन्दी (Hindi)</option>
-                <option value="ml" className="text-black">മലയാളം (Malayalam)</option>
+                <option value="ml" className="text-black">മലയാളம் (Malayalam)</option>
                 <option value="te" className="text-black">తెలుగు (Telugu)</option>
               </select>
               <div className={`absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none ${isDarkNav ? "text-primary" : "text-white"}`}>
