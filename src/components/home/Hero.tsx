@@ -72,7 +72,7 @@ export default function Hero() {
           {/* Big Majestic Headline with Kinetic Impact & Shimmer */}
           <motion.h1
             variants={itemVariants}
-            className="text-5xl sm:text-7xl md:text-8xl lg:text-[84px] font-heading font-extrabold text-white mb-2 leading-[1.05] tracking-tight drop-shadow-2xl"
+            className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[80px] font-heading font-extrabold text-white mb-2 leading-[1.1] tracking-tight drop-shadow-2xl break-words px-2"
           >
             Kumar Hospital <br /> 
             <span className="bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-200 bg-clip-text text-transparent animate-shimmer drop-shadow-lg">
@@ -80,10 +80,10 @@ export default function Hero() {
             </span>
           </motion.h1>
 
-          {/* Tamil Subtitle with Warm Gold Tint - Only Hospital Name */}
+          {/* Tamil Subtitle with Warm Gold Tint */}
           <motion.p
             variants={itemVariants}
-            className="text-amber-100 font-medium text-sm sm:text-base md:text-lg tracking-[0.15em] drop-shadow-md mt-4 uppercase"
+            className="text-amber-100 font-medium text-xs sm:text-base md:text-lg tracking-wider drop-shadow-md mt-4 uppercase px-2"
           >
             குமார் இயற்கை மற்றும் பல் மருத்துவமனை
           </motion.p>
@@ -96,12 +96,12 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           variants={itemVariants}
-          className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-8 w-full"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mb-8 w-full max-w-sm sm:max-w-none mx-auto"
         >
           {/* Primary Action Button (Glowing) */}
           <a
             href="tel:+918148129709"
-            className="group relative px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-amber-400 to-yellow-500 text-green-950 font-extrabold rounded-full text-sm sm:text-base uppercase tracking-widest transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(251,191,36,0.4)] hover:shadow-[0_0_30px_rgba(251,191,36,0.6)] flex items-center justify-center gap-2.5 overflow-hidden"
+            className="w-full sm:w-auto group relative px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-amber-400 to-yellow-500 text-green-950 font-extrabold rounded-full text-xs sm:text-sm uppercase tracking-wider transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(251,191,36,0.4)] hover:shadow-[0_0_30px_rgba(251,191,36,0.6)] flex items-center justify-center gap-2.5 overflow-hidden"
           >
             <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:animate-[shimmer_1.5s_infinite]" />
             <PhoneCall size={18} className="shrink-0" />
@@ -111,10 +111,10 @@ export default function Hero() {
           {/* Secondary Action Button (Glassmorphism) */}
           <Link
             href="/treatments"
-            className="px-6 sm:px-8 py-3.5 sm:py-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white/40 rounded-full font-bold text-sm sm:text-base uppercase tracking-widest transition-all transform hover:-translate-y-1 backdrop-blur-lg flex items-center justify-center gap-2.5 shadow-xl hover:shadow-2xl"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white/40 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider transition-all transform hover:-translate-y-1 backdrop-blur-lg flex items-center justify-center gap-2.5 shadow-xl hover:shadow-2xl text-center"
           >
             <span>Explore Treatments</span>
-            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1 shrink-0" />
           </Link>
         </motion.div>
 

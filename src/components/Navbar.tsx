@@ -39,6 +39,36 @@ export default function Navbar() {
 
   const isDarkNav = isScrolled || pathname !== '/';
 
+  const handleLanguageChange = (code: string) => {
+    if (!code) return;
+
+    if (typeof window !== "undefined") {
+      const hostname = window.location.hostname;
+      const rootDomain = hostname.replace(/^www\./, "");
+
+      if (code === "en") {
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${hostname};`;
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${rootDomain};`;
+      } else {
+        const val = `/en/${code}`;
+        document.cookie = `googtrans=${val}; path=/;`;
+        document.cookie = `googtrans=${val}; path=/; domain=${hostname};`;
+        document.cookie = `googtrans=${val}; path=/; domain=.${rootDomain};`;
+      }
+
+      // Trigger native Google Translate select element if available
+      const combo = document.querySelector(".goog-te-combo") as HTMLSelectElement | null;
+      if (combo) {
+        combo.value = code;
+        combo.dispatchEvent(new Event("change"));
+      }
+
+      setCurrentLang(code);
+      window.location.reload();
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -47,19 +77,19 @@ export default function Navbar() {
           : "bg-primary/80 backdrop-blur-sm py-4 border-b border-white/10"
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+      <div className="container mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-2">
           
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
-            <div className="relative w-12 h-12 rounded-full overflow-hidden shadow-md flex-shrink-0 border-2 border-white/20">
+          {/* Logo with safe truncation on mobile */}
+          <Link href="/" className="flex items-center gap-2 sm:gap-3 shrink min-w-0">
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden shadow-md shrink-0 border-2 border-white/20">
               <Image src="/images/knch_emblem.jpg" alt="KNCH Logo" fill sizes="48px" className="object-cover" />
             </div>
-            <div className="flex flex-col">
-              <span className={`text-lg sm:text-xl font-heading font-bold leading-tight ${isDarkNav ? 'text-primary' : 'text-white'}`}>
+            <div className="flex flex-col min-w-0">
+              <span className={`text-sm sm:text-xl font-heading font-bold leading-tight truncate ${isDarkNav ? 'text-primary' : 'text-white'}`}>
                 Kumar Hospital
               </span>
-              <span className={`text-[10px] sm:text-xs font-medium tracking-wider ${isDarkNav ? 'text-secondary' : 'text-secondary'}`}>
+              <span className={`text-[9px] sm:text-xs font-medium tracking-tight truncate ${isDarkNav ? 'text-secondary' : 'text-secondary'}`}>
                 Nature Cure & Dental • Est. 2003
               </span>
             </div>
@@ -85,19 +115,13 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Direct Phone & CTA Button */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* Direct Phone & CTA Button (Desktop) */}
+          <div className="hidden sm:flex items-center gap-3 shrink-0">
             {/* Custom Language Switcher */}
-            <div className="relative">
+            <div className="relative shrink-0">
               <select
                 value={currentLang}
-                onChange={(e) => {
-                  const code = e.target.value;
-                  if (code) {
-                    document.cookie = `googtrans=/en/${code}; path=/`;
-                    window.location.reload();
-                  }
-                }}
+                onChange={(e) => handleLanguageChange(e.target.value)}
                 className={`appearance-none bg-transparent text-xs font-semibold py-2 pl-3 pr-7 rounded-full border transition-all cursor-pointer outline-none notranslate ${
                   isDarkNav
                     ? "border-gray-200 text-primary hover:bg-gray-50"
@@ -110,49 +134,42 @@ export default function Navbar() {
                 <option value="hi" className="text-black">हिन्दी (Hindi)</option>
                 <option value="ml" className="text-black">മലയാളം (Malayalam)</option>
                 <option value="te" className="text-black">తెలుగు (Telugu)</option>
+                <option value="kn" className="text-black">ಕನ್ನಡ (Kannada)</option>
               </select>
               <div className={`absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none ${isDarkNav ? "text-primary" : "text-white"}`}>
                 <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              {/* Hidden original translate element for the script to bind to */}
-              <div id="google_translate_element" className="hidden"></div>
             </div>
             
             <a
               href="tel:+918148129709"
-              className={`flex items-center gap-2 text-xs font-semibold py-2 px-4 rounded-full transition-all shadow-md group animate-pulse hover:animate-none ${
+              className={`flex items-center gap-2 text-xs font-semibold py-2 px-4 rounded-full transition-all shadow-md group animate-pulse hover:animate-none shrink-0 ${
                 isDarkNav
                   ? "text-white bg-green-600 hover:bg-green-700"
                   : "text-white bg-[#25D366] hover:bg-[#20bd5a]"
               }`}
             >
-              <Phone size={14} className="text-white fill-white" />
-              <span>Call: 81481 29709</span>
+              <Phone size={14} className="text-white fill-white shrink-0" />
+              <span className="whitespace-nowrap">Call: 81481 29709</span>
             </a>
 
             <Link
               href="/contact"
-              className="bg-secondary hover:bg-secondary/90 text-primary font-bold px-5 py-2.5 rounded-full text-xs sm:text-sm transition-all shadow-sm"
+              className="bg-secondary hover:bg-secondary/90 text-primary font-bold px-5 py-2.5 rounded-full text-xs sm:text-sm transition-all shadow-sm shrink-0 whitespace-nowrap"
             >
               Book Consultation
             </Link>
           </div>
 
           {/* Mobile Language & Menu Toggle */}
-          <div className="flex lg:hidden items-center gap-1 sm:gap-2">
-            <div className="relative">
+          <div className="flex lg:hidden items-center gap-1.5 sm:gap-2 shrink-0">
+            <div className="relative shrink-0">
               <select
                 value={currentLang}
-                onChange={(e) => {
-                  const code = e.target.value;
-                  if (code) {
-                    document.cookie = `googtrans=/en/${code}; path=/`;
-                    window.location.reload();
-                  }
-                }}
-                className={`appearance-none bg-transparent text-xs font-semibold py-1.5 pl-2 pr-6 rounded-full border transition-all cursor-pointer outline-none notranslate ${
+                onChange={(e) => handleLanguageChange(e.target.value)}
+                className={`appearance-none bg-transparent text-xs font-semibold py-1.5 pl-2.5 pr-6 rounded-full border transition-all cursor-pointer outline-none notranslate ${
                   isDarkNav
                     ? "border-gray-200 text-primary hover:bg-gray-50"
                     : "border-white/30 text-white hover:bg-white/10"
@@ -164,6 +181,7 @@ export default function Navbar() {
                 <option value="hi" className="text-black">हिन्दी</option>
                 <option value="ml" className="text-black">മലയാളം</option>
                 <option value="te" className="text-black">తెలుగు</option>
+                <option value="kn" className="text-black">ಕನ್ನಡ</option>
               </select>
               <div className={`absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none ${isDarkNav ? "text-primary" : "text-white"}`}>
                 <svg width="8" height="5" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -173,7 +191,7 @@ export default function Navbar() {
             </div>
 
             <button
-              className={`p-1.5 rounded-lg ${isDarkNav ? 'text-primary' : 'text-white'}`}
+              className={`p-1.5 rounded-lg shrink-0 ${isDarkNav ? 'text-primary' : 'text-white'}`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >

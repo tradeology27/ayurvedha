@@ -115,7 +115,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="absolute -top-12 -right-4 sm:-top-16 sm:-right-8 bg-white p-5 sm:p-6 rounded-2xl shadow-2xl border-b-4 border-secondary max-w-xs z-10"
+              className="absolute top-3 right-3 sm:-top-14 sm:-right-6 bg-white p-4 sm:p-6 rounded-2xl shadow-2xl border-b-4 border-secondary max-w-[220px] sm:max-w-xs z-10"
             >
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-xl bg-secondary/15 flex items-center justify-center text-primary font-bold">

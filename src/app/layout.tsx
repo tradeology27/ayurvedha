@@ -233,7 +233,10 @@ export default function RootLayout({
         <meta name="geo.position" content="10.9574;78.0809" />
         <meta name="ICBM" content="10.9574, 78.0809" />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} antialiased flex flex-col min-h-screen bg-background text-foreground`}>
+      <body className={`${inter.variable} ${playfair.variable} antialiased flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden`}>
+        {/* Hidden permanent Google Translate mount container */}
+        <div id="google_translate_element" style={{ display: 'none' }} aria-hidden="true"></div>
+
         <Navbar />
         <main className="flex-grow">
           {children}
@@ -242,21 +245,28 @@ export default function RootLayout({
         <ScrollToTop />
         <WhatsAppButton />
 
-        {/* Google Translate Scripts */}
-        <Script
-          src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-          strategy="lazyOnload"
-        />
-        <Script id="google-translate-init" strategy="lazyOnload">
+        {/* Global Google Translate Initialization */}
+        <Script id="google-translate-init" strategy="beforeInteractive">
           {`
-            function googleTranslateElementInit() {
-              new google.translate.TranslateElement(
-                { pageLanguage: 'en', includedLanguages: 'en,ta,hi,ml,te', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
-                'google_translate_element'
-              );
-            }
+            window.googleTranslateElementInit = function() {
+              if (window.google && window.google.translate) {
+                new window.google.translate.TranslateElement(
+                  { 
+                    pageLanguage: 'en', 
+                    includedLanguages: 'en,ta,hi,ml,te,kn', 
+                    layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+                    autoDisplay: false
+                  },
+                  'google_translate_element'
+                );
+              }
+            };
           `}
         </Script>
+        <Script
+          src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
