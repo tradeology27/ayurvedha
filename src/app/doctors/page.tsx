@@ -63,10 +63,16 @@ export default function DoctorsPage() {
 
                       {/* Designation Badge Under Photo */}
                       <div className="text-center pt-0.5">
-                        <span className="inline-block bg-secondary text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
-                          {doc.designation}
-                        </span>
-                        <p className="text-[11px] text-primary font-semibold mt-1">
+                        {isDoctor1 ? (
+                          <span className="inline-flex items-center gap-1.5 bg-secondary text-primary text-[11px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md border border-secondary/40">
+                            🏅 Founder &amp; Chief Medical Officer
+                          </span>
+                        ) : (
+                          <span className="inline-flex items-center gap-1.5 bg-primary text-white text-[11px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                            🦷 Dental Specialist
+                          </span>
+                        )}
+                        <p className="text-[11px] text-primary font-semibold mt-1.5">
                           {doc.experience}
                         </p>
                       </div>
