@@ -17,7 +17,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.kumarnaturecure.com'),
+  metadataBase: new URL('https://www.knchkarur.com'),
   title: {
     default: "Kumar Nature Cure Hospital (KNCH) | Karur, Tamil Nadu",
     template: "%s | Kumar Nature Cure Hospital (KNCH)"
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://www.kumarnaturecure.com",
+    url: "https://www.knchkarur.com",
     title: "Kumar Nature Cure Hospital (KNCH) | Karur, Tamil Nadu",
     description: "10,000 sq.ft serene greenery campus offering specialized Naturopathy, Mud therapy, Hydrotherapy, and Yoga. Drugless healing since 2003.",
     siteName: "Kumar Nature Cure Hospital",
@@ -100,12 +100,12 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": ["Hospital", "MedicalOrganization", "LocalBusiness"],
-        "@id": "https://www.kumarnaturecure.com/#hospital",
+        "@id": "https://www.knchkarur.com/#hospital",
         "name": "Kumar Nature Cure Hospital",
         "alternateName": ["KNCH", "Kumar Hospital Karur", "Kumar Nature Cure"],
-        "url": "https://www.kumarnaturecure.com",
-        "logo": "https://www.kumarnaturecure.com/images/knch_full_logo.jpg",
-        "image": "https://www.kumarnaturecure.com/images/knch_main_campus.jpg",
+        "url": "https://www.knchkarur.com",
+        "logo": "https://www.knchkarur.com/images/knch_full_logo.jpg",
+        "image": "https://www.knchkarur.com/images/knch_main_campus.jpg",
         "description": "Established in 2003 in Karur, Tamil Nadu. A 10,000 sq.ft serene greenery hospital offering authentic drugless Naturopathy, Mud therapy, Hydrotherapy, Spinal Spray, Plantain Leaf Bath, and Yoga Therapy.",
         "telephone": "+91 94433 34220",
         "priceRange": "₹₹",
@@ -170,16 +170,16 @@ export default function RootLayout({
           }
         ],
         "founder": [
-          { "@id": "https://www.kumarnaturecure.com/#doctor-sukumar" },
-          { "@id": "https://www.kumarnaturecure.com/#doctor-anitha" }
+          { "@id": "https://www.knchkarur.com/#doctor-sukumar" },
+          { "@id": "https://www.knchkarur.com/#doctor-anitha" }
         ]
       },
       {
         "@type": ["Hospital", "MedicalOrganization", "LocalBusiness"],
-        "@id": "https://www.kumarnaturecure.com/#pk-hospital",
+        "@id": "https://www.knchkarur.com/#pk-hospital",
         "name": "P.K. Hospital",
         "alternateName": ["P.K. Nature Cure Hospital Kulithalai"],
-        "url": "https://www.kumarnaturecure.com",
+        "url": "https://www.knchkarur.com",
         "description": "Expanded campus established in 2017 near Kulithalai, Karur district, offering extensive residential nature cure retreats, cottages, organic farms, and dental clinic.",
         "telephone": "+91 94432 40040",
         "address": {
@@ -193,28 +193,28 @@ export default function RootLayout({
       },
       {
         "@type": "Physician",
-        "@id": "https://www.kumarnaturecure.com/#doctor-sukumar",
+        "@id": "https://www.knchkarur.com/#doctor-sukumar",
         "name": "Dr. C. Sukumar",
         "jobTitle": "Chief Medical Officer & Founder",
         "honorificSuffix": "BNYS",
         "description": "Renowned Naturopath with over 20 years of clinical experience in drugless natural medicine, hydrotherapy, and therapeutic lifestyle guidance.",
         "medicalSpecialty": "Naturopathy and Yogic Sciences",
-        "worksFor": { "@id": "https://www.kumarnaturecure.com/#hospital" }
+        "worksFor": { "@id": "https://www.knchkarur.com/#hospital" }
       },
       {
         "@type": "Physician",
-        "@id": "https://www.kumarnaturecure.com/#doctor-anitha",
+        "@id": "https://www.knchkarur.com/#doctor-anitha",
         "name": "Dr. M. Anitha Sukumar",
         "jobTitle": "Co-Founder & Dental Specialist",
         "honorificSuffix": "BDS, DNYS",
         "description": "Specialized Dental Surgeon and Naturopath providing integrated oral healthcare and holistic lifestyle treatments.",
         "medicalSpecialty": "Dental Surgery and Naturopathy",
-        "worksFor": { "@id": "https://www.kumarnaturecure.com/#hospital" }
+        "worksFor": { "@id": "https://www.knchkarur.com/#hospital" }
       },
       {
         "@type": "WebSite",
-        "@id": "https://www.kumarnaturecure.com/#website",
-        "url": "https://www.kumarnaturecure.com",
+        "@id": "https://www.knchkarur.com/#website",
+        "url": "https://www.knchkarur.com",
         "name": "Kumar Nature Cure Hospital",
         "inLanguage": ["en-IN", "ta-IN"]
       }

@@ -1,8 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Replace with the actual production domain when deploying
-  const baseUrl = 'https://www.kumarnaturecure.com';
+  const baseUrl = 'https://www.knchkarur.com';
 
   return [
     {
