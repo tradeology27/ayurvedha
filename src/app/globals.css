@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-primary;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes textShimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: textShimmer 4s linear infinite;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Google Translate Overrides */
+.skiptranslate iframe { display: none !important; }
+body { top: 0 !important; }
+.goog-te-gadget-simple { border: none !important; background-color: transparent !important; }
+.goog-te-menu-value { color: inherit !important; }
+
+/* Hide Google Translate Tooltip and Highlights */
+#goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+.goog-text-highlight { background: none !important; box-shadow: none !important; }
+.VIpgJd-yAWNEb-hvhgNd { display: none !important; }
