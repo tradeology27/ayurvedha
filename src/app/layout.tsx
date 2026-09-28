@@ -97,61 +97,126 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Hospital",
-    "@id": "https://www.kumarnaturecure.com/#hospital",
-    "name": "Kumar Nature Cure Hospital",
-    "alternateName": ["KNCH", "P.K. Hospital", "Kumar Naturopathy Hospital"],
-    "url": "https://www.kumarnaturecure.com",
-    "logo": "https://www.kumarnaturecure.com/images/knch_full_logo.jpg",
-    "image": "https://www.kumarnaturecure.com/images/knch_main_campus.jpg",
-    "description": "Established in 2003 at Gandhigramam, Karur. 10,000 sq.ft serene greenery campus offering specialized Naturopathy, Mud therapy, Hydrotherapy, Yoga and Diet therapy.",
-    "telephone": "+91 94433 34220",
-    "priceRange": "₹₹",
-    "medicalSpecialty": [
-      "Physiotherapy",
-      "Dietetics"
-    ],
-    "availableService": [
-      { "@type": "MedicalTherapy", "name": "Naturopathy & Drugless Healing" },
-      { "@type": "MedicalTherapy", "name": "Mud Therapy & Mud Bath" },
-      { "@type": "MedicalTherapy", "name": "Hydrotherapy & Spinal Spray" },
-      { "@type": "MedicalTherapy", "name": "Plantain Leaf Sun Bath" },
-      { "@type": "MedicalTherapy", "name": "Therapeutic Yoga & Pranayama" },
-      { "@type": "MedicalTherapy", "name": "Diet Therapy & Natural Nutrition" }
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Shakthi Nagar, Gandhigramam",
-      "addressLocality": "Karur",
-      "addressRegion": "Tamil Nadu",
-      "postalCode": "639004",
-      "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 10.9574,
-      "longitude": 78.0809
-    },
-    "openingHoursSpecification": [
+    "@graph": [
       {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "opens": "06:00",
-        "closes": "21:00"
-      }
-    ],
-    "founder": [
-      {
-        "@type": "Person",
-        "name": "Dr. C. Sukumar",
-        "jobTitle": "Chief Medical Officer & Founder",
-        "honorificSuffix": "BNYS"
+        "@type": ["Hospital", "MedicalOrganization", "LocalBusiness"],
+        "@id": "https://www.kumarnaturecure.com/#hospital",
+        "name": "Kumar Nature Cure Hospital",
+        "alternateName": ["KNCH", "Kumar Hospital Karur", "Kumar Nature Cure"],
+        "url": "https://www.kumarnaturecure.com",
+        "logo": "https://www.kumarnaturecure.com/images/knch_full_logo.jpg",
+        "image": "https://www.kumarnaturecure.com/images/knch_main_campus.jpg",
+        "description": "Established in 2003 in Karur, Tamil Nadu. A 10,000 sq.ft serene greenery hospital offering authentic drugless Naturopathy, Mud therapy, Hydrotherapy, Spinal Spray, Plantain Leaf Bath, and Yoga Therapy.",
+        "telephone": "+91 94433 34220",
+        "priceRange": "₹₹",
+        "currenciesAccepted": "INR",
+        "paymentAccepted": "Cash, Credit Card, UPI",
+        "areaServed": [
+          { "@type": "City", "name": "Karur" },
+          { "@type": "AdministrativeArea", "name": "Tamil Nadu" },
+          { "@type": "Country", "name": "India" }
+        ],
+        "knowsAbout": [
+          "Naturopathy",
+          "Mud Therapy",
+          "Hydrotherapy",
+          "Spinal Spray",
+          "Plantain Leaf Sun Bath",
+          "Yoga Therapy",
+          "Pranayama",
+          "Diet Therapy",
+          "Natural Detoxification",
+          "Arthritis and Joint Pain Treatment",
+          "Cervical and Lumbar Spondylosis",
+          "Sciatica Treatment without Surgery",
+          "Diabetes and Hypertension Management",
+          "Digestive and Gastric Disorders",
+          "Skin Diseases and Psoriasis Naturopathy",
+          "Stress and Obesity Management"
+        ],
+        "medicalSpecialty": [
+          "Physiotherapy",
+          "Dietetics",
+          "PublicHealth"
+        ],
+        "availableService": [
+          { "@type": "MedicalTherapy", "name": "Full Body Mud Bath & Mud Packs" },
+          { "@type": "MedicalTherapy", "name": "Spinal Spray & Spinal Bath" },
+          { "@type": "MedicalTherapy", "name": "Herbal Steam Bath & Hip Bath" },
+          { "@type": "MedicalTherapy", "name": "Plantain Leaf Sun Bath" },
+          { "@type": "MedicalTherapy", "name": "Herbal Enema & Gastrointestinal Cleansing" },
+          { "@type": "MedicalTherapy", "name": "Therapeutic Yoga, Asanas & Pranayama" },
+          { "@type": "MedicalTherapy", "name": "Juice Fasting & Organic Diet Therapy" }
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Shakthi Nagar, Gandhigramam",
+          "addressLocality": "Karur",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": "639004",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 10.9574,
+          "longitude": 78.0809
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "06:00",
+            "closes": "21:00"
+          }
+        ],
+        "founder": [
+          { "@id": "https://www.kumarnaturecure.com/#doctor-sukumar" },
+          { "@id": "https://www.kumarnaturecure.com/#doctor-anitha" }
+        ]
       },
       {
-        "@type": "Person",
+        "@type": ["Hospital", "MedicalOrganization", "LocalBusiness"],
+        "@id": "https://www.kumarnaturecure.com/#pk-hospital",
+        "name": "P.K. Hospital",
+        "alternateName": ["P.K. Nature Cure Hospital Kulithalai"],
+        "url": "https://www.kumarnaturecure.com",
+        "description": "Expanded campus established in 2017 near Kulithalai, Karur district, offering extensive residential nature cure retreats, cottages, organic farms, and dental clinic.",
+        "telephone": "+91 94432 40040",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Inam Karur to Kulithalai Highway",
+          "addressLocality": "Kulithalai",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": "639104",
+          "addressCountry": "IN"
+        }
+      },
+      {
+        "@type": "Physician",
+        "@id": "https://www.kumarnaturecure.com/#doctor-sukumar",
+        "name": "Dr. C. Sukumar",
+        "jobTitle": "Chief Medical Officer & Founder",
+        "honorificSuffix": "BNYS",
+        "description": "Renowned Naturopath with over 20 years of clinical experience in drugless natural medicine, hydrotherapy, and therapeutic lifestyle guidance.",
+        "medicalSpecialty": "Naturopathy and Yogic Sciences",
+        "worksFor": { "@id": "https://www.kumarnaturecure.com/#hospital" }
+      },
+      {
+        "@type": "Physician",
+        "@id": "https://www.kumarnaturecure.com/#doctor-anitha",
         "name": "Dr. M. Anitha Sukumar",
-        "jobTitle": "Dental Specialist & Naturopath",
-        "honorificSuffix": "BDS, DNYS"
+        "jobTitle": "Co-Founder & Dental Specialist",
+        "honorificSuffix": "BDS, DNYS",
+        "description": "Specialized Dental Surgeon and Naturopath providing integrated oral healthcare and holistic lifestyle treatments.",
+        "medicalSpecialty": "Dental Surgery and Naturopathy",
+        "worksFor": { "@id": "https://www.kumarnaturecure.com/#hospital" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.kumarnaturecure.com/#website",
+        "url": "https://www.kumarnaturecure.com",
+        "name": "Kumar Nature Cure Hospital",
+        "inLanguage": ["en-IN", "ta-IN"]
       }
     ]
   };

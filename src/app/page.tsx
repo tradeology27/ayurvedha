@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
 import About from "@/components/home/About";
 import Services from "@/components/home/Services";
+import AIFactSheet from "@/components/home/AIFactSheet";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Doctors from "@/components/home/Doctors";
 import AppointmentForm from "@/components/home/AppointmentForm";
@@ -20,6 +21,7 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
+      <AIFactSheet />
       <WhyChooseUs />
       <Doctors />
       <AppointmentForm />
