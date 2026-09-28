@@ -234,22 +234,6 @@ export default function RootLayout({
         <meta name="ICBM" content="10.9574, 78.0809" />
       </head>
       <body className={`${inter.variable} ${playfair.variable} antialiased flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden`}>
-        {/* Hidden permanent Google Translate mount container without display:none so Google creates combo */}
-        <div 
-          id="google_translate_element" 
-          style={{ 
-            position: 'absolute', 
-            left: '-9999px', 
-            top: '-9999px', 
-            width: '1px', 
-            height: '1px', 
-            overflow: 'hidden', 
-            opacity: 0, 
-            pointerEvents: 'none' 
-          }} 
-          aria-hidden="true"
-        />
-
         <Navbar />
         <main className="flex-grow">
           {children}
@@ -258,17 +242,20 @@ export default function RootLayout({
         <ScrollToTop />
         <WhatsAppButton />
 
-        {/* Global Google Translate Initialization */}
-        <Script id="google-translate-init" strategy="beforeInteractive">
+        {/* Google Translate Scripts */}
+        <Script
+          src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          strategy="lazyOnload"
+        />
+        <Script id="google-translate-init" strategy="lazyOnload">
           {`
             function googleTranslateElementInit() {
               if (window.google && window.google.translate) {
                 new window.google.translate.TranslateElement(
                   { 
                     pageLanguage: 'en', 
-                    includedLanguages: 'en,ta,hi,ml,te,kn', 
-                    layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-                    autoDisplay: false
+                    includedLanguages: 'en,ta,hi,ml,te', 
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE 
                   },
                   'google_translate_element'
                 );
@@ -277,10 +264,6 @@ export default function RootLayout({
             window.googleTranslateElementInit = googleTranslateElementInit;
           `}
         </Script>
-        <Script
-          src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   );

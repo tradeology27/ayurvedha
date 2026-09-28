@@ -60,16 +60,16 @@ export default function About() {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 w-full">
               <Link
                 href="/about"
-                className="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-white hover:bg-primary/90 rounded-full font-medium transition-all shadow-md text-sm"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 bg-primary text-white hover:bg-primary/90 rounded-full font-medium transition-all shadow-md text-xs sm:text-sm text-center"
               >
                 Discover Our Heritage
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-3.5 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-full font-medium transition-all text-sm"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-full font-medium transition-all text-xs sm:text-sm text-center"
               >
                 Book Consultation
               </Link>

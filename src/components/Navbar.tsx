@@ -41,55 +41,45 @@ export default function Navbar() {
 
   const isDarkNav = isScrolled || pathname !== '/';
 
-  const clearAllGoogTransCookies = () => {
-    if (typeof window === "undefined") return;
+  const handleLanguageChange = (code: string) => {
+    if (!code || typeof window === "undefined") return;
+
     const host = window.location.hostname;
-    const parts = host.split('.');
-    const root = parts.length >= 2 ? parts.slice(-2).join('.') : host;
+    const cleanHost = host.replace(/^www\./i, '');
 
-    const domains = ['', host, '.' + host, '.' + root, root, 'www.' + root, '.www.' + root];
-    const paths = ['/', ''];
+    const domains = [
+      '',
+      host,
+      '.' + host,
+      cleanHost,
+      '.' + cleanHost,
+      'www.' + cleanHost,
+      '.www.' + cleanHost,
+    ];
+    const paths = ['/', '', window.location.pathname];
 
+    // 1. Purge all prior cookies so previous language (like Tamil) never gets stuck
     domains.forEach((d) => {
       paths.forEach((p) => {
         const domainStr = d ? `; domain=${d}` : '';
         document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=${p || '/'}${domainStr};`;
       });
     });
-  };
-
-  const handleLanguageChange = (code: string) => {
-    if (!code || typeof window === "undefined") return;
-
-    // 1. Purge all prior cookies so previous language (like Tamil) never gets stuck
-    clearAllGoogTransCookies();
 
     // 2. Set new cookie across domains if not English
     if (code !== "en") {
-      const host = window.location.hostname;
-      const parts = host.split('.');
-      const root = parts.length >= 2 ? parts.slice(-2).join('.') : host;
       const val = `/en/${code}`;
-
       document.cookie = `googtrans=${val}; path=/;`;
-      document.cookie = `googtrans=${val}; path=/; domain=${host};`;
-      document.cookie = `googtrans=${val}; path=/; domain=.${root};`;
-      document.cookie = `googtrans=${val}; path=/; domain=.${host};`;
-    }
-
-    // 3. Trigger native Google Translate select element if loaded
-    const combo = document.querySelector(".goog-te-combo") as HTMLSelectElement | null;
-    if (combo) {
-      combo.value = code;
-      combo.dispatchEvent(new Event("change"));
+      document.cookie = `googtrans=${val}; path=/; domain=${cleanHost};`;
+      document.cookie = `googtrans=${val}; path=/; domain=.${cleanHost};`;
+      if (host !== cleanHost) {
+        document.cookie = `googtrans=${val}; path=/; domain=${host};`;
+        document.cookie = `googtrans=${val}; path=/; domain=.${host};`;
+      }
     }
 
     setCurrentLang(code);
-
-    // 4. Smooth reload with slight delay so browser writes cookie
-    setTimeout(() => {
-      window.location.reload();
-    }, 150);
+    window.location.reload();
   };
 
   return (
@@ -103,16 +93,16 @@ export default function Navbar() {
       <div className="container mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-2">
           
-          {/* Logo with safe truncation on mobile */}
+          {/* Logo with proper responsive text */}
           <Link href="/" className="flex items-center gap-2 sm:gap-3 shrink min-w-0">
             <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden shadow-md shrink-0 border-2 border-white/20">
               <Image src="/images/knch_emblem.jpg" alt="KNCH Logo" fill sizes="48px" className="object-cover" />
             </div>
             <div className="flex flex-col min-w-0">
-              <span className={`text-sm sm:text-xl font-heading font-bold leading-tight truncate ${isDarkNav ? 'text-primary' : 'text-white'}`}>
+              <span className={`text-base sm:text-xl font-heading font-bold leading-tight ${isDarkNav ? 'text-primary' : 'text-white'}`}>
                 Kumar Hospital
               </span>
-              <span className={`text-[9px] sm:text-xs font-medium tracking-tight truncate ${isDarkNav ? 'text-secondary' : 'text-secondary'}`}>
+              <span className={`text-[10px] sm:text-xs font-medium tracking-tight ${isDarkNav ? 'text-secondary' : 'text-secondary'}`}>
                 Nature Cure & Dental • Est. 2003
               </span>
             </div>
@@ -157,13 +147,14 @@ export default function Navbar() {
                 <option value="hi" className="text-black">हिन्दी (Hindi)</option>
                 <option value="ml" className="text-black">മലയാളം (Malayalam)</option>
                 <option value="te" className="text-black">తెలుగు (Telugu)</option>
-                <option value="kn" className="text-black">ಕನ್ನಡ (Kannada)</option>
               </select>
               <div className={`absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none ${isDarkNav ? "text-primary" : "text-white"}`}>
                 <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
+              {/* Hidden Google Translate mount element */}
+              <div id="google_translate_element" className="hidden"></div>
             </div>
             
             <a
@@ -204,7 +195,6 @@ export default function Navbar() {
                 <option value="hi" className="text-black">हिन्दी</option>
                 <option value="ml" className="text-black">മലയാളം</option>
                 <option value="te" className="text-black">తెలుగు</option>
-                <option value="kn" className="text-black">ಕನ್ನಡ</option>
               </select>
               <div className={`absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none ${isDarkNav ? "text-primary" : "text-white"}`}>
                 <svg width="8" height="5" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">

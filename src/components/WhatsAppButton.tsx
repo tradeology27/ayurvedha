@@ -5,7 +5,7 @@ export default function WhatsAppButton() {
       href={`https://wa.me/918148129709?text=${message}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-24 sm:bottom-28 right-6 z-50 p-3.5 sm:p-4 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full shadow-2xl transition-all hover:scale-110 flex items-center justify-center gap-2 group animate-pulse hover:animate-none"
+      className="fixed bottom-20 sm:bottom-28 right-4 sm:right-6 z-50 p-3 sm:p-4 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full shadow-2xl transition-all hover:scale-110 flex items-center justify-center gap-2 group animate-pulse hover:animate-none"
       aria-label="Chat on WhatsApp with Kumar Nature Cure Hospital"
     >
       <svg 
