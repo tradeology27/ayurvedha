@@ -234,8 +234,21 @@ export default function RootLayout({
         <meta name="ICBM" content="10.9574, 78.0809" />
       </head>
       <body className={`${inter.variable} ${playfair.variable} antialiased flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden`}>
-        {/* Hidden permanent Google Translate mount container */}
-        <div id="google_translate_element" style={{ display: 'none' }} aria-hidden="true"></div>
+        {/* Hidden permanent Google Translate mount container without display:none so Google creates combo */}
+        <div 
+          id="google_translate_element" 
+          style={{ 
+            position: 'absolute', 
+            left: '-9999px', 
+            top: '-9999px', 
+            width: '1px', 
+            height: '1px', 
+            overflow: 'hidden', 
+            opacity: 0, 
+            pointerEvents: 'none' 
+          }} 
+          aria-hidden="true"
+        />
 
         <Navbar />
         <main className="flex-grow">
@@ -248,7 +261,7 @@ export default function RootLayout({
         {/* Global Google Translate Initialization */}
         <Script id="google-translate-init" strategy="beforeInteractive">
           {`
-            window.googleTranslateElementInit = function() {
+            function googleTranslateElementInit() {
               if (window.google && window.google.translate) {
                 new window.google.translate.TranslateElement(
                   { 
@@ -260,7 +273,8 @@ export default function RootLayout({
                   'google_translate_element'
                 );
               }
-            };
+            }
+            window.googleTranslateElementInit = googleTranslateElementInit;
           `}
         </Script>
         <Script

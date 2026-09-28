@@ -28,10 +28,12 @@ export default function Navbar() {
     };
     window.addEventListener("scroll", handleScroll);
 
-    // Read Google Translate cookie
-    const match = document.cookie.match(/googtrans=\/en\/([a-z]{2})/);
+    // Read Google Translate cookie (handles /en/xx and /auto/xx)
+    const match = document.cookie.match(/googtrans=\/(?:en|auto)\/([a-z]{2})/);
     if (match && match[1]) {
       setCurrentLang(match[1]);
+    } else {
+      setCurrentLang("en");
     }
 
     return () => window.removeEventListener("scroll", handleScroll);
@@ -39,34 +41,55 @@ export default function Navbar() {
 
   const isDarkNav = isScrolled || pathname !== '/';
 
+  const clearAllGoogTransCookies = () => {
+    if (typeof window === "undefined") return;
+    const host = window.location.hostname;
+    const parts = host.split('.');
+    const root = parts.length >= 2 ? parts.slice(-2).join('.') : host;
+
+    const domains = ['', host, '.' + host, '.' + root, root, 'www.' + root, '.www.' + root];
+    const paths = ['/', ''];
+
+    domains.forEach((d) => {
+      paths.forEach((p) => {
+        const domainStr = d ? `; domain=${d}` : '';
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=${p || '/'}${domainStr};`;
+      });
+    });
+  };
+
   const handleLanguageChange = (code: string) => {
-    if (!code) return;
+    if (!code || typeof window === "undefined") return;
 
-    if (typeof window !== "undefined") {
-      const hostname = window.location.hostname;
-      const rootDomain = hostname.replace(/^www\./, "");
+    // 1. Purge all prior cookies so previous language (like Tamil) never gets stuck
+    clearAllGoogTransCookies();
 
-      if (code === "en") {
-        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${hostname};`;
-        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${rootDomain};`;
-      } else {
-        const val = `/en/${code}`;
-        document.cookie = `googtrans=${val}; path=/;`;
-        document.cookie = `googtrans=${val}; path=/; domain=${hostname};`;
-        document.cookie = `googtrans=${val}; path=/; domain=.${rootDomain};`;
-      }
+    // 2. Set new cookie across domains if not English
+    if (code !== "en") {
+      const host = window.location.hostname;
+      const parts = host.split('.');
+      const root = parts.length >= 2 ? parts.slice(-2).join('.') : host;
+      const val = `/en/${code}`;
 
-      // Trigger native Google Translate select element if available
-      const combo = document.querySelector(".goog-te-combo") as HTMLSelectElement | null;
-      if (combo) {
-        combo.value = code;
-        combo.dispatchEvent(new Event("change"));
-      }
-
-      setCurrentLang(code);
-      window.location.reload();
+      document.cookie = `googtrans=${val}; path=/;`;
+      document.cookie = `googtrans=${val}; path=/; domain=${host};`;
+      document.cookie = `googtrans=${val}; path=/; domain=.${root};`;
+      document.cookie = `googtrans=${val}; path=/; domain=.${host};`;
     }
+
+    // 3. Trigger native Google Translate select element if loaded
+    const combo = document.querySelector(".goog-te-combo") as HTMLSelectElement | null;
+    if (combo) {
+      combo.value = code;
+      combo.dispatchEvent(new Event("change"));
+    }
+
+    setCurrentLang(code);
+
+    // 4. Smooth reload with slight delay so browser writes cookie
+    setTimeout(() => {
+      window.location.reload();
+    }, 150);
   };
 
   return (
