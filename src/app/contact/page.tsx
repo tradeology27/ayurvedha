@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import AppointmentForm from "@/components/home/AppointmentForm";
 import { MapPin, Phone, Clock, Mail } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Contact & Appointments | Kumar Nature Cure Hospital & P.K. Hospital",
+  description: "Contact Kumar Nature Cure Hospital (Gandhigramam, Karur) and P.K. Hospital (Kulithalai). Call +91 94433 34220 / +91 94432 40040 or book your consultation online.",
+  alternates: {
+    canonical: "/contact",
+  },
+};
 
 export default function ContactPage() {
   return (

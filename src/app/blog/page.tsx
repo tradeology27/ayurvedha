@@ -1,31 +1,40 @@
+import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import Image from "next/image";
 import Link from "next/link";
 import { Calendar, User } from "lucide-react";
 
+export const metadata: Metadata = {
+  title: "Health & Naturopathy Articles | Kumar Nature Cure Hospital",
+  description: "Read expert health guides, naturopathic lifestyle tips, dietary advice, and holistic healing articles by Dr. C. Sukumar and Dr. M. Anitha Sukumar.",
+  alternates: {
+    canonical: "/blog",
+  },
+};
+
 const blogPosts = [
   {
-    title: "Understanding Your Ayurvedic Body Type (Prakriti)",
-    excerpt: "Discover the three doshasâ€”Vata, Pitta, and Kaphaâ€”and learn how identifying your unique constitution can transform your health and well-being.",
+    title: "Understanding Your Body Type & Natural Self-Healing",
+    excerpt: "Discover the core principles of Nature Cure and learn how aligning your body with the five natural elements can transform your chronic wellness.",
     image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=2000&auto=format&fit=crop",
     date: "March 15, 2024",
-    author: "Dr. Arvind Sharma",
-    category: "Wellness",
+    author: "Dr. C. Sukumar, BNYS",
+    category: "Naturopathy",
   },
   {
-    title: "The Benefits of Daily Oil Massage (Abhyanga)",
-    excerpt: "Explore the profound physical and mental benefits of Abhyanga. Learn how this simple daily practice can improve sleep, calm the nervous system, and nourish the skin.",
+    title: "The Healing Powers of Mud Therapy & Hydrotherapy",
+    excerpt: "Explore the profound physical benefits of mud packs and spinal sprays for chronic spine, joint, and digestive health.",
     image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2000&auto=format&fit=crop",
     date: "April 2, 2024",
-    author: "Dr. Meera Nambiar",
+    author: "Dr. C. Sukumar, BNYS",
     category: "Treatments",
   },
   {
-    title: "Ayurvedic Diet Tips for a Healthy Gut",
-    excerpt: "According to Ayurveda, all disease begins in the gut. Here are 5 essential dietary guidelines to maintain strong Agni (digestive fire) and prevent illness.",
+    title: "Natural Nutrition: Diet Therapy for a Disease-Free Life",
+    excerpt: "All disease begins in poor digestion and toxemia. Learn 5 essential dietary rules for natural detoxification and strong immunity.",
     image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2000&auto=format&fit=crop",
     date: "May 10, 2024",
-    author: "Dr. Rajesh Kumar",
+    author: "Dr. M. Anitha Sukumar, BDS, DNYS",
     category: "Diet & Nutrition",
   },
 ];

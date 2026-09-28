@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import { doctorsData } from "@/data/doctors";
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, Clock, MapPin, CheckCircle2, Stethoscope, Sparkles, Calendar } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Specialist Doctors | Dr. C. Sukumar & Dr. M. Anitha Sukumar",
+  description: "Meet Dr. C. Sukumar (BNYS, Naturopathy Specialist) and Dr. M. Anitha Sukumar (BDS, DNYS, Dental Specialist). Over 20 years of clinical healthcare excellence in Karur.",
+  alternates: {
+    canonical: "/doctors",
+  },
+};
 
 export default function DoctorsPage() {
   return (

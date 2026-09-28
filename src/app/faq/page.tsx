@@ -1,38 +1,58 @@
-"use client";
-
-import { useState } from "react";
+import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
-import { ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import FaqAccordion, { FAQItem } from "@/components/faq/FaqAccordion";
 
-const faqs = [
+export const metadata: Metadata = {
+  title: "Frequently Asked Questions (FAQ) | Naturopathy & Nature Cure",
+  description: "Get answers about Naturopathy, Mud therapy, Hydrotherapy, residential admission, inpatient packages, and drugless healing at Kumar Nature Cure Hospital, Karur.",
+  alternates: {
+    canonical: "/faq",
+  },
+};
+
+const faqs: FAQItem[] = [
   {
-    question: "What is Ayurveda and how does it work?",
-    answer: "Ayurveda is a 5000-year-old natural system of medicine that originated in India. It works on the principle that health and wellness depend on a delicate balance between the mind, body, and spirit. It uses diet, herbal treatment, and yogic breathing to treat illnesses and maintain health.",
+    question: "What is Naturopathy and how does drugless healing work?",
+    answer: "Naturopathy is a holistic system of natural medicine that emphasizes the body's self-healing capacity using the five natural elements (Earth, Water, Fire, Air, Ether). Rather than suppressing symptoms with synthetic drugs, it detoxifies the system and restores biological vitality through Mud therapy, Hydrotherapy, Diet therapy, and Yoga.",
   },
   {
-    question: "What is Panchakarma?",
-    answer: "Panchakarma is the ultimate mind-body healing experience for detoxifying the body, strengthening the immune system, and restoring balance and well-being. It consists of five major purification procedures tailored to an individual's specific body type (Prakriti).",
+    question: "What conditions are treated at Kumar Nature Cure Hospital?",
+    answer: "We specialize in chronic conditions including Arthritis & Joint Pain, Spondylosis, Sciatica, Diabetes, Hypertension, Digestive disorders (Gastritis, Constipation), Asthma & Bronchitis, Skin diseases, Obesity, Stress, and post-stroke rehabilitation.",
   },
   {
-    question: "How do I know which treatment is right for me?",
-    answer: "During your initial consultation, our experienced Ayurvedic doctors will conduct a thorough assessment of your physical and mental health to determine your Prakriti (body constitution) and any imbalances (Vikriti). Based on this, they will recommend a personalized treatment plan.",
+    question: "Do you offer residential inpatient (admission) facilities?",
+    answer: "Yes. Both Kumar Nature Cure Hospital (Gandhigramam, Karur) and P.K. Hospital (Kulithalai) offer residential inpatient facilities surrounded by serene greenery, organic natural diet, and round-the-clock medical care by qualified doctors.",
   },
   {
-    question: "Are Ayurvedic medicines safe? Do they have side effects?",
-    answer: "Authentic Ayurvedic medicines are made from natural herbs and minerals and are generally very safe when prescribed by a qualified practitioner. Because they are natural and work with your body's innate intelligence, they rarely have adverse side effects.",
+    question: "What are the key treatments included during a residential stay?",
+    answer: "A customized daily regimen typically includes Full-Body Mud Bath, Spinal Spray, Steam Bath, Herbal Enema, Hip Bath, Plantain Leaf Bath, therapeutic Yoga & Pranayama sessions, and therapeutic fasting with raw juices.",
   },
   {
-    question: "Do I need to stay at the hospital for all treatments?",
-    answer: "Not necessarily. While intensive detox programs like Panchakarma require you to stay at our facility to monitor your diet and provide daily therapies, many treatments and consultations can be done on an outpatient basis.",
+    question: "Can I take outpatient (OPD) consultation without admission?",
+    answer: "Yes, outpatient consultations and individual therapy sessions (such as spinal baths, steam therapy, and physiotherapy) are available daily from 6:00 AM to 9:00 PM.",
   },
 ];
 
 export default function FAQPage() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((f) => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.answer,
+      },
+    })),
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <PageHeader 
         title="Frequently Asked Questions" 
         breadcrumb={[{ name: "FAQ", path: "/faq" }]} 
@@ -41,40 +61,15 @@ export default function FAQPage() {
       
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div 
-                key={index} 
-                className="border border-gray-200 rounded-xl overflow-hidden"
-              >
-                <button
-                  className="w-full px-6 py-4 flex items-center justify-between text-left bg-background hover:bg-gray-50 transition-colors"
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                >
-                  <span className="font-heading font-bold text-primary text-lg">
-                    {faq.question}
-                  </span>
-                  <ChevronDown 
-                    className={`text-secondary transition-transform duration-300 shrink-0 ${openIndex === index ? "rotate-180" : ""}`} 
-                  />
-                </button>
-                <AnimatePresence>
-                  {openIndex === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-6 py-4 text-foreground/70 font-light bg-white border-t border-gray-100">
-                        {faq.answer}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-heading font-bold text-primary mb-3">
+              Common Questions About Nature Cure
+            </h2>
+            <p className="text-foreground/70">
+              Clear answers to help you prepare for your health transformation journey.
+            </p>
           </div>
+          <FaqAccordion items={faqs} />
         </div>
       </section>
     </>

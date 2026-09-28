@@ -1,9 +1,18 @@
+import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import AboutSection from "@/components/home/About";
 import HospitalsSection from "@/components/home/HospitalsSection";
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "About Our Hospitals | Kumar Nature Cure Hospital & P.K. Hospital",
+  description: "Learn about Kumar Nature Cure Hospital (est. 2003, Karur) and P.K. Hospital (est. 2017, Kulithalai). Over 20 years of drugless naturopathy, hydrotherapy, and yoga therapy.",
+  alternates: {
+    canonical: "/about",
+  },
+};
 
 export default function AboutPage() {
   return (

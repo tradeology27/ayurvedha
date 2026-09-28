@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import Services from "@/components/home/Services";
 import TreatmentExplorer from "@/components/treatments/TreatmentExplorer";
 import { ShieldCheck, HeartPulse, Sparkles, Phone } from "lucide-react";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Specialised Naturopathy Treatments | Mud Therapy, Hydrotherapy, Yoga",
+  description: "Explore drugless naturopathy treatments: Mud bath & packs, Spinal spray, Steam bath, Plantain leaf bath, Hip bath, Diet therapy, and Yoga at KNCH Karur.",
+  alternates: {
+    canonical: "/treatments",
+  },
+};
 
 export default function TreatmentsPage() {
   return (
