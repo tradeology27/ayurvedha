@@ -91,18 +91,18 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center gap-2">
           
           {/* Logo with proper responsive text */}
-          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+          <Link href="/" className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1 lg:flex-none">
             <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden shadow-md shrink-0 border-2 border-white/20">
               <Image src="/images/knch_emblem.jpg" alt="KNCH Logo" fill sizes="48px" className="object-cover" />
             </div>
-            <div className="flex flex-col shrink-0">
-              <span className={`text-lg sm:text-xl font-heading font-bold leading-tight whitespace-nowrap ${isDarkNav ? 'text-primary' : 'text-white'}`}>
+            <div className="flex flex-col min-w-0">
+              <span className={`text-sm sm:text-xl font-heading font-bold leading-tight truncate notranslate ${isDarkNav ? 'text-primary' : 'text-white'}`}>
                 Kumar Hospital
               </span>
-              <span className={`text-xs sm:text-xs font-semibold tracking-tight whitespace-nowrap ${isDarkNav ? 'text-secondary' : 'text-secondary'}`}>
+              <span className={`hidden sm:block text-xs font-semibold tracking-tight whitespace-nowrap notranslate ${isDarkNav ? 'text-secondary' : 'text-secondary'}`}>
                 Nature Cure & Dental • Est. 2003
               </span>
             </div>
@@ -177,28 +177,29 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Language & Menu Toggle */}
-          <div className="flex lg:hidden items-center gap-1.5 sm:gap-2 shrink-0">
+          {/* Mobile Language & Menu Toggle — always shrink-0 so never pushed off screen */}
+          <div className="flex lg:hidden items-center gap-1.5 sm:gap-2 shrink-0 ml-auto">
             <div className="relative shrink-0">
               <select
                 value={currentLang}
                 onChange={(e) => handleLanguageChange(e.target.value)}
-                className={`appearance-none bg-transparent text-xs font-semibold py-1.5 pl-2.5 pr-6 rounded-full border transition-all cursor-pointer outline-none notranslate ${
+                className={`appearance-none bg-transparent text-[11px] font-bold py-1.5 pl-2 pr-5 rounded-full border transition-all cursor-pointer outline-none notranslate ${
                   isDarkNav
-                    ? "border-gray-200 text-primary hover:bg-gray-50"
-                    : "border-white/30 text-white hover:bg-white/10"
+                    ? "border-gray-300 text-primary hover:bg-gray-50"
+                    : "border-white/40 text-white hover:bg-white/10"
                 }`}
+                style={{ maxWidth: '72px' }}
               >
                 <option value="" className="text-black hidden">EN</option>
                 <option value="en" className="text-black">EN</option>
                 <option value="ta" className="text-black">தமிழ்</option>
-                <option value="hi" className="text-black">हिन्दी</option>
-                <option value="ml" className="text-black">മലയാളം</option>
+                <option value="hi" className="text-black">हिंदी</option>
+                <option value="ml" className="text-black">മലയ്</option>
                 <option value="te" className="text-black">తెలుగు</option>
               </select>
-              <div className={`absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none ${isDarkNav ? "text-primary" : "text-white"}`}>
-                <svg width="8" height="5" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <div className={`absolute right-1.5 top-1/2 -translate-y-1/2 pointer-events-none ${isDarkNav ? "text-primary" : "text-white"}`}>
+                <svg width="7" height="5" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
             </div>
@@ -208,7 +209,7 @@ export default function Navbar() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
