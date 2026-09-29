@@ -114,8 +114,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/treatments" className="text-white/80 hover:text-secondary transition-colors">
-                  Dental Care
+                <Link href="/treatments?tab=dental" className="text-white/80 hover:text-secondary transition-colors">
+                  Dental Care Clinic
+                </Link>
+              </li>
+              <li>
+                <Link href="/treatments?tab=health-shop" className="text-white/80 hover:text-secondary transition-colors">
+                  KNCH Health Shop
                 </Link>
               </li>
             </ul>
