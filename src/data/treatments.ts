@@ -771,12 +771,12 @@ export const treatmentCategories: TreatmentCategory[] = [
   {
     id: "acupuncture",
     name: "Acupuncture",
-    shortDesc: "Classical meridian needling, acupressure, reflexology, and cupping therapy.",
+    shortDesc: "Classical meridian acupuncture, acupressure, reflexology, and cupping therapy.",
     iconName: "ShieldAlert",
     treatments: [
       {
-        id: "needling",
-        name: "Needling (Acupuncture)",
+        id: "acupuncture-therapy",
+        name: "Acupuncture",
         tagline: "Sterile micro-needle meridian therapy to unlock natural healing",
         description: "Gentle insertion of ultra-fine, sterile, single-use stainless steel needles into specific therapeutic acupoints along the body's vital meridians. Stimulates the nervous system, releases pain-relieving endorphins, and balances organ energy.",
         benefits: [
