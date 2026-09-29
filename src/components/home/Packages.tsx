@@ -8,7 +8,7 @@ const packages = [
   {
     name: "Basic Wellness",
     duration: "7 Days",
-    price: "â‚¹35,000",
+    price: "₹35,000",
     desc: "Perfect for a quick detox and stress relief.",
     features: [
       "Doctor Consultation",
@@ -22,13 +22,13 @@ const packages = [
   {
     name: "Deep Healing",
     duration: "14 Days",
-    price: "â‚¹65,000",
+    price: "₹65,000",
     desc: "Comprehensive Panchakarma for chronic conditions.",
     features: [
       "Detailed Prakriti Analysis",
       "Full Panchakarma Therapy",
       "Customized Herbal Medicines",
-      "Specialized Ayurvedic Diet",
+      "Customized Naturopathic Diet",
       "Premium Accommodation",
       "Post-Treatment Follow-up",
     ],
@@ -37,7 +37,7 @@ const packages = [
   {
     name: "Premium Retreat",
     duration: "21 Days",
-    price: "â‚¹95,000",
+    price: "₹95,000",
     desc: "Ultimate rejuvenation and lifestyle reset.",
     features: [
       "Daily Doctor Visits",
@@ -64,7 +64,7 @@ export default function Packages() {
             Invest in Your Health
           </h3>
           <p className="text-lg text-foreground/70 font-light">
-            Choose a holistic healing journey that suits your needs. All packages include personalized care from our expert Ayurvedic doctors.
+            Choose a holistic healing journey that suits your needs. All packages include personalized care from our expert Naturopathy and Dental specialists.
           </p>
         </div>
 

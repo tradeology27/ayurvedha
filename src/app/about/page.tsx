@@ -108,7 +108,7 @@ export default function AboutPage() {
                   href="tel:+918148129709"
                   className="px-6 py-3.5 border border-primary text-primary hover:bg-primary hover:text-white rounded-full font-medium text-sm transition-all"
                 >
-                  Call Dr. G. Kumar
+                  Call Dr. C. Sukumar
                 </a>
               </div>
             </div>

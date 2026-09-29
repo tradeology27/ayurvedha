@@ -43,7 +43,7 @@ export default function BlogPage() {
   return (
     <>
       <PageHeader 
-        title="Ayurveda Blog" 
+        title="Health & Wellness Blog" 
         breadcrumb={[{ name: "Blog", path: "/blog" }]} 
         bgImage="https://images.unsplash.com/photo-1473221326025-9183b46be8cb?q=80&w=2000&auto=format&fit=crop"
       />
@@ -83,8 +83,8 @@ export default function BlogPage() {
                     {post.excerpt}
                   </p>
                   
-                  <Link href="#" className="inline-block text-secondary font-medium hover:text-primary transition-colors mt-auto">
-                    Read Full Article &rarr;
+                  <Link href="/contact" className="inline-block text-secondary font-medium hover:text-primary transition-colors mt-auto">
+                    Consult Doctor &rarr;
                   </Link>
                 </div>
               </article>

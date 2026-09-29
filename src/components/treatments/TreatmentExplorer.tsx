@@ -143,7 +143,7 @@ export default function TreatmentExplorer() {
                   >
                     <div className="flex items-center gap-2 text-xs font-semibold text-secondary uppercase tracking-wider mb-2">
                       <span>{category.name}</span>
-                      <span>â€¢</span>
+                      <span>•</span>
                       {item.duration && <span>{item.duration}</span>}
                     </div>
                     <h4 className="text-xl font-heading font-bold text-primary mb-2">
