@@ -16,8 +16,6 @@ import {
   PhoneCall,
   ChevronLeft,
   ChevronRight,
-  Truck,
-  Clock,
   type LucideIcon 
 } from "lucide-react";
 
@@ -33,7 +31,7 @@ function ShopCategoryCard({ cat }: { cat: ShopCategory }) {
   const IconComp = shopIconMap[cat.iconName] || Leaf;
 
   return (
-    <div className="bg-background rounded-3xl p-5 md:p-6 lg:p-7 border border-gray-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between h-full">
+    <div className="bg-background rounded-3xl p-5 sm:p-6 lg:p-7 border border-gray-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between h-full">
       <div>
         {/* Header */}
         <div className="flex items-center gap-3 mb-3">
@@ -41,7 +39,7 @@ function ShopCategoryCard({ cat }: { cat: ShopCategory }) {
             <IconComp size={20} className="text-secondary" />
           </div>
           <div>
-            <h4 className="text-lg md:text-xl font-heading font-bold text-primary">
+            <h4 className="text-lg sm:text-xl font-heading font-bold text-primary">
               {cat.name}
             </h4>
             <p className="text-xs text-secondary font-medium italic">
@@ -57,7 +55,7 @@ function ShopCategoryCard({ cat }: { cat: ShopCategory }) {
         {/* Product Groups & Lists */}
         <div className="space-y-4">
           {cat.groups.map((group, gIdx) => (
-            <div key={gIdx} className="bg-white rounded-2xl p-4 md:p-5 border border-gray-100 shadow-sm">
+            <div key={gIdx} className="bg-white rounded-2xl p-4 sm:p-5 border border-gray-100 shadow-sm">
               {group.subheading && (
                 <h5 className="text-xs font-bold uppercase tracking-wider text-primary mb-3 pb-1.5 border-b border-gray-100 flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
@@ -101,8 +99,18 @@ function ShopCategoryCard({ cat }: { cat: ShopCategory }) {
 export default function HealthShopShowcase() {
   const [selectedCategoryId, setSelectedCategoryId] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [laptopSlideIndex, setLaptopSlideIndex] = useState<number>(0);
+  const [slideIndex, setSlideIndex] = useState<number>(0);
   const [slideDirection, setSlideDirection] = useState<number>(1);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkIsMobile();
+    window.addEventListener("resize", checkIsMobile);
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
 
   const filteredCategories = useMemo(() => {
     let list = healthShopCategories;
@@ -143,35 +151,36 @@ export default function HealthShopShowcase() {
       .filter(Boolean) as ShopCategory[];
   }, [selectedCategoryId, searchQuery]);
 
-  // Group into pages of 2 cards for laptop slider
-  const laptopPages = useMemo(() => {
-    const pages: ShopCategory[][] = [];
-    for (let i = 0; i < filteredCategories.length; i += 2) {
-      pages.push(filteredCategories.slice(i, i + 2));
+  // Group into pages (1 card per slide on mobile, 2 cards per slide on tablet & laptop)
+  const itemsPerPage = isMobile ? 1 : 2;
+  const pages = useMemo(() => {
+    const chunks: ShopCategory[][] = [];
+    for (let i = 0; i < filteredCategories.length; i += itemsPerPage) {
+      chunks.push(filteredCategories.slice(i, i + itemsPerPage));
     }
-    return pages;
-  }, [filteredCategories]);
+    return chunks;
+  }, [filteredCategories, itemsPerPage]);
 
-  // Reset slide index when category filter or search changes
+  // Reset slide index when category filter, search, or screen size changes
   useEffect(() => {
-    setLaptopSlideIndex(0);
+    setSlideIndex(0);
     setSlideDirection(1);
-  }, [selectedCategoryId, searchQuery]);
+  }, [selectedCategoryId, searchQuery, isMobile]);
 
-  const totalPages = laptopPages.length;
-  const safeSlideIndex = Math.min(laptopSlideIndex, Math.max(0, totalPages - 1));
+  const totalPages = pages.length;
+  const safeSlideIndex = Math.min(slideIndex, Math.max(0, totalPages - 1));
 
   const handleNextSlide = () => {
     if (safeSlideIndex < totalPages - 1) {
       setSlideDirection(1);
-      setLaptopSlideIndex((prev) => prev + 1);
+      setSlideIndex((prev) => prev + 1);
     }
   };
 
   const handlePrevSlide = () => {
     if (safeSlideIndex > 0) {
       setSlideDirection(-1);
-      setLaptopSlideIndex((prev) => prev - 1);
+      setSlideIndex((prev) => prev - 1);
     }
   };
 
@@ -296,196 +305,128 @@ export default function HealthShopShowcase() {
             </button>
           </div>
         ) : (
-          <>
-            {/* ========================================================
-                1. LAPTOP VIEW ONLY (>= 1024px / lg:):
-                   Swipeable / Paginated Carousel with Controls & Gestures
-               ======================================================== */}
-            <div className="hidden lg:block w-full">
-              {/* Laptop Carousel Navigation Header */}
-              {totalPages > 1 && (
-                <div className="flex items-center justify-between mb-5 px-2">
-                  <div className="flex items-center gap-3">
-                    <span className="text-xs font-bold uppercase tracking-wider text-primary">
-                      Categories Slide {safeSlideIndex + 1} of {totalPages}
-                    </span>
-                    <span className="text-xs text-foreground/60">
-                      &bull; Swipe or use arrows to view categories
-                    </span>
-                  </div>
-
-                  {/* Navigation Arrows & Dot Indicators */}
-                  <div className="flex items-center gap-3">
-                    {/* Pagination Dots */}
-                    <div className="flex items-center gap-1.5 mr-2">
-                      {laptopPages.map((_, pIdx) => (
-                        <button
-                          key={pIdx}
-                          onClick={() => {
-                            setSlideDirection(pIdx > safeSlideIndex ? 1 : -1);
-                            setLaptopSlideIndex(pIdx);
-                          }}
-                          className={`h-2.5 rounded-full transition-all duration-300 ${
-                            pIdx === safeSlideIndex
-                              ? "w-8 bg-secondary"
-                              : "w-2.5 bg-gray-300 hover:bg-gray-400"
-                          }`}
-                          aria-label={`Go to slide ${pIdx + 1}`}
-                        />
-                      ))}
-                    </div>
-
-                    {/* Prev Arrow */}
-                    <button
-                      onClick={handlePrevSlide}
-                      disabled={safeSlideIndex === 0}
-                      className={`w-10 h-10 rounded-full flex items-center justify-center border transition-all ${
-                        safeSlideIndex === 0
-                          ? "border-gray-200 text-gray-300 cursor-not-allowed"
-                          : "border-primary/30 bg-white text-primary hover:bg-primary hover:text-white shadow-xs hover:shadow-md cursor-pointer"
-                      }`}
-                      aria-label="Previous category slide"
-                    >
-                      <ChevronLeft size={18} />
-                    </button>
-
-                    {/* Next Arrow */}
-                    <button
-                      onClick={handleNextSlide}
-                      disabled={safeSlideIndex === totalPages - 1}
-                      className={`w-10 h-10 rounded-full flex items-center justify-center border transition-all ${
-                        safeSlideIndex === totalPages - 1
-                          ? "border-gray-200 text-gray-300 cursor-not-allowed"
-                          : "border-primary/30 bg-white text-primary hover:bg-primary hover:text-white shadow-xs hover:shadow-md cursor-pointer"
-                      }`}
-                      aria-label="Next category slide"
-                    >
-                      <ChevronRight size={18} />
-                    </button>
-                  </div>
+          <div className="w-full">
+            {/* Swipeable Carousel Navigation Header */}
+            {totalPages > 1 && (
+              <div className="flex items-center justify-between mb-5 px-1 sm:px-2">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <span className="text-xs font-bold uppercase tracking-wider text-primary">
+                    Slide {safeSlideIndex + 1} of {totalPages}
+                  </span>
+                  <span className="hidden sm:inline-block text-xs text-foreground/60">
+                    &bull; Swipe or use arrows to view categories
+                  </span>
                 </div>
-              )}
 
-              {/* Swipeable Animated Carousel Track */}
-              <div className="relative overflow-hidden min-h-[580px]">
-                <AnimatePresence mode="wait" custom={slideDirection}>
-                  <motion.div
-                    key={safeSlideIndex}
-                    custom={slideDirection}
-                    variants={slideVariants}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    transition={{ duration: 0.35, ease: "easeInOut" }}
-                    drag={totalPages > 1 ? "x" : false}
-                    dragConstraints={{ left: 0, right: 0 }}
-                    dragElastic={0.2}
-                    onDragEnd={(_, info) => {
-                      if (info.offset.x < -60) {
-                        handleNextSlide();
-                      } else if (info.offset.x > 60) {
-                        handlePrevSlide();
-                      }
-                    }}
-                    className="grid grid-cols-2 gap-6 lg:gap-8 w-full cursor-grab active:cursor-grabbing items-stretch"
-                  >
-                    {laptopPages[safeSlideIndex]?.map((cat) => (
-                      <div key={cat.id} className="h-full">
-                        <ShopCategoryCard cat={cat} />
-                      </div>
+                {/* Navigation Arrows & Dot Indicators */}
+                <div className="flex items-center gap-2 sm:gap-3">
+                  {/* Pagination Dots */}
+                  <div className="flex items-center gap-1.5 mr-1 sm:mr-2">
+                    {pages.map((_, pIdx) => (
+                      <button
+                        key={pIdx}
+                        onClick={() => {
+                          setSlideDirection(pIdx > safeSlideIndex ? 1 : -1);
+                          setSlideIndex(pIdx);
+                        }}
+                        className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 ${
+                          pIdx === safeSlideIndex
+                            ? "w-6 sm:w-8 bg-secondary"
+                            : "w-2 sm:w-2.5 bg-gray-300 hover:bg-gray-400"
+                        }`}
+                        aria-label={`Go to slide ${pIdx + 1}`}
+                      />
                     ))}
+                  </div>
 
-                    {/* If last slide has only 1 card, fill 2nd column with Hospital Store Information banner */}
-                    {laptopPages[safeSlideIndex]?.length === 1 && (
-                      <div className="bg-gradient-to-br from-primary/10 via-background to-secondary/15 rounded-3xl p-6 lg:p-8 border border-secondary/30 shadow-sm flex flex-col justify-between h-full">
-                        <div>
-                          <div className="w-12 h-12 rounded-2xl bg-secondary/20 text-primary flex items-center justify-center mb-4">
-                            <Truck size={24} className="text-secondary" />
-                          </div>
-                          <span className="text-xs font-bold uppercase tracking-wider text-secondary">
-                            Campus & Courier Service
-                          </span>
-                          <h4 className="text-2xl font-heading font-bold text-primary mt-1 mb-3">
-                            Direct Delivery to Your Doorstep
-                          </h4>
-                          <p className="text-foreground/80 font-light text-sm leading-relaxed mb-6">
-                            All organic wellness foods, honey preserves, native millets, and therapy tools can be purchased directly at our Karur hospital reception or couriered across Tamil Nadu & India.
-                          </p>
+                  {/* Prev Arrow */}
+                  <button
+                    onClick={handlePrevSlide}
+                    disabled={safeSlideIndex === 0}
+                    className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center border transition-all ${
+                      safeSlideIndex === 0
+                        ? "border-gray-200 text-gray-300 cursor-not-allowed opacity-50"
+                        : "border-primary/30 bg-white text-primary hover:bg-primary hover:text-white shadow-xs hover:shadow-md cursor-pointer"
+                    }`}
+                    aria-label="Previous category slide"
+                  >
+                    <ChevronLeft size={18} />
+                  </button>
 
-                          <div className="space-y-3 bg-white/80 backdrop-blur-xs p-4 rounded-2xl border border-gray-200/60">
-                            <div className="flex items-center gap-2.5 text-xs text-foreground/85 font-medium">
-                              <Clock size={16} className="text-secondary shrink-0" />
-                              <span>Store Open Daily: 8:00 AM &ndash; 7:30 PM</span>
-                            </div>
-                            <div className="flex items-center gap-2.5 text-xs text-foreground/85 font-medium">
-                              <CheckCircle2 size={16} className="text-secondary shrink-0" />
-                              <span>Safe packaging & reliable door courier</span>
-                            </div>
-                            <div className="flex items-center gap-2.5 text-xs text-foreground/85 font-medium">
-                              <CheckCircle2 size={16} className="text-secondary shrink-0" />
-                              <span>100% Genuine, tested organic ingredients</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="mt-8 pt-4 border-t border-gray-200/80 flex items-center justify-between">
-                          <span className="text-xs text-foreground/70 font-light">
-                            Hospital Pharmacy Desk
-                          </span>
-                          <a
-                            href={`https://wa.me/918148129709?text=${encodeURIComponent(
-                              "Hello KNCH Store! 👋\n\nI would like to inquire about courier delivery for organic products. Please share details."
-                            )}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white hover:bg-primary/90 rounded-xl text-xs font-bold transition-all shadow-sm"
-                          >
-                            <PhoneCall size={14} />
-                            <span>Inquire Courier</span>
-                          </a>
-                        </div>
-                      </div>
-                    )}
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-
-              {/* Bottom Pagination hint for laptop */}
-              {totalPages > 1 && (
-                <div className="flex items-center justify-center gap-2 mt-6">
-                  {laptopPages.map((_, pIdx) => (
-                    <button
-                      key={pIdx}
-                      onClick={() => {
-                        setSlideDirection(pIdx > safeSlideIndex ? 1 : -1);
-                        setLaptopSlideIndex(pIdx);
-                      }}
-                      className={`h-2 rounded-full transition-all duration-300 ${
-                        pIdx === safeSlideIndex
-                          ? "w-8 bg-secondary"
-                          : "w-2 bg-gray-300 hover:bg-gray-400"
-                      }`}
-                      aria-label={`Slide ${pIdx + 1}`}
-                    />
-                  ))}
+                  {/* Next Arrow */}
+                  <button
+                    onClick={handleNextSlide}
+                    disabled={safeSlideIndex === totalPages - 1}
+                    className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center border transition-all ${
+                      safeSlideIndex === totalPages - 1
+                        ? "border-gray-200 text-gray-300 cursor-not-allowed opacity-50"
+                        : "border-primary/30 bg-white text-primary hover:bg-primary hover:text-white shadow-xs hover:shadow-md cursor-pointer"
+                    }`}
+                    aria-label="Next category slide"
+                  >
+                    <ChevronRight size={18} />
+                  </button>
                 </div>
-              )}
+              </div>
+            )}
+
+            {/* Swipeable Animated Carousel Track */}
+            <div className="relative overflow-hidden min-h-[480px] sm:min-h-[540px]">
+              <AnimatePresence mode="wait" custom={slideDirection}>
+                <motion.div
+                  key={safeSlideIndex}
+                  custom={slideDirection}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.35, ease: "easeInOut" }}
+                  drag={totalPages > 1 ? "x" : false}
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.2}
+                  onDragEnd={(_, info) => {
+                    if (info.offset.x < -50) {
+                      handleNextSlide();
+                    } else if (info.offset.x > 50) {
+                      handlePrevSlide();
+                    }
+                  }}
+                  className={`grid gap-5 md:gap-6 lg:gap-8 w-full cursor-grab active:cursor-grabbing items-stretch ${
+                    pages[safeSlideIndex]?.length === 1
+                      ? "grid-cols-1 max-w-3xl mx-auto"
+                      : "grid-cols-1 md:grid-cols-2"
+                  }`}
+                >
+                  {pages[safeSlideIndex]?.map((cat) => (
+                    <div key={cat.id} className="h-full">
+                      <ShopCategoryCard cat={cat} />
+                    </div>
+                  ))}
+                </motion.div>
+              </AnimatePresence>
             </div>
 
-            {/* ========================================================
-                2. MOBILE & TABLET VIEW ONLY (< 1024px / lg:hidden):
-                   Standard Responsive Vertical Scrolling Grid
-               ======================================================== */}
-            <div className="block lg:hidden w-full">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 w-full">
-                {filteredCategories.map((cat) => (
-                  <div key={cat.id}>
-                    <ShopCategoryCard cat={cat} />
-                  </div>
+            {/* Bottom Pagination hint */}
+            {totalPages > 1 && (
+              <div className="flex items-center justify-center gap-2 mt-6">
+                {pages.map((_, pIdx) => (
+                  <button
+                    key={pIdx}
+                    onClick={() => {
+                      setSlideDirection(pIdx > safeSlideIndex ? 1 : -1);
+                      setSlideIndex(pIdx);
+                    }}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      pIdx === safeSlideIndex
+                        ? "w-8 bg-secondary"
+                        : "w-2 bg-gray-300 hover:bg-gray-400"
+                    }`}
+                    aria-label={`Slide ${pIdx + 1}`}
+                  />
                 ))}
               </div>
-            </div>
-          </>
+            )}
+          </div>
         )}
 
       </div>
