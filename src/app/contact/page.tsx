@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import AppointmentForm from "@/components/home/AppointmentForm";
-import { MapPin, Phone, Clock, Mail } from "lucide-react";
+import { MapPin, Phone, Clock, Mail, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact & Appointments | Kumar Nature Cure Hospital & P.K. Hospital",
-  description: "Contact Kumar Nature Cure Hospital (Gandhigramam, Karur) and P.K. Hospital Nature Cure (Karur - Sengal Rd, Sengal). Call +91 81481 29709 / +91 98424 29709 or book your consultation online.",
+  description: "Contact Kumar Nature Cure Hospital (Gandhigramam, Karur) and P.K. Hospital (Karur - Sengal Rd). Call Reception: 81481 29709, Dr. C. Sukumar: 98424 29709, Dr. M. Anitha: 73737 29709.",
   alternates: {
     canonical: "/contact",
   },
@@ -63,21 +63,46 @@ export default function ContactPage() {
 
                 <div className="flex items-start gap-3">
                   <Phone size={18} className="text-primary shrink-0 mt-0.5" />
-                  <div>
-                    <a href="tel:+918148129709" className="hover:text-primary font-bold block">
-                      +91 81481 29709
-                    </a>
-                    <a href="tel:+919842429709" className="hover:text-primary font-bold block mt-0.5">
-                      +91 98424 29709
-                    </a>
+                  <div className="space-y-1.5">
+                    <div>
+                      <span className="text-[11px] text-foreground/60 uppercase tracking-wider block">Reception</span>
+                      <a href="tel:+918148129709" className="hover:text-primary font-bold block text-sm">
+                        +91 81481 29709
+                      </a>
+                    </div>
+                    <div>
+                      <span className="text-[11px] text-foreground/60 uppercase tracking-wider block">Dr. C. Sukumar</span>
+                      <a href="tel:+919842429709" className="hover:text-primary font-bold block text-sm">
+                        +91 98424 29709
+                      </a>
+                    </div>
+                    <div>
+                      <span className="text-[11px] text-foreground/60 uppercase tracking-wider block">Dr. M. Anitha</span>
+                      <a href="tel:+917373729709" className="hover:text-primary font-bold block text-sm">
+                        +91 73737 29709
+                      </a>
+                    </div>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <Mail size={18} className="text-primary shrink-0 mt-0.5" />
-                  <a href="mailto:contact@knchkarur.com" className="hover:text-primary block transition-colors">
-                    contact@knchkarur.com
-                  </a>
+                  <div>
+                    <span className="text-[11px] text-foreground/60 uppercase tracking-wider block">Email</span>
+                    <a href="mailto:contact@knchkarur.com" className="hover:text-primary block transition-colors font-medium">
+                      contact@knchkarur.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Globe size={18} className="text-primary shrink-0 mt-0.5" />
+                  <div>
+                    <span className="text-[11px] text-foreground/60 uppercase tracking-wider block">Website</span>
+                    <a href="https://knchkarur.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary block transition-colors font-medium">
+                      www.knchkarur.com
+                    </a>
+                  </div>
                 </div>
 
                 <div className="flex items-start gap-3">
@@ -119,21 +144,46 @@ export default function ContactPage() {
 
                 <div className="flex items-start gap-3">
                   <Phone size={18} className="text-primary shrink-0 mt-0.5" />
-                  <div>
-                    <a href="tel:+918148129709" className="hover:text-primary font-bold block">
-                      +91 81481 29709
-                    </a>
-                    <a href="tel:+919842429709" className="hover:text-primary font-bold block mt-0.5">
-                      +91 98424 29709
-                    </a>
+                  <div className="space-y-1.5">
+                    <div>
+                      <span className="text-[11px] text-foreground/60 uppercase tracking-wider block">Reception</span>
+                      <a href="tel:+918148129709" className="hover:text-primary font-bold block text-sm">
+                        +91 81481 29709
+                      </a>
+                    </div>
+                    <div>
+                      <span className="text-[11px] text-foreground/60 uppercase tracking-wider block">Dr. C. Sukumar</span>
+                      <a href="tel:+919842429709" className="hover:text-primary font-bold block text-sm">
+                        +91 98424 29709
+                      </a>
+                    </div>
+                    <div>
+                      <span className="text-[11px] text-foreground/60 uppercase tracking-wider block">Dr. M. Anitha</span>
+                      <a href="tel:+917373729709" className="hover:text-primary font-bold block text-sm">
+                        +91 73737 29709
+                      </a>
+                    </div>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <Mail size={18} className="text-primary shrink-0 mt-0.5" />
-                  <a href="mailto:contact@knchkarur.com" className="hover:text-primary block transition-colors">
-                    contact@knchkarur.com
-                  </a>
+                  <div>
+                    <span className="text-[11px] text-foreground/60 uppercase tracking-wider block">Email</span>
+                    <a href="mailto:contact@knchkarur.com" className="hover:text-primary block transition-colors font-medium">
+                      contact@knchkarur.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Globe size={18} className="text-primary shrink-0 mt-0.5" />
+                  <div>
+                    <span className="text-[11px] text-foreground/60 uppercase tracking-wider block">Website</span>
+                    <a href="https://knchkarur.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary block transition-colors font-medium">
+                      www.knchkarur.com
+                    </a>
+                  </div>
                 </div>
 
                 <div className="flex items-start gap-3">

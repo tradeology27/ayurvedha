@@ -39,7 +39,7 @@ export const doctorsData: Doctor[] = [
     ],
     image: "/images/dr_sukumar.jpg",
     hospitalBranch: "Kumar Nature Cure Hospital, Karur",
-    phone: "+91 81481 29709",
+    phone: "+91 98424 29709",
     timings: "Morning: 9:30 AM – 1:30 PM | Evening: 5:00 PM – 8:30 PM",
     bio: "Dr. C. Sukumar, the Chief Medical Officer and Managing Director of our hospital is a well qualified and experienced Naturopathy and Yoga practitioner graduated as Bachelor of Naturopathy and Yogic Science (B.N.Y.S) from Dr. MGR Medical University, Chennai. He has been running Kumar Nature Cure Hospital since 2003. Our hospital is specialised for treating all kinds of diseases either acute or chronic by Nature Cure Therapies without any medicine and surgery. During the treatment and after treatment people can avoid allopathy and herbal medicine.",
     highlights: [
@@ -70,7 +70,7 @@ export const doctorsData: Doctor[] = [
     ],
     image: "/images/dr_anitha_sukumar.jpg",
     hospitalBranch: "Kumar Nature Cure Hospital, Karur",
-    phone: "+91 98424 29709",
+    phone: "+91 73737 29709",
     timings: "Morning: 9:30 AM – 1:30 PM | Evening: 5:00 PM – 8:30 PM",
     bio: "Dr. M. Anitha Sukumar B.D.S. looks after the dental wing of this hospital. All kinds of dental diseases are treated here with utmost care in a completely sterile atmosphere. We all know Oral Health is a part of general health. The oral cavity reflects the general status of a person. Improving oral health can have a tremendous impact on improving general health and well-being of a community. To give complete health care our hospital has got dental wing as a unique part of it.",
     highlights: [

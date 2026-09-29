@@ -56,15 +56,21 @@ export default function DentalShowcase() {
 
             <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
               <a
-                href={`https://wa.me/918148129709?text=${encodeURIComponent(
+                href="tel:+917373729709"
+                className="px-5 py-3 bg-white border border-primary text-primary hover:bg-primary hover:text-white font-bold rounded-xl text-sm transition-all shadow-sm flex items-center justify-center gap-2 text-center"
+              >
+                <PhoneCall size={16} />
+                <span>Call: 73737 29709</span>
+              </a>
+              <a
+                href={`https://wa.me/917373729709?text=${encodeURIComponent(
                   "Hello Dr. Anitha Sukumar! 👋\n\nI would like to book a Dental Consultation at Kumar Nature Cure Hospital. Please provide available appointment slots."
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-primary text-white hover:bg-primary/90 font-bold rounded-xl text-sm transition-all shadow-md flex items-center justify-center gap-2 text-center"
               >
-                <PhoneCall size={16} />
-                <span>Book Dental Appointment</span>
+                <span>Book Appointment</span>
               </a>
             </div>
           </div>
@@ -181,7 +187,7 @@ export default function DentalShowcase() {
                       <p>Appointments available Mon - Sat &bull; Walk-ins welcome for dental emergencies.</p>
                     </div>
                     <a
-                      href={`https://wa.me/918148129709?text=${encodeURIComponent(
+                      href={`https://wa.me/917373729709?text=${encodeURIComponent(
                         `*Hello Dr. Anitha Sukumar!* 👋\n\nI would like to inquire about *${activeCategory.name}* at your dental clinic. Please guide me.`
                       )}`}
                       target="_blank"

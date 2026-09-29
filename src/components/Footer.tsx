@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Clock, Bed, Heart, Sparkles, Mail } from "lucide-react";
+import { MapPin, Phone, Clock, Bed, Heart, Sparkles, Mail, Globe } from "lucide-react";
 
 const FacebookIcon = ({ size = 24, className = "" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -178,25 +178,41 @@ export default function Footer() {
             <ul className="space-y-4 text-xs sm:text-sm">
               <li className="flex items-start gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
                 <Phone className="text-secondary shrink-0 mt-0.5" size={16} />
-                <div className="text-white/90">
-                  <a href="tel:+918148129709" className="hover:text-secondary block font-medium">
-                    +91 81481 29709
-                  </a>
-                  <span className="text-white/60 text-xs block mb-1.5">Dr. C. Sukumar</span>
-                  
-                  <a href="tel:+919842429709" className="hover:text-secondary block font-medium">
-                    +91 98424 29709
-                  </a>
-                  <span className="text-white/60 text-xs block">Dr. M. Anitha Sukumar</span>
+                <div className="text-white/90 space-y-2.5">
+                  <div>
+                    <span className="text-white/60 text-[11px] uppercase tracking-wider block">Reception</span>
+                    <a href="tel:+918148129709" className="hover:text-secondary block font-bold text-sm">
+                      81481 29709
+                    </a>
+                  </div>
+                  <div>
+                    <span className="text-white/60 text-[11px] uppercase tracking-wider block">Dr. C. Sukumar</span>
+                    <a href="tel:+919842429709" className="hover:text-secondary block font-bold text-sm">
+                      98424 29709
+                    </a>
+                  </div>
+                  <div>
+                    <span className="text-white/60 text-[11px] uppercase tracking-wider block">Dr. M. Anitha</span>
+                    <a href="tel:+917373729709" className="hover:text-secondary block font-bold text-sm">
+                      73737 29709
+                    </a>
+                  </div>
                 </div>
               </li>
               <li className="flex items-start gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
                 <Mail className="text-secondary shrink-0 mt-0.5" size={16} />
                 <div className="text-white/90">
+                  <span className="text-white/60 text-[11px] uppercase tracking-wider block">Email</span>
                   <a href="mailto:contact@knchkarur.com" className="hover:text-secondary block font-medium text-xs sm:text-sm">
                     contact@knchkarur.com
                   </a>
-                  <a href="https://knchkarur.com" target="_blank" rel="noopener noreferrer" className="hover:text-secondary block font-medium mt-1 text-xs sm:text-sm">
+                </div>
+              </li>
+              <li className="flex items-start gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
+                <Globe className="text-secondary shrink-0 mt-0.5" size={16} />
+                <div className="text-white/90">
+                  <span className="text-white/60 text-[11px] uppercase tracking-wider block">Website</span>
+                  <a href="https://knchkarur.com" target="_blank" rel="noopener noreferrer" className="hover:text-secondary block font-medium text-xs sm:text-sm">
                     www.knchkarur.com
                   </a>
                 </div>

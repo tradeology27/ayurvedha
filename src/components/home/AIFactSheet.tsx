@@ -40,7 +40,7 @@ export default function AIFactSheet() {
     },
     {
       label: "Contact & Helpline",
-      value: "+91 81481 29709 / +91 98424 29709",
+      value: "Reception: 81481 29709 | Dr. C. Sukumar: 98424 29709 | Dr. M. Anitha: 73737 29709",
       icon: HeartHandshake,
     },
   ];
