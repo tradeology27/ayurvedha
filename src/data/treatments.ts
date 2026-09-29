@@ -752,21 +752,6 @@ export const treatmentCategories: TreatmentCategory[] = [
         indications: ["Stress", "Mild Depression", "Insomnia", "Nervous Restlessness"],
       },
       {
-        id: "fruit-gel-massage",
-        name: "Fruit Gel Massage",
-        tagline: "Organic antioxidant fruit pulp therapy for glowing skin",
-        description: "Application of fresh, pureed fruit pulp (papaya, cucumber, orange) and cooling aloe vera gel using gentle effleurage strokes. Delivers high concentrations of vitamins A, C, and E directly to the skin mantle.",
-        benefits: [
-          "Soothes overheated, sun-damaged, or irritated skin",
-          "Naturally lightens superficial blemishes and hyperpigmentation",
-          "Deeply hydrates without clogging delicate skin pores",
-          "Provides cooling relief during hot weather or Pitta elevation",
-          "Leaves the complexion radiant, supple, and naturally fragrant"
-        ],
-        duration: "40 mins",
-        indications: ["Sunburn", "Hyperpigmentation", "Sensitive Skin", "Summer Heat Fatigue"],
-      },
-      {
         id: "swedish-massage",
         name: "Swedish Massage",
         tagline: "Classic restorative bodywork to improve venous return and stamina",
