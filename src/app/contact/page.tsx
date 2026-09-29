@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import PageHeader from "@/components/PageHeader";
+import Image from "next/image";
+import Link from "next/link";
 import AppointmentForm from "@/components/home/AppointmentForm";
-import { MapPin, Phone, Clock, Mail, Globe } from "lucide-react";
+import { MapPin, Phone, Clock, Mail, Globe, ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact & Appointments | Kumar Nature Cure Hospital & P.K. Hospital",
@@ -14,22 +15,40 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHeader 
-        title="Contact Us" 
-        breadcrumb={[{ name: "Contact", path: "/contact" }]} 
-        bgImage="/images/contact_hero.jpg"
-      />
+      {/* Clean Hospital Hero Image (Pure photograph, zero blur, zero text overlay, natural 16:9 ratio) */}
+      <section className="relative w-full pt-[68px] sm:pt-[72px] bg-background">
+        <div className="w-full relative aspect-[16/9] overflow-hidden bg-gray-100">
+          <Image
+            src="/images/contact_hero.jpg"
+            alt="P.K. Hospital - Nature Cure, Yoga & Dental, Karur"
+            fill
+            priority
+            quality={100}
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
+      </section>
 
       {/* Two Campuses Cards */}
-      <section className="py-16 bg-background">
+      <section className="py-14 sm:py-16 bg-background">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-secondary inline-block mb-1">
+            {/* Breadcrumb relocated below hero banner */}
+            <nav className="inline-flex items-center gap-2 text-xs font-semibold text-foreground/65 bg-white shadow-2xs px-4 py-1.5 rounded-full mb-5 border border-gray-200/80">
+              <Link href="/" className="hover:text-primary transition-colors">
+                Home
+              </Link>
+              <ChevronRight size={13} className="text-secondary" />
+              <span className="text-primary font-bold">Contact</span>
+            </nav>
+
+            <span className="text-xs font-bold uppercase tracking-widest text-secondary block mb-1">
               Karur, Tamil Nadu
             </span>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-primary mt-2 mb-3 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-primary mt-2 mb-3 tracking-tight">
               Visit or Contact Our Hospital
-            </h2>
+            </h1>
             <p className="text-foreground/75 font-light text-base md:text-lg max-w-2xl mx-auto">
               Started in 2003 on Trichy National Highway, ~5km from Karur bus stand.
             </p>
