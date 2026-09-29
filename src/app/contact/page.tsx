@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      {/* Clean Hospital Hero Image (Pure photograph, zero blur, zero text overlay, natural 16:9 ratio) */}
+      {/* Clean Hospital Hero Image (Pure photograph, zero blur, half-screen height) */}
       <section className="relative w-full pt-[68px] sm:pt-[72px] bg-background">
-        <div className="w-full relative aspect-[16/9] overflow-hidden bg-gray-100">
+        <div className="w-full relative h-[240px] sm:h-[300px] md:h-[360px] lg:h-[390px] overflow-hidden bg-gray-100">
           <Image
             src="/images/contact_hero.jpg"
             alt="P.K. Hospital - Nature Cure, Yoga & Dental, Karur"
@@ -25,7 +25,7 @@ export default function ContactPage() {
             priority
             quality={100}
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-[center_40%]"
           />
         </div>
       </section>
