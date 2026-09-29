@@ -22,12 +22,12 @@ export default function DentalShowcase() {
   const activeCategory = dentalCategories.find((c) => c.id === activeCategoryId) || dentalCategories[0];
 
   return (
-    <section className="py-12 bg-white" id="dental-care-section">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+    <section className="py-10 md:py-12 bg-white" id="dental-care-section">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Doctor Header Banner */}
-        <div className="bg-gradient-to-br from-primary/5 via-secondary/10 to-primary/5 rounded-3xl p-6 md:p-8 border border-secondary/20 mb-12 shadow-sm">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-gradient-to-br from-primary/5 via-secondary/10 to-primary/5 rounded-3xl p-5 md:p-8 border border-secondary/20 mb-8 md:mb-12 shadow-sm">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-5 md:gap-6">
             <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
               <div className="relative w-24 h-24 rounded-2xl overflow-hidden border-2 border-secondary shadow-md shrink-0">
                 <Image
@@ -77,7 +77,7 @@ export default function DentalShowcase() {
         </div>
 
         {/* Two-Column Interactive Explorer */}
-        <div className="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden max-w-6xl mx-auto">
+        <div className="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden w-full max-w-7xl mx-auto">
           {/* Mobile horizontal category pills */}
           <div className="md:hidden flex gap-2 overflow-x-auto p-3 bg-gray-50 border-b border-gray-200 no-scrollbar">
             {dentalCategories.map((cat) => {
@@ -98,7 +98,7 @@ export default function DentalShowcase() {
             })}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 min-h-[540px]">
+          <div className="grid grid-cols-1 md:grid-cols-12 min-h-[480px] md:min-h-[540px]">
             
             {/* Left Column: Dental Category Navigation (Desktop/Tablet) */}
             <div className="hidden md:block md:col-span-5 lg:col-span-4 border-r border-gray-100 bg-white">
@@ -138,7 +138,7 @@ export default function DentalShowcase() {
             </div>
 
             {/* Right Column: Procedure Details & Photo */}
-            <div className="col-span-1 md:col-span-7 lg:col-span-8 bg-background/30 p-6 md:p-8 flex flex-col justify-between">
+            <div className="col-span-1 md:col-span-7 lg:col-span-8 bg-background/30 p-4 md:p-6 lg:p-8 flex flex-col justify-between">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeCategory.id}
@@ -165,17 +165,17 @@ export default function DentalShowcase() {
                   </div>
 
                   {/* Image & Procedures Grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
                     
                     {/* Procedures List */}
-                    <div className="md:col-span-7 bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                    <div className="lg:col-span-7 bg-white p-5 md:p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-center order-2 lg:order-1">
                       <h4 className="text-xs font-bold uppercase tracking-wider text-primary mb-3.5 flex items-center gap-1.5">
                         <ShieldCheck size={14} className="text-secondary" />
                         Available Dental Procedures:
                       </h4>
                       <ul className="space-y-2.5">
                         {activeCategory.services.map((service, idx) => (
-                          <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/85 font-medium">
+                          <li key={idx} className="flex items-start gap-2.5 text-xs md:text-sm text-foreground/85 font-medium">
                             <CheckCircle2 size={16} className="text-secondary shrink-0 mt-0.5" />
                             <span>{service}</span>
                           </li>
@@ -184,16 +184,16 @@ export default function DentalShowcase() {
                     </div>
 
                     {/* Procedure Image */}
-                    <div className="md:col-span-5 relative h-56 md:h-64 rounded-2xl overflow-hidden border border-gray-200 shadow-md bg-gray-100">
+                    <div className="lg:col-span-5 relative h-56 sm:h-64 md:h-72 lg:h-auto min-h-[240px] rounded-2xl overflow-hidden border border-gray-200 shadow-md bg-gray-100 order-1 lg:order-2">
                       <Image
                         src={activeCategory.image}
                         alt={activeCategory.name}
                         fill
-                        sizes="(max-width: 768px) 100vw, 400px"
+                        sizes="(max-width: 1024px) 100vw, 400px"
                         className="object-cover hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                      <div className="absolute bottom-3 left-3 right-3 text-white text-xs font-semibold">
+                      <div className="absolute bottom-4 left-4 right-4 text-white text-sm font-semibold drop-shadow-md">
                         KNCH Dental Care Clinic
                       </div>
                     </div>
@@ -201,7 +201,7 @@ export default function DentalShowcase() {
                   </div>
 
                   {/* Bottom Appointment Prompt */}
-                  <div className="pt-4 border-t border-gray-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="pt-4 border-t border-gray-200/80 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                     <div className="text-xs text-foreground/75">
                       <p className="font-semibold text-primary">Need relief from dental pain or cosmetic consultation?</p>
                       <p>Appointments available Mon - Sat &bull; Walk-ins welcome for dental emergencies.</p>

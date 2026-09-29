@@ -76,7 +76,7 @@ export default function TreatmentExplorer() {
 
   return (
     <section className="py-16 md:py-24 bg-white" id="treatments-explorer">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -176,7 +176,7 @@ export default function TreatmentExplorer() {
           </div>
         ) : (
           /* Main Two-Column Layout (Matching the user's design) */
-          <div className="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden max-w-6xl mx-auto">
+          <div className="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden w-full max-w-7xl mx-auto">
             {/* Mobile horizontal category pills */}
             <div className="md:hidden flex gap-2 overflow-x-auto p-3 bg-gray-50 border-b border-gray-200 no-scrollbar">
               {treatmentCategories.map((cat) => {
@@ -202,7 +202,7 @@ export default function TreatmentExplorer() {
               })}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-12 min-h-[620px]">
+            <div className="grid grid-cols-1 md:grid-cols-12 min-h-[540px] md:min-h-[620px]">
               
               {/* LEFT COLUMN: Categories Navigation (Desktop/Tablet) */}
               <div className="hidden md:block md:col-span-5 lg:col-span-4 border-r border-gray-100 bg-white">
@@ -252,7 +252,7 @@ export default function TreatmentExplorer() {
               </div>
 
               {/* RIGHT COLUMN: Treatment Items & Full Details */}
-              <div className="col-span-1 md:col-span-7 lg:col-span-8 bg-background/30 p-6 md:p-8 flex flex-col justify-between">
+              <div className="col-span-1 md:col-span-7 lg:col-span-8 bg-background/30 p-4 md:p-6 lg:p-8 flex flex-col justify-between">
                 <div>
                   {/* Category Header */}
                   <div className="border-b border-gray-200 pb-5 mb-6 flex flex-col md:flex-row md:items-center justify-between gap-3">
@@ -335,11 +335,11 @@ export default function TreatmentExplorer() {
                         </p>
 
                         {/* Benefits list */}
-                        <div className="mb-6 bg-background/60 p-5 rounded-xl border border-gray-100">
+                        <div className="mb-6 bg-background/60 p-4 md:p-5 rounded-xl border border-gray-100">
                           <h5 className="text-xs font-bold uppercase tracking-wider text-primary mb-3">
                             Key Clinical & Health Benefits:
                           </h5>
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-2.5">
                             {activeTreatment.benefits.map((benefit, idx) => (
                               <div key={idx} className="flex items-start gap-2 text-xs md:text-sm text-foreground/80 font-light">
                                 <div className="p-0.5 bg-primary/10 text-primary rounded-full shrink-0 mt-0.5">

@@ -65,7 +65,7 @@ export const dentalCategories: DentalServiceCategory[] = [
     tagline: "Full tooth replacement, zirconia crowns & comfortable bridges",
     description:
       "Specialized replacement of missing teeth and damaged tooth structures to restore complete chewing efficiency, clear speech, and facial aesthetics.",
-    image: "/images/dental_cosmetic_treatment.jpg",
+    image: "/images/dental_prosthodontic_care.jpg",
     services: [
       "Metal-Free All-Ceramic & Zirconia Crowns & Bridges",
       "Porcelain Fused to Metal (PFM) Crowns & Bridges",
@@ -81,7 +81,7 @@ export const dentalCategories: DentalServiceCategory[] = [
     tagline: "Advanced gum care, ultrasonic scaling & periodontal surgery",
     description:
       "Comprehensive treatment of gums, periodontal ligaments, and supporting bone to arrest bleeding gums, treat pyorrhea, and ensure firm dental foundation.",
-    image: "/images/dental_diagnostic_clinic.jpg",
+    image: "/images/dental_periodontic_care.jpg",
     services: [
       "Ultrasonic Scaling & Deep Root Planing",
       "Correction of Overhanging Restorations",
@@ -98,7 +98,7 @@ export const dentalCategories: DentalServiceCategory[] = [
     tagline: "Gentle surgical extractions & impacted wisdom tooth removal",
     description:
       "Safe, sterile, and pain-free surgical extractions performed under local anesthesia with minimal post-operative downtime.",
-    image: "/images/dental_restorative_care.jpg",
+    image: "/images/dental_maxillofacial_surgery.jpg",
     services: [
       "Routine Painless Tooth Extractions",
       "Surgical Removal of Impacted Wisdom Teeth",
