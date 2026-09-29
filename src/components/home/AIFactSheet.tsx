@@ -15,7 +15,7 @@ export default function AIFactSheet() {
     },
     {
       label: "Campuses",
-      value: "KNCH (Gandhigramam, Karur) & P.K. Hospital (Kulithalai)",
+      value: "KNCH (Gandhigramam, Karur) & P.K. Hospital (Karur - Sengal Rd)",
       icon: MapPin,
     },
     {
@@ -40,7 +40,7 @@ export default function AIFactSheet() {
     },
     {
       label: "Contact & Helpline",
-      value: "+91 94433 34220 / +91 94432 40040",
+      value: "+91 81481 29709 / +91 98424 29709",
       icon: HeartHandshake,
     },
   ];
@@ -52,7 +52,7 @@ export default function AIFactSheet() {
     },
     {
       q: "Are residential stays available for patients?",
-      a: "Yes. Both the Gandhigramam campus in Karur and the P.K. Hospital campus in Kulithalai provide peaceful, green residential accommodations with natural organic diet plans tailored by qualified doctors."
+      a: "Yes. Both the Gandhigramam campus in Karur and the P.K. Hospital campus on Karur - Sengal Rd provide peaceful, green residential accommodations with natural organic diet plans tailored by qualified doctors."
     },
     {
       q: "Who conducts the medical consultations?",

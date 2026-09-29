@@ -8,7 +8,7 @@ import { CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Our Hospitals | Kumar Nature Cure Hospital & P.K. Hospital",
-  description: "Learn about Kumar Nature Cure Hospital (est. 2003, Karur) and P.K. Hospital (est. 2017, Kulithalai). Over 20 years of drugless naturopathy, hydrotherapy, and yoga therapy.",
+  description: "Learn about Kumar Nature Cure Hospital (est. 2003, Karur) and P.K. Hospital Nature Cure (est. 2017, Sengal, Karur). Over 20 years of drugless naturopathy, hydrotherapy, and yoga therapy.",
   alternates: {
     canonical: "/about",
   },

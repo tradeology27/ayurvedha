@@ -21,7 +21,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Do you offer residential inpatient (admission) facilities?",
-    answer: "Yes. Both Kumar Nature Cure Hospital (Gandhigramam, Karur) and P.K. Hospital (Kulithalai) offer residential inpatient facilities surrounded by serene greenery, organic natural diet, and round-the-clock medical care by qualified doctors.",
+    answer: "Yes. Both Kumar Nature Cure Hospital (Gandhigramam, Karur) and P.K. Hospital (Karur - Sengal Rd, Sengal) offer residential inpatient facilities surrounded by serene greenery, organic natural diet, and round-the-clock medical care by qualified doctors.",
   },
   {
     question: "What are the key treatments included during a residential stay?",

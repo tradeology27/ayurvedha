@@ -37,7 +37,7 @@ export default function AppointmentForm() {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     
-    const hospitalName = data.hospital === "knch-main" ? "Kumar Nature Cure Hospital" : "P.K. Hospital";
+    const hospitalName = data.hospital === "knch-main" ? "Kumar Nature Cure Hospital (Gandhigramam)" : "P.K.Hospital Nature cure -Yoga-Dental (Karur - Sengal Rd)";
     let text = `*New Booking Request!* 🌿\n\n`;
     text += `👤 *Name:* ${data.name}\n`;
     text += `📞 *Phone:* ${data.phone}\n`;
@@ -219,7 +219,7 @@ export default function AppointmentForm() {
                   }`}
                 >
                   <option value="knch-main">Kumar Nature Cure Hospital (Gandhigramam, Karur)</option>
-                  <option value="pk-hospital">P.K. Hospital (Karur)</option>
+                  <option value="pk-hospital">P.K.Hospital Nature cure -Yoga-Dental (Karur - Sengal Rd, Sengal)</option>
                 </select>
                 {errors.hospital && (
                   <p className="text-red-500 text-xs">{errors.hospital.message}</p>

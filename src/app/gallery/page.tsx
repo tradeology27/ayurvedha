@@ -4,7 +4,7 @@ import GalleryViewer, { GalleryItem } from "@/components/gallery/GalleryViewer";
 
 export const metadata: Metadata = {
   title: "Photo Gallery | Hospital Campuses, Treatments & Nature Sanctuary",
-  description: "View photos of Kumar Nature Cure Hospital (Karur) and P.K. Hospital (Kulithalai): lush green campuses, patient rooms, mud therapy, spinal bath, and yoga hall.",
+  description: "View photos of Kumar Nature Cure Hospital (Karur) and P.K. Hospital (Sengal, Karur): lush green campuses, patient rooms, mud therapy, spinal bath, and yoga hall.",
   alternates: {
     canonical: "/gallery",
   },

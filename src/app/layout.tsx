@@ -26,7 +26,8 @@ export const metadata: Metadata = {
   keywords: [
     "Kumar Nature Cure Hospital",
     "KNCH Karur",
-    "P.K. Hospital Kulithalai",
+    "P.K. Hospital Sengal Karur",
+    "P.K.Hospital Nature cure -Yoga-Dental",
     "Naturopathy Hospital Karur",
     "Nature Cure Hospital Tamil Nadu",
     "Best Naturopathy Center Tamil Nadu",
@@ -177,17 +178,17 @@ export default function RootLayout({
       {
         "@type": ["Hospital", "MedicalOrganization", "LocalBusiness"],
         "@id": "https://www.knchkarur.com/#pk-hospital",
-        "name": "P.K. Hospital",
-        "alternateName": ["P.K. Nature Cure Hospital Kulithalai"],
+        "name": "P.K.Hospital Nature cure -Yoga-Dental",
+        "alternateName": ["P.K. Hospital", "P.K. Nature Cure Hospital Sengal Karur"],
         "url": "https://www.knchkarur.com",
-        "description": "Expanded campus established in 2017 near Kulithalai, Karur district, offering extensive residential nature cure retreats, cottages, organic farms, and dental clinic.",
-        "telephone": "+91 94432 40040",
+        "description": "Lush 10,000 sq.ft residential nature cure sanctuary and dental clinic at Karur - Sengal Rd, Sengal, Tamil Nadu.",
+        "telephone": "+91 81481 29709",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Inam Karur to Kulithalai Highway",
-          "addressLocality": "Kulithalai",
+          "streetAddress": "Karur - Sengal Rd, Sengal",
+          "addressLocality": "Sengal, Karur",
           "addressRegion": "Tamil Nadu",
-          "postalCode": "639104",
+          "postalCode": "639102",
           "addressCountry": "IN"
         }
       },

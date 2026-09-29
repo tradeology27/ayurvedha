@@ -153,10 +153,18 @@ export default function Footer() {
               {/* PK Hospital Location */}
               <div className="bg-white/5 p-3.5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
                 <p className="font-bold text-white text-[13px] flex items-center gap-1.5 mb-1.5">
-                  <MapPin size={14} className="text-secondary" /> P.K. Hospital
+                  <MapPin size={14} className="text-secondary" /> P.K. Hospital Campus
                 </p>
-                <p className="text-white/75 text-xs leading-relaxed">
-                  P.K.Hospital Nature cure -Yoga-Dental
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=P.K.Hospital+Nature+cure+-Yoga-Dental,+Karur+-+Sengal+Rd,+Sengal,+Tamil+Nadu+639102"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/75 text-xs leading-relaxed block hover:text-white transition-colors"
+                >
+                  P.K.Hospital Nature cure -Yoga-Dental, Karur - Sengal Rd, Sengal, Tamil Nadu 639102, India
+                </a>
+                <p className="text-secondary text-xs mt-2 font-semibold flex items-center gap-1 uppercase tracking-wider">
+                  <Bed size={12} /> Nature Retreat & Residential Stay
                 </p>
               </div>
             </div>

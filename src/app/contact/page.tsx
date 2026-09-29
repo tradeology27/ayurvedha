@@ -5,7 +5,7 @@ import { MapPin, Phone, Clock, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact & Appointments | Kumar Nature Cure Hospital & P.K. Hospital",
-  description: "Contact Kumar Nature Cure Hospital (Gandhigramam, Karur) and P.K. Hospital (Kulithalai). Call +91 94433 34220 / +91 94432 40040 or book your consultation online.",
+  description: "Contact Kumar Nature Cure Hospital (Gandhigramam, Karur) and P.K. Hospital Nature Cure (Karur - Sengal Rd, Sengal). Call +91 81481 29709 / +91 98424 29709 or book your consultation online.",
   alternates: {
     canonical: "/contact",
   },
@@ -105,10 +105,16 @@ export default function ContactPage() {
               <div className="space-y-3.5 text-xs sm:text-sm text-foreground/80">
                 <div className="flex items-start gap-3">
                   <MapPin size={18} className="text-primary shrink-0 mt-0.5" />
-                  <span className="leading-relaxed">
-                    P.K.Hospital Nature cure -Yoga-Dental,<br/>
-                    Karur, Tamil Nadu.
-                  </span>
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=P.K.Hospital+Nature+cure+-Yoga-Dental,+Karur+-+Sengal+Rd,+Sengal,+Tamil+Nadu+639102"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="leading-relaxed hover:text-primary transition-colors block"
+                  >
+                    <strong className="block font-semibold">P.K.Hospital Nature cure -Yoga-Dental</strong>
+                    Karur - Sengal Rd, Sengal,<br/>
+                    Tamil Nadu 639102, India.
+                  </a>
                 </div>
 
                 <div className="flex items-start gap-3">
@@ -179,7 +185,7 @@ export default function ContactPage() {
 
             {/* P.K. Hospital Map */}
             <div className="flex flex-col">
-              <h4 className="text-lg font-bold text-primary mb-3 text-center">P.K. Hospital (Nature Retreat)</h4>
+              <h4 className="text-lg font-bold text-primary mb-3 text-center">P.K. Hospital (Karur - Sengal Rd)</h4>
               <div className="rounded-3xl overflow-hidden shadow-xl h-[400px] w-full border border-gray-200">
                 <iframe 
                   src="https://maps.google.com/maps?q=P.K.Hospital+Nature+cure+-Yoga-Dental,+Karur+-+Sengal+Rd,+Sengal,+Tamil+Nadu+639102&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -189,7 +195,7 @@ export default function ContactPage() {
                   allowFullScreen={true} 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="P.K. Hospital Karur Location Map"
+                  title="P.K. Hospital Nature Cure Yoga Dental - Karur Sengal Road Location Map"
                 ></iframe>
               </div>
             </div>

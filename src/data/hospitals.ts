@@ -86,11 +86,11 @@ export const hospitalBranches: HospitalBranch[] = [
       "Medicinal Herbal Gardens & Walking Trails"
     ],
     address: {
-      line1: "P.K. Hospital Campus, Greenery Nature Enclave",
-      area: "Gandhigramam Surroundings",
-      city: "Karur",
-      landmark: "Close to Trichy National Highway",
-      pincode: "639004"
+      line1: "Karur - Sengal Rd, Sengal",
+      area: "Sengal",
+      city: "Karur, Tamil Nadu",
+      landmark: "Karur - Sengal Road",
+      pincode: "639102"
     },
     phones: ["+91 81481 29709", "+91 98424 29709"],
     timings: "Residential Care: 24 Hours | Day Visit: 8:00 AM – 6:00 PM",
