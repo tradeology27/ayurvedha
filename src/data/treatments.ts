@@ -493,64 +493,20 @@ export const treatmentCategories: TreatmentCategory[] = [
         popular: true,
       },
       {
-        id: "sauna-bath",
-        name: "Sauna Bath",
-        tagline: "Dry heat thermal chamber for cardiovascular & detox benefits",
-        description: "Traditional dry heat sauna using heated rocks to produce elevated temperatures in a low-humidity cedar environment. It elevates core temperature safely, promoting intense sweating and accelerating metabolic waste removal.",
+        id: "infrared-ray",
+        name: "Infrared Ray",
+        tagline: "Penetrating therapeutic thermal radiation for pain and joint healing",
+        description: "Application of therapeutic infrared rays (IR lamp therapy) targeting specific joints, muscles, and nerve regions. The gentle radiant thermal waves penetrate deep beneath the skin without physical pressure, dilating local capillaries, relaxing painful spasms, and accelerating cellular tissue repair.",
         benefits: [
-          "Boosts cardiovascular circulation and increases heart rate variability",
-          "Flushes out environmental pollutants, alcohol, and heavy metals",
-          "Promotes rapid post-workout and post-fatigue muscle recovery",
-          "Stimulates the immune system through transient hyperthermia",
-          "Releases mental tension and promotes deep relaxation"
+          "Provides deep penetrating heat to relieve acute and chronic muscle spasms",
+          "Dramatically increases local microvascular blood flow and cellular oxygenation",
+          "Alleviates joint stiffness in cervical spondylosis, knee osteoarthritis, and frozen shoulder",
+          "Accelerates tissue healing, reduces inflammation, and relieves localized swelling",
+          "Calms irritated nerve endings and diminishes neuralgia and neuropathic pain"
         ],
         duration: "15 - 20 mins",
-        indications: ["Muscle Stiffness", "Slow Metabolism", "Poor Circulation", "Chronic Fatigue"],
-      },
-      {
-        id: "infrared-sauna-bath",
-        name: "Infrared Sauna Bath",
-        tagline: "Deep cellular radiant light therapy for joint and adipose healing",
-        description: "Utilizes invisible infrared light spectrum wavelengths to penetrate directly up to 3-4 centimeters beneath the skin into muscle fibers, joints, and adipose tissues without heating the surrounding air to uncomfortable levels.",
-        benefits: [
-          "Penetrates deep into connective tissues and joints to relieve chronic pain",
-          "Stimulates collagen synthesis and cellular mitochondrial regeneration",
-          "Aids in targeted fat mobilization and healthy weight loss",
-          "Operates at gentler, more breathable temperatures than conventional saunas",
-          "Improves lymphatic drainage and microvascular perfusion"
-        ],
-        duration: "20 - 30 mins",
-        indications: ["Fibromyalgia", "Chronic Joint Pain", "Weight Loss", "Neuropathic Aches"],
-      },
-      {
-        id: "under-water-massage",
-        name: "Under Water Massage",
-        tagline: "Hydro-kinetic deep pressure massage for muscular revitalization",
-        description: "The patient floats in a large therapeutic warm water bath while a skilled therapist applies adjustable high-pressure water jets along major muscle groups and meridian lines. Combines the benefits of thermal warmth with deep tissue massage.",
-        benefits: [
-          "Reaches deep muscle knots without causing tissue bruising",
-          "Substantially increases lymphatic return and reduces fluid retention",
-          "Softens post-surgical adhesions and tight fascia",
-          "Eases severe muscular spasms and lumbar-sacral tension",
-          "Leaves muscles profoundly supple and relaxed"
-        ],
-        duration: "20 - 30 mins",
-        indications: ["Muscular Spasms", "Lymphedema", "Sports Injuries", "Deep Tissue Tightness"],
-      },
-      {
-        id: "whirlpool-bath",
-        name: "Whirlpool Bath",
-        tagline: "Aerated swirling hydrotherapy for circulation and joint recovery",
-        description: "A hydrodynamic tub equipped with multiple aerated water nozzles that continuously churn and swirl warm water around the limbs and torso, creating continuous micromassage on sensory nerve endings.",
-        benefits: [
-          "Delivers continuous gentle percussion and vibration massage to joints",
-          "Increases peripheral capillary blood flow and venous return",
-          "Accelerates recovery from sprains, fractures, and sports trauma",
-          "Reduces localized swelling, inflammation, and joint pain",
-          "Provides a calming, invigorating sensory experience"
-        ],
-        duration: "20 mins",
-        indications: ["Osteoarthritis", "Post-trauma Rehab", "Poor Peripheral Circulation", "Knee Stiffness"],
+        indications: ["Cervical & Lumbar Spondylosis", "Knee Osteoarthritis", "Muscle Spasms & Back Pain", "Frozen Shoulder", "Neuralgia"],
+        popular: true,
       },
     ],
   },
@@ -956,7 +912,7 @@ export const healthPackages = [
       "Physiotherapy & Orthopedic Assessment",
       "Computerized Spinal Traction & Short-Wave Diathermy (SWD)",
       "Interferential Therapy (IFT) & Ultrasound Therapy",
-      "Hydrotherapy: Spinal Spray, Spinal Bath & Whirlpool",
+      "Hydrotherapy: Spinal Spray, Spinal Bath & Steam Bath",
       "Acupuncture, Acupressure & Cupping Therapy",
       "Paraffin Wax Bath for small joint stiffness",
       "Specialized Anti-inflammatory Diet & Herbal Decoctions"
@@ -987,8 +943,8 @@ export const healthPackages = [
     includes: [
       "Body Composition Analysis & Caloric Profiling",
       "Supervised Fasting (Juice Fasting & Mono Diet)",
-      "Plantain Leaf Bath & Infrared Sauna Therapy",
-      "Underwater High-Pressure Jet Massage & Salt Glow Scrub",
+      "Plantain Leaf Bath & Infrared Ray Therapy",
+      "Herbal Steam Bath & Salt Glow Scrub",
       "Daily Zumba, Hydro-gym, and Aerobic Conditioning",
       "Detox Colon Cleansing (Enema) & Mud Therapy",
       "Personalized Maintenance Nutrition Guide"
