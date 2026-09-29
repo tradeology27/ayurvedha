@@ -49,9 +49,6 @@ export default function ContactPage() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-primary mt-2 mb-3 tracking-tight">
               Visit or Contact Our Hospital
             </h1>
-            <p className="text-foreground/75 font-light text-base md:text-lg max-w-2xl mx-auto">
-              Started in 2003 on Trichy National Highway, ~5km from Karur bus stand.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
