@@ -134,7 +134,7 @@ export default function ContactPage() {
             {/* Campus 2: PK Hospital */}
             <div className="bg-white rounded-3xl p-8 border border-gray-200/80 shadow-md">
               <span className="bg-secondary/20 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-3">
-                Nature Retreat Center
+                24 Acres Nature Retreat • Est. 2017
               </span>
               <h3 className="text-2xl font-heading font-bold text-primary mb-1">
                 P.K. Hospital

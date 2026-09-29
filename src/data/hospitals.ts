@@ -64,14 +64,14 @@ export const hospitalBranches: HospitalBranch[] = [
     id: "pk-green-campus",
     name: "P.K.Hospital Nature cure -Yoga-Dental",
     tamilName: "பி. கே இயற்கை மருத்துவமனை-யோகா-பல் மருத்துவம்",
-    tagline: "10,000 Sq.Ft Lush Green Healing Sanctuary",
+    tagline: "24 Acres Lush Green Healing Sanctuary • Est. 2017",
     category: "Nature Retreat & Residential Campus",
     image: "/images/pk_hospital_green_campus.jpg",
-    badge: "Greenery Sanctuary • Inpatient Retreat",
+    badge: "24 Acres Nature Retreat • Est. 2017",
     description:
-      "Nestled amidst 10,000 sq.ft of peaceful, pollution-free land surrounded by serene nature and lush trees. This campus is specially crafted for deep residential rejuvenation, long-term chronic recovery, banana-leaf sun baths, mud therapy, and daily yoga under fresh open skies.",
+      "Started in 2017, nestled amidst 24 acres of peaceful, pollution-free land surrounded by serene nature and lush trees. This campus is specially crafted for deep residential rejuvenation, long-term chronic recovery, banana-leaf sun baths, mud therapy, and daily yoga under fresh open skies.",
     features: [
-      "Situated in 10,000 sq.ft of serene green landscape",
+      "Started in 2017 across 24 acres of serene green landscape",
       "Pollution-free, peaceful atmosphere for mind & body relaxation",
       "Open-air Plantain-Leaf Bath decks & Mud Therapy courts",
       "Dedicated Yoga & Meditation Lawn",

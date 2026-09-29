@@ -181,7 +181,7 @@ export default function RootLayout({
         "name": "P.K.Hospital Nature cure -Yoga-Dental",
         "alternateName": ["P.K. Hospital", "P.K. Nature Cure Hospital Sengal Karur"],
         "url": "https://www.knchkarur.com",
-        "description": "Lush 10,000 sq.ft residential nature cure sanctuary and dental clinic at Karur - Sengal Rd, Sengal, Tamil Nadu.",
+        "description": "Established in 2017, lush 24 acres residential nature cure sanctuary and dental clinic at Karur - Sengal Rd, Sengal, Tamil Nadu.",
         "telephone": "+91 81481 29709",
         "address": {
           "@type": "PostalAddress",

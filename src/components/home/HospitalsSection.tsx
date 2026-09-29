@@ -21,7 +21,7 @@ export default function HospitalsSection() {
             Our Hospitals & Healing Campuses
           </h2>
           <p className="text-foreground/75 font-light text-base md:text-lg leading-relaxed">
-            Under <strong>Kumar Nature Cure Hospital</strong>, we serve patients through two specialized centers — our main multi-specialty clinical hospital and our serene 10,000 sq.ft. green nature retreat.
+            Under <strong>Kumar Nature Cure Hospital</strong>, we serve patients through two specialized centers — our main clinical center at Gandhigramam (est. 2003) and our serene 24 acres green nature retreat at P.K. Hospital (est. 2017).
           </p>
         </div>
 

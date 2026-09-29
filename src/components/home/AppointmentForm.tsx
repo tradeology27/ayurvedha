@@ -77,7 +77,7 @@ export default function AppointmentForm() {
                 Book Consultation or Residential Stay
               </h3>
               <p className="text-white/80 font-light mb-8 text-sm leading-relaxed">
-                Connect with our expert Naturopathy doctors and Dental specialists. Choose between outpatient therapy or peaceful residential stay in our 10,000 sq.ft. green campus.
+                Connect with our expert Naturopathy doctors and Dental specialists. Choose between outpatient therapy or peaceful residential stay in our 24 acres green campus at P.K. Hospital (Est. 2017).
               </p>
 
               <div className="space-y-6 text-sm">

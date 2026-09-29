@@ -38,20 +38,20 @@ export default function AboutPage() {
             <div className="relative h-[480px] rounded-3xl overflow-hidden shadow-2xl border-4 border-background">
               <Image 
                 src="/images/pk_hospital_green_campus.jpg" 
-                alt="P.K.Hospital Nature cure -Yoga-Dental 10,000 sq.ft Greenery Campus" 
+                alt="P.K.Hospital Nature cure -Yoga-Dental 24 Acres Greenery Campus" 
                 fill 
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <span className="bg-secondary text-primary font-bold text-xs uppercase px-3 py-1 rounded-full">
-                  10,000 Sq.Ft Greenery Retreat
+                  24 Acres Greenery Retreat • Est. 2017
                 </span>
                 <p className="font-heading font-bold text-xl mt-2">
                   P.K.Hospital Nature cure -Yoga-Dental
                 </p>
                 <p className="text-white/80 text-xs">
-                  Peaceful residential healing amidst lush trees and fresh oxygen
+                  Peaceful residential healing amidst 24 acres of lush trees and fresh oxygen
                 </p>
               </div>
             </div>
@@ -78,13 +78,13 @@ export default function AboutPage() {
               </div>
 
               <p className="text-foreground/80 font-light leading-relaxed">
-                Our main center at <strong>Shakthi Nagar, Gandhigramam</strong> (located on Trichy National Highway, ~5km from Karur bus stand) brings comprehensive natural care and dental services close to the heart of Karur. In addition, our <strong>10,000 sq.ft. serene greenery campus</strong> provides patients with a peaceful sanctuary away from noise, pollution, and daily stress.
+                Our main center at <strong>Shakthi Nagar, Gandhigramam</strong> (located on Trichy National Highway, ~5km from Karur bus stand) brings comprehensive natural care and dental services close to the heart of Karur. In addition, our <strong>24 acres serene greenery campus at P.K. Hospital (started in 2017)</strong> provides patients with a peaceful sanctuary away from noise, pollution, and daily stress.
               </p>
 
               <div className="space-y-3 pt-2">
                 {[
-                  "Started in 2003 with over 20+ years of clinical experience",
-                  "10,000 sq.ft. of calm, serene greenery for mind & body peace",
+                  "KNCH started in 2003 with over 20+ years of clinical experience",
+                  "P.K. Hospital campus started in 2017 across 24 acres of serene greenery",
                   "Comfortable accommodation to suit an individual's budget",
                   "24/7 care supervised by qualified and experienced doctors",
                   "Specialized Plantain-leaf bath, Mud therapy & Hydrotherapy",

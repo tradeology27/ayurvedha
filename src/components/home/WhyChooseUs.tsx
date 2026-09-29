@@ -40,8 +40,8 @@ const reasons = [
   },
   {
     icon: <Building2 size={24} />,
-    title: "10,000 Sq.Ft Green Campus",
-    desc: "Surrounded by calm, serene nature and greenery for total mental and physical peace.",
+    title: "24 Acres Green Campus",
+    desc: "P.K. Hospital retreat spread across 24 acres of calm, serene nature for deep residential healing (Est. 2017).",
     link: "/gallery"
   },
   {
