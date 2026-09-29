@@ -32,6 +32,9 @@ export default function About() {
               <p>
                 The hospital is situated in about <strong>10,000 sq.ft. of land</strong> surrounded by a calm and serene atmosphere and full of greenery, which provides peace and relaxation of mind and body.
               </p>
+              <p className="bg-emerald-50/70 border-l-4 border-primary p-4 rounded-r-xl text-foreground/90 font-normal text-base leading-relaxed">
+                We specialize in weight loss treatments, pain management, natural detox and rejuvenation, dental aligners, dental braces, and root canal treatments. Alongside these, we offer naturopathy treatment, mud therapy, yoga therapy, massage therapy, hydrotherapy, and plantain-leaf bath, all designed to heal the body in a gentle, natural way.
+              </p>
               <p>
                 <strong>Our hospital</strong> provides modern and comfortable accommodation to suit an individual&apos;s budget. We recommend patients to stay in our premises which is supervised by qualified and experienced doctors.
               </p>
@@ -44,14 +47,18 @@ export default function About() {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
-                  "Massage therapy",
-                  "Acupuncture",
-                  "Steam bath",
-                  "Diet therapy",
+                  "Weight loss treatments",
+                  "Pain management",
+                  "Natural detox & rejuvenation",
+                  "Dental aligners & braces",
+                  "Root canal treatments",
+                  "Naturopathy treatment",
                   "Mud therapy",
-                  "Hydrotherapy",
                   "Yoga therapy",
+                  "Massage therapy",
+                  "Hydrotherapy",
                   "Plantain-leaf bath",
+                  "Acupuncture",
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-2.5">
                     <CheckCircle2 className="text-secondary shrink-0" size={18} />

@@ -71,6 +71,12 @@ export default function AboutPage() {
                 Founded in <strong>2003</strong>, <strong>Kumar Nature Cure Hospital (KNCH)</strong> was born out of a profound vision to offer pure, drugless healing to people suffering from chronic diseases, spinal conditions, stress, and lifestyle disorders.
               </p>
 
+              <div className="bg-emerald-50/80 border-l-4 border-primary p-4 rounded-r-2xl">
+                <p className="text-foreground/90 text-sm md:text-base leading-relaxed font-normal">
+                  We specialize in weight loss treatments, pain management, natural detox and rejuvenation, dental aligners, dental braces, and root canal treatments. Alongside these, we offer naturopathy treatment, mud therapy, yoga therapy, massage therapy, hydrotherapy, and plantain-leaf bath, all designed to heal the body in a gentle, natural way.
+                </p>
+              </div>
+
               <p className="text-foreground/80 font-light leading-relaxed">
                 Our main center at <strong>Shakthi Nagar, Gandhigramam</strong> (located on Trichy National Highway, ~5km from Karur bus stand) brings comprehensive natural care and dental services close to the heart of Karur. In addition, our <strong>10,000 sq.ft. serene greenery campus</strong> provides patients with a peaceful sanctuary away from noise, pollution, and daily stress.
               </p>
@@ -79,10 +85,11 @@ export default function AboutPage() {
                 {[
                   "Started in 2003 with over 20+ years of clinical experience",
                   "10,000 sq.ft. of calm, serene greenery for mind & body peace",
+                  "Specialized in Weight Loss, Pain Management & Natural Detox",
+                  "Full-fledged dental clinic: Aligners, Braces & Root Canal",
+                  "Specialized Plantain-leaf bath, Mud therapy, Yoga & Hydrotherapy",
                   "Comfortable accommodation to suit an individual's budget",
                   "24/7 care supervised by qualified and experienced doctors",
-                  "Specialized Plantain-leaf bath, Mud therapy & Hydrotherapy",
-                  "Full-fledged dental clinic led by experienced dental surgeons"
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3">
                     <CheckCircle2 className="text-secondary shrink-0" size={18} />
