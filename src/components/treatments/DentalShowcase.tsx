@@ -268,8 +268,8 @@ export default function DentalShowcase() {
             )}
           </div>
 
-          {/* Category Filter Pills Ribbon */}
-          <div className="w-full overflow-x-auto no-scrollbar py-2 px-1 flex items-center gap-2 justify-start md:justify-center">
+          {/* Category Filter Pills (Scrollable on Mobile, Wrapped on Tablet & Laptop) */}
+          <div className="w-full flex items-center justify-start md:justify-center overflow-x-auto md:overflow-visible md:flex-wrap no-scrollbar gap-2 py-2 px-1">
             <button
               onClick={() => setSelectedCategoryId("all")}
               className={`whitespace-nowrap shrink-0 px-4 py-2 rounded-full text-xs font-bold transition-all ${
