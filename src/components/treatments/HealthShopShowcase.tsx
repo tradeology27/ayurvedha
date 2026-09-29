@@ -255,14 +255,14 @@ export default function HealthShopShowcase() {
             )}
           </div>
 
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
+          {/* Category Filter Pills Ribbon */}
+          <div className="w-full overflow-x-auto no-scrollbar py-2 px-1 flex items-center gap-2 justify-start md:justify-center">
             <button
               onClick={() => setSelectedCategoryId("all")}
-              className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
+              className={`whitespace-nowrap shrink-0 px-4 py-2 rounded-full text-xs font-bold transition-all ${
                 selectedCategoryId === "all"
-                  ? "bg-primary text-white shadow-md scale-105"
-                  : "bg-background text-foreground/80 hover:bg-gray-100 border border-gray-200"
+                  ? "bg-primary text-white shadow-md scale-102 ring-2 ring-primary/20"
+                  : "bg-white text-foreground/80 hover:bg-emerald-50/60 border border-gray-200 shadow-2xs hover:border-secondary/40"
               }`}
             >
               All Product Categories ({healthShopCategories.length})
@@ -275,10 +275,10 @@ export default function HealthShopShowcase() {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategoryId(cat.id)}
-                  className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold transition-all ${
+                  className={`inline-flex items-center gap-1.5 whitespace-nowrap shrink-0 px-4 py-2 rounded-full text-xs font-semibold transition-all ${
                     isSelected
-                      ? "bg-primary text-white shadow-md scale-105"
-                      : "bg-background text-foreground/80 hover:bg-gray-100 border border-gray-200"
+                      ? "bg-primary text-white shadow-md scale-102 ring-2 ring-primary/20"
+                      : "bg-white text-foreground/80 hover:bg-emerald-50/60 border border-gray-200 shadow-2xs hover:border-secondary/40"
                   }`}
                 >
                   <IconComp size={13} className={isSelected ? "text-secondary" : "text-gray-500"} />

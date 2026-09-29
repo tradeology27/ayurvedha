@@ -1,8 +1,10 @@
 export interface DentalServiceCategory {
   id: string;
   name: string;
+  shortName: string;
   tagline: string;
   description: string;
+  iconName: string;
   image: string;
   services: string[];
 }
@@ -11,9 +13,11 @@ export const dentalCategories: DentalServiceCategory[] = [
   {
     id: "diagnostic-preventive",
     name: "Diagnostic & Preventive Services",
+    shortName: "Diagnostic & Preventive",
     tagline: "Early detection, computerized diagnostics & proactive oral prevention",
     description:
       "Comprehensive clinical dental examination and preventive dentistry to safeguard long-term oral health, protect tooth enamel, and detect issues before they cause discomfort.",
+    iconName: "ShieldCheck",
     image: "/images/dental_diagnostic_clinic.jpg",
     services: [
       "Comprehensive Dental Consultations",
@@ -29,9 +33,11 @@ export const dentalCategories: DentalServiceCategory[] = [
   {
     id: "conservative-endodontic",
     name: "Conservative & Endodontic Services",
+    shortName: "Root Canal & Fillings",
     tagline: "Painless root canals & natural tooth-colored restorations",
     description:
       "Advanced preservation of natural teeth through micro-dentistry, tooth-colored aesthetic fillings, and painless root canal treatments utilizing precision endodontic protocols.",
+    iconName: "Activity",
     image: "/images/dental_restorative_care.jpg",
     services: [
       "Light Cured Composite Fillings (Natural Tooth-Colored)",
@@ -46,9 +52,11 @@ export const dentalCategories: DentalServiceCategory[] = [
   {
     id: "esthetic-cosmetic",
     name: "Esthetic Dentistry / Cosmetic Dentistry",
+    shortName: "Cosmetic Dentistry",
     tagline: "Smile makeovers, professional whitening & custom veneers",
     description:
       "Artistic smile enhancement tailored to your facial harmony. Transform stained, chipped, or misaligned teeth into a brilliant, confident, and natural smile.",
+    iconName: "Sparkles",
     image: "/images/dental_cosmetic_treatment.jpg",
     services: [
       "Professional Tooth Bleaching & Laser Whitening",
@@ -62,9 +70,11 @@ export const dentalCategories: DentalServiceCategory[] = [
   {
     id: "prosthodontic",
     name: "Prosthodontic Services",
+    shortName: "Crowns & Dentures",
     tagline: "Full tooth replacement, zirconia crowns & comfortable bridges",
     description:
       "Specialized replacement of missing teeth and damaged tooth structures to restore complete chewing efficiency, clear speech, and facial aesthetics.",
+    iconName: "Smile",
     image: "/images/dental_prosthodontic_care.jpg",
     services: [
       "Metal-Free All-Ceramic & Zirconia Crowns & Bridges",
@@ -78,9 +88,11 @@ export const dentalCategories: DentalServiceCategory[] = [
   {
     id: "periodontic",
     name: "Periodontic Services",
+    shortName: "Gum Care & Surgery",
     tagline: "Advanced gum care, ultrasonic scaling & periodontal surgery",
     description:
       "Comprehensive treatment of gums, periodontal ligaments, and supporting bone to arrest bleeding gums, treat pyorrhea, and ensure firm dental foundation.",
+    iconName: "HeartPulse",
     image: "/images/dental_periodontic_care.jpg",
     services: [
       "Ultrasonic Scaling & Deep Root Planing",
@@ -95,9 +107,11 @@ export const dentalCategories: DentalServiceCategory[] = [
   {
     id: "maxillofacial",
     name: "Maxillofacial Surgery",
+    shortName: "Oral & Wisdom Surgery",
     tagline: "Gentle surgical extractions & impacted wisdom tooth removal",
     description:
       "Safe, sterile, and pain-free surgical extractions performed under local anesthesia with minimal post-operative downtime.",
+    iconName: "Stethoscope",
     image: "/images/dental_maxillofacial_surgery.jpg",
     services: [
       "Routine Painless Tooth Extractions",
@@ -109,9 +123,11 @@ export const dentalCategories: DentalServiceCategory[] = [
   {
     id: "pediatric",
     name: "Pediatric Dentistry",
+    shortName: "Pediatric Dentistry",
     tagline: "Gentle, fear-free dental care for infants, children & teens",
     description:
       "Dedicated, child-friendly oral healthcare in a comforting atmosphere designed to make dental visits fun, fearless, and protective of developing permanent teeth.",
+    iconName: "Baby",
     image: "/images/dental_pediatric_care.jpg",
     services: [
       "Child-Friendly Tooth Fillings",
@@ -128,3 +144,4 @@ export const dentalCategories: DentalServiceCategory[] = [
     ]
   }
 ];
+
