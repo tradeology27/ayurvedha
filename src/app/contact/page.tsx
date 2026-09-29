@@ -17,7 +17,7 @@ export default function ContactPage() {
       <PageHeader 
         title="Contact Our 2 Hospitals" 
         breadcrumb={[{ name: "Contact", path: "/contact" }]} 
-        bgImage="https://images.unsplash.com/photo-1599423300746-b62533397364?q=80&w=2070&auto=format&fit=crop"
+        bgImage="/images/contact_hero.jpg"
       />
 
       {/* Two Campuses Cards */}
