@@ -177,10 +177,35 @@ export default function TreatmentExplorer() {
         ) : (
           /* Main Two-Column Layout (Matching the user's design) */
           <div className="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[620px]">
+            {/* Mobile horizontal category pills */}
+            <div className="md:hidden flex gap-2 overflow-x-auto p-3 bg-gray-50 border-b border-gray-200 no-scrollbar">
+              {treatmentCategories.map((cat) => {
+                const isActive = activeCategoryId === cat.id;
+                const IconComponent = categoryIconMap[cat.iconName] || Sparkles;
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => {
+                      setActiveCategoryId(cat.id);
+                      setSelectedTreatmentId(cat.treatments[0]?.id || "");
+                    }}
+                    className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap shrink-0 transition-all ${
+                      isActive
+                        ? "bg-primary text-white shadow-sm"
+                        : "bg-white text-foreground/80 border border-gray-200"
+                    }`}
+                  >
+                    <IconComponent size={14} className={isActive ? "text-secondary" : "text-gray-400"} />
+                    <span>{cat.name}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-12 min-h-[620px]">
               
-              {/* LEFT COLUMN: Categories Navigation (Exact style as screenshot) */}
-              <div className="lg:col-span-4 border-r border-gray-100 bg-white">
+              {/* LEFT COLUMN: Categories Navigation (Desktop/Tablet) */}
+              <div className="hidden md:block md:col-span-5 lg:col-span-4 border-r border-gray-100 bg-white">
                 <div className="p-4 bg-background/50 border-b border-gray-100 font-semibold text-xs tracking-wider uppercase text-primary/80 flex items-center justify-between">
                   <span>Categories ({treatmentCategories.length})</span>
                   <Filter size={14} className="text-secondary" />
@@ -197,23 +222,23 @@ export default function TreatmentExplorer() {
                           setActiveCategoryId(cat.id);
                           setSelectedTreatmentId(cat.treatments[0]?.id || "");
                         }}
-                        className={`w-full text-left px-6 py-4 flex items-center justify-between transition-all duration-200 group ${
+                        className={`w-full text-left px-5 py-4 flex items-center justify-between transition-all duration-200 group ${
                           isActive
-                            ? "bg-secondary/10 text-secondary font-bold pl-7 border-l-4 border-secondary"
+                            ? "bg-secondary/10 text-secondary font-bold pl-6 border-l-4 border-secondary"
                             : "text-foreground hover:bg-gray-50/80 hover:text-primary"
                         }`}
                       >
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-2.5">
                           <IconComponent 
                             size={18} 
                             className={isActive ? "text-secondary" : "text-gray-400 group-hover:text-primary"} 
                           />
-                          <span className={`text-base ${isActive ? "text-secondary font-bold" : "font-medium text-foreground"}`}>
+                          <span className={`text-sm md:text-base ${isActive ? "text-secondary font-bold" : "font-medium text-foreground"}`}>
                             {cat.name}
                           </span>
                         </div>
                         <ChevronRight
-                          size={18}
+                          size={16}
                           className={`transition-transform duration-200 ${
                             isActive
                               ? "text-secondary translate-x-1 font-bold"
@@ -227,7 +252,7 @@ export default function TreatmentExplorer() {
               </div>
 
               {/* RIGHT COLUMN: Treatment Items & Full Details */}
-              <div className="lg:col-span-8 bg-background/30 p-6 md:p-8 flex flex-col justify-between">
+              <div className="col-span-1 md:col-span-7 lg:col-span-8 bg-background/30 p-6 md:p-8 flex flex-col justify-between">
                 <div>
                   {/* Category Header */}
                   <div className="border-b border-gray-200 pb-5 mb-6 flex flex-col md:flex-row md:items-center justify-between gap-3">

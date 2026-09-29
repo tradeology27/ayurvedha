@@ -78,10 +78,30 @@ export default function DentalShowcase() {
 
         {/* Two-Column Interactive Explorer */}
         <div className="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[580px]">
+          {/* Mobile horizontal category pills */}
+          <div className="md:hidden flex gap-2 overflow-x-auto p-3 bg-gray-50 border-b border-gray-200 no-scrollbar">
+            {dentalCategories.map((cat) => {
+              const isActive = activeCategoryId === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveCategoryId(cat.id)}
+                  className={`px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap shrink-0 transition-all ${
+                    isActive
+                      ? "bg-primary text-white shadow-sm"
+                      : "bg-white text-foreground/80 border border-gray-200"
+                  }`}
+                >
+                  {cat.name}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 min-h-[540px]">
             
-            {/* Left Column: Dental Category Navigation */}
-            <div className="lg:col-span-4 border-r border-gray-100 bg-white">
+            {/* Left Column: Dental Category Navigation (Desktop/Tablet) */}
+            <div className="hidden md:block md:col-span-5 lg:col-span-4 border-r border-gray-100 bg-white">
               <div className="p-4 bg-background/50 border-b border-gray-100 font-semibold text-xs tracking-wider uppercase text-primary/80 flex items-center justify-between">
                 <span>Dental Services ({dentalCategories.length})</span>
                 <Smile size={15} className="text-secondary" />
@@ -118,7 +138,7 @@ export default function DentalShowcase() {
             </div>
 
             {/* Right Column: Procedure Details & Photo */}
-            <div className="lg:col-span-8 bg-background/30 p-6 md:p-8 flex flex-col justify-between">
+            <div className="col-span-1 md:col-span-7 lg:col-span-8 bg-background/30 p-6 md:p-8 flex flex-col justify-between">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeCategory.id}

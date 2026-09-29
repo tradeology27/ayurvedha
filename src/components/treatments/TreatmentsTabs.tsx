@@ -61,7 +61,12 @@ function TreatmentsTabsContent() {
   const searchParams = useSearchParams();
   const queryTab = searchParams.get("tab") || searchParams.get("section");
 
-  const [activeTab, setActiveTab] = useState<TreatmentSectionTab>("naturopathy");
+  const [activeTab, setActiveTab] = useState<TreatmentSectionTab>(() => {
+    if (queryTab === "dental" || queryTab === "health-shop" || queryTab === "naturopathy") {
+      return queryTab as TreatmentSectionTab;
+    }
+    return "naturopathy";
+  });
 
   useEffect(() => {
     if (queryTab === "dental" || queryTab === "health-shop" || queryTab === "naturopathy") {
@@ -75,21 +80,15 @@ function TreatmentsTabsContent() {
       const url = new URL(window.location.href);
       url.searchParams.set("tab", tabId);
       window.history.replaceState({}, "", url.toString());
-
-      // Scroll smoothly to treatments tabs
-      const el = document.getElementById("treatment-section-tabs");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
     }
   };
 
   return (
     <div className="w-full" id="treatment-section-tabs">
       {/* 3-Section Selector Navigation Bar */}
-      <div className="bg-white/90 backdrop-blur-md sticky top-16 z-30 border-b border-gray-200/80 shadow-xs">
+      <div className="bg-white/95 backdrop-blur-md sticky top-[68px] sm:top-[72px] z-30 border-b border-gray-200/80 shadow-xs">
         <div className="container mx-auto px-4 md:px-6 lg:px-8 py-4">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mb-3">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-2 mb-3">
             <span className="text-xs font-bold uppercase tracking-wider text-secondary flex items-center gap-1.5">
               <Sparkles size={14} />
               Select Healthcare Department:
@@ -99,7 +98,7 @@ function TreatmentsTabsContent() {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
             {TABS.map((tab) => {
               const isActive = activeTab === tab.id;
               const Icon = tab.icon;
@@ -109,56 +108,67 @@ function TreatmentsTabsContent() {
                   key={tab.id}
                   onClick={() => handleTabChange(tab.id)}
                   type="button"
-                  className={`group relative text-left p-4 rounded-2xl transition-all duration-300 border flex flex-col justify-between ${
+                  className={`group relative text-left p-4 sm:p-5 rounded-2xl transition-all duration-300 border flex flex-col justify-between ${
                     isActive
-                      ? "bg-primary text-white border-primary shadow-lg shadow-primary/15 scale-[1.01]"
-                      : "bg-gray-50/70 hover:bg-white text-primary border-gray-200 hover:border-secondary/40 hover:shadow-md"
+                      ? "bg-primary border-primary shadow-lg shadow-primary/20 ring-2 ring-primary/20"
+                      : "bg-white hover:bg-emerald-50/40 border-gray-200 hover:border-secondary/50 shadow-xs hover:shadow-md"
                   }`}
                 >
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <div className="flex items-center gap-2.5">
-                      <div
-                        className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all ${
-                          isActive
-                            ? "bg-secondary text-primary"
-                            : "bg-white text-secondary group-hover:bg-secondary/15 border border-gray-200 group-hover:border-secondary/30"
-                        }`}
-                      >
-                        <Icon size={18} />
-                      </div>
-                      <div>
-                        <h3 className="font-heading font-bold text-base leading-tight">
-                          {tab.title}
-                        </h3>
-                        <p className={`text-xs ${isActive ? "text-secondary font-medium" : "text-foreground/50"}`}>
-                          {tab.tamilTitle}
-                        </p>
-                      </div>
+                  {/* Top Row: Icon on left, Badge on right */}
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <div
+                      className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
+                        isActive
+                          ? "bg-secondary text-primary shadow-sm"
+                          : "bg-primary/10 text-primary group-hover:bg-secondary/20"
+                      }`}
+                    >
+                      <Icon size={20} />
                     </div>
 
                     <span
-                      className={`text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full shrink-0 ${
+                      className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shrink-0 transition-colors ${
                         isActive
-                          ? "bg-white/20 text-white"
-                          : "bg-secondary/10 text-secondary"
+                          ? "bg-white/15 text-white border border-white/20"
+                          : "bg-secondary/15 text-primary border border-secondary/30"
                       }`}
                     >
                       {tab.badge}
                     </span>
                   </div>
 
+                  {/* Middle: Title & Tamil Title */}
+                  <div>
+                    <h3
+                      className={`font-heading font-bold text-base sm:text-lg leading-tight transition-colors ${
+                        isActive ? "!text-white" : "!text-primary"
+                      }`}
+                    >
+                      {tab.title}
+                    </h3>
+                    <p
+                      className={`text-xs mt-1 font-semibold transition-colors ${
+                        isActive ? "text-secondary" : "text-secondary"
+                      }`}
+                    >
+                      {tab.tamilTitle}
+                    </p>
+                  </div>
+
+                  {/* Tagline */}
                   <p
-                    className={`text-xs line-clamp-2 mt-1 leading-relaxed ${
-                      isActive ? "text-white/80 font-light" : "text-foreground/65"
+                    className={`text-xs mt-2.5 leading-relaxed line-clamp-2 transition-colors ${
+                      isActive ? "text-white/85 font-light" : "text-foreground/70"
                     }`}
                   >
                     {tab.tagline}
                   </p>
 
+                  {/* Active Bottom Indicator */}
                   {isActive && (
                     <motion.div
                       layoutId="tabActiveIndicator"
-                      className="absolute -bottom-1 left-6 right-6 h-1 bg-secondary rounded-full"
+                      className="absolute -bottom-1 left-4 right-4 h-1 bg-secondary rounded-full"
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     />
                   )}
