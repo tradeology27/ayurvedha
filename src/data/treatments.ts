@@ -619,19 +619,19 @@ export const treatmentCategories: TreatmentCategory[] = [
         popular: true,
       },
       {
-        id: "juice-fasting",
-        name: "Juice Fasting",
-        tagline: "Liquid micronutrient feast to trigger accelerated cellular repair",
-        description: "Consuming raw, cold-pressed green vegetables, ash gourd, bottle gourd, wheatgrass, and citrus juices at scheduled intervals. Floods the bloodstream with minerals and phytonutrients without digestive burden.",
+        id: "honey-fasting",
+        name: "Honey Fasting",
+        tagline: "Therapeutic cleanse with pure raw honey and warm lemon water",
+        description: "A classical Naturopathy fasting regimen where patients consume pure, unprocessed wild honey diluted in lukewarm water with fresh lemon juice at calibrated intervals. Honey supplies direct bio-available glucose and vital minerals to nourish vital organs and prevent fatigue, while lemon alkalizes the system, accelerates metabolic fat burning, and flushes systemic toxins.",
         benefits: [
-          "Accelerates cellular autophagy and toxic elimination",
-          "Rapidly reduces systemic inflammation and joint swelling",
-          "Hydrates cells at deep intracellular levels",
-          "Assists in clearing arterial plaque and stabilizing blood pressure",
-          "Resets appetite and eradicates cravings for processed sugars"
+          "Provides instant cellular energy and prevents weakness or dizziness during fasting",
+          "Accelerates metabolic fat oxidation and supports healthy, sustainable weight loss",
+          "Cleanses the stomach, intestines, and colon of accumulated toxic wastes",
+          "Protects vital cardiac, hepatic, and nervous function with readily absorbed natural glucose",
+          "Soothes gastric inflammation and promotes mucosal gastrointestinal repair"
         ],
-        duration: "1 - 5 Days (Supervised)",
-        indications: ["Metabolic Syndrome", "Hypertension", "Uric Acid Arthropathy", "Obesity"],
+        duration: "1 - 3 Days (Doctor Supervised)",
+        indications: ["Weight Management / Obesity", "Sluggish Metabolism", "Toxemia", "Chronic Indigestion", "Fatigue"],
         popular: true,
       },
       {
@@ -664,21 +664,6 @@ export const treatmentCategories: TreatmentCategory[] = [
         ],
         duration: "1 - 2 Days",
         indications: ["Gastritis", "Acid Peptic Disease", "Irritable Bowel Symptoms", "Food Sensitivities"],
-      },
-      {
-        id: "dry-fasting",
-        name: "Dry Fasting",
-        tagline: "Short-duration absolute rest for intense metabolic cellular reset",
-        description: "Strictly monitored short-term abstinence from both food and water for a calculated window of hours under strict Naturopathic physician supervision. The body consumes metabolic water stored within fat cells.",
-        benefits: [
-          "Intense catabolic breakdown of pathological tissues and cysts",
-          "Drastic reduction in localized fluid retention and chronic edema",
-          "Powerful stimulation of systemic immune vigilance",
-          "High-efficiency mobilization of stubborn visceral adipose tissue",
-          "Calms allergic hypersensitivity reactions"
-        ],
-        duration: "Intermittent / 12-24 Hours (Medical Supervision Only)",
-        indications: ["Refractory Edema", "Stubborn Obesity", "Chronic Cysts", "Severe Allergies"],
       },
       {
         id: "immune-boosting-diet",
@@ -942,7 +927,7 @@ export const healthPackages = [
     idealFor: "Obesity, Visceral Adiposity, Cellulite, High Cholesterol",
     includes: [
       "Body Composition Analysis & Caloric Profiling",
-      "Supervised Fasting (Juice Fasting & Mono Diet)",
+      "Supervised Fasting (Honey Fasting & Mono Diet)",
       "Plantain Leaf Bath & Infrared Ray Therapy",
       "Herbal Steam Bath & Salt Glow Scrub",
       "Daily Zumba, Hydro-gym, and Aerobic Conditioning",

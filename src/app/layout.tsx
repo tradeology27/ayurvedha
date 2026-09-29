@@ -146,7 +146,7 @@ export default function RootLayout({
           { "@type": "MedicalTherapy", "name": "Plantain Leaf Sun Bath" },
           { "@type": "MedicalTherapy", "name": "Herbal Enema & Gastrointestinal Cleansing" },
           { "@type": "MedicalTherapy", "name": "Therapeutic Yoga, Asanas & Pranayama" },
-          { "@type": "MedicalTherapy", "name": "Juice Fasting & Organic Diet Therapy" }
+          { "@type": "MedicalTherapy", "name": "Honey Fasting & Organic Diet Therapy" }
         ],
         "address": {
           "@type": "PostalAddress",
