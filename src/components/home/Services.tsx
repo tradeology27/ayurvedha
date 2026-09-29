@@ -22,8 +22,8 @@ export default function Services({ hideExploreLink = false }: { hideExploreLink?
           </p>
         </div>
 
-        {/* 6 Specialised Treatments Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {/* 8 Specialised Treatments Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 max-w-7xl mx-auto">
           {specialisedTreatments.map((treatment, idx) => (
             <motion.div
               key={treatment.id}
@@ -39,16 +39,15 @@ export default function Services({ hideExploreLink = false }: { hideExploreLink?
                   src={treatment.image}
                   alt={treatment.name}
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, (max-width: 1400px) 33vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 
 
-
                 {/* Bottom title over image */}
                 <div className="absolute bottom-4 left-5 right-5 text-white">
-                  <h3 className="text-2xl font-heading font-bold text-white leading-tight">
+                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-white leading-tight">
                     {treatment.name}
                   </h3>
                 </div>

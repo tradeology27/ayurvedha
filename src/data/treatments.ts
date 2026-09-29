@@ -12,24 +12,6 @@ export interface SpecialisedTreatment {
 
 export const specialisedTreatments: SpecialisedTreatment[] = [
   {
-    id: "naturopathy-treatment",
-    name: "Naturopathy Treatment",
-    tamilName: "இயற்கை மருத்துவம்",
-    tagline: "Drug-free healing through nature's 5 elements",
-    description:
-      "A holistic approach using Space, Air, Fire, Water, and Earth to remove toxins and awaken your body's natural self-healing power without any medicines.",
-    benefits: [
-      "100% natural, safe, and drug-free",
-      "Treats the root cause, not just symptoms",
-      "Naturally balances blood sugar and pressure",
-      "Rejuvenates vital organs like the liver and kidneys",
-      "Improves digestion and deep sleep"
-    ],
-    duration: "Personalized Protocol (Daily / Residential)",
-    indications: ["Diabetes Mellitus", "Hypertension", "Digestive Disorders", "Obesity", "Allergies"],
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
     id: "massage-therapy",
     name: "Massage Therapy",
     tamilName: "மசாஜ் சிகிச்சை",
@@ -46,6 +28,60 @@ export const specialisedTreatments: SpecialisedTreatment[] = [
     duration: "45 - 60 mins",
     indications: ["Cervical & Lumbar Pain", "Sciatica", "Insomnia", "Anxiety & Fatigue", "Muscle Spasms"],
     image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
+    id: "acupuncture",
+    name: "Acupuncture",
+    tamilName: "அக்குபஞ்சர் சிகிச்சை",
+    tagline: "Sterile meridian needling for instant pain & neuro-energy balance",
+    description:
+      "An ancient, drugless science of stimulating specific energy channels using ultra-fine sterile needles to activate the body's self-healing mechanisms and release natural pain-relieving endorphins.",
+    benefits: [
+      "Rapid drug-free pain relief for chronic joint and spine conditions",
+      "Re-balances neuro-endocrine and autonomic nervous pathways",
+      "Significantly reduces migraine and chronic tension headache frequency",
+      "Relieves sciatica, nerve numbness, and muscular spasms",
+      "Strengthens immune resilience and vitality"
+    ],
+    duration: "30 - 45 mins",
+    indications: ["Cervical & Lumbar Spondylosis", "Sciatica", "Migraines", "Paralysis Rehab", "Chronic Pain"],
+    image: "/images/acupuncture_therapy.jpg"
+  },
+  {
+    id: "steam-bath",
+    name: "Steam Bath",
+    tamilName: "நீராவிக்குளியல்",
+    tagline: "Medicinal herbal steam for full-body cellular detox",
+    description:
+      "A therapeutic wooden chamber steam bath infused with medicinal herbs while keeping the head cool outside. Dilates pores, accelerates toxin elimination through sweat, and relieves deep muscular fatigue.",
+    benefits: [
+      "Flushes out deep cellular metabolic toxins through profuse perspiration",
+      "Eases chronic joint stiffness, back pain, and muscle knots",
+      "Cleanses and opens millions of skin pores for a healthy glow",
+      "Boosts peripheral blood circulation and metabolic rate",
+      "Relieves respiratory congestion and general body heaviness"
+    ],
+    duration: "15 - 25 mins",
+    indications: ["Toxin Buildup", "Rheumatism & Arthritis", "Muscle Spasms", "Sluggish Metabolism", "Bronchial Congestion"],
+    image: "/images/steam_bath_therapy.jpg"
+  },
+  {
+    id: "diet-therapy",
+    name: "Diet Therapy",
+    tamilName: "உணவு சிகிச்சை",
+    tagline: "Healing through living foods, juices & therapeutic nutrition",
+    description:
+      "Clinical natural nutrition using live sprouts, raw vegetable juices, organic fruits, and alkaline broths to cleanse internal organs, reverse metabolic disorders, and energize every cell.",
+    benefits: [
+      "Restores optimal alkaline balance across bodily tissues",
+      "Effectively reverses insulin resistance and regulates blood sugar",
+      "Supports liver and colon detoxification without pharmaceutical load",
+      "Promotes sustained fat loss and healthy digestion",
+      "Significantly boosts daily energy, vitality, and immunity"
+    ],
+    duration: "Personalized Protocol (Daily / Residential)",
+    indications: ["Type 2 Diabetes", "Obesity", "Hypertension", "Fatty Liver", "Digestive Disorders"],
+    image: "/images/diet_therapy.jpg"
   },
   {
     id: "mud-therapy",
@@ -144,43 +180,9 @@ export const treatmentCategories: TreatmentCategory[] = [
   {
     id: "specialised",
     name: "Specialised Therapies",
-    shortDesc: "Our 6 core signature treatments: Plantain-Leaf Bath, Naturopathy, Mud, Hydrotherapy, Massage & Yoga.",
+    shortDesc: "Our core signature treatments: Massage Therapy, Acupuncture, Steam Bath, Diet Therapy, Mud, Hydrotherapy, Yoga & Plantain-Leaf Bath.",
     iconName: "Sparkles",
     treatments: [
-      {
-        id: "plantain-leaf-bath",
-        name: "Plantain-Leaf Bath (வாழை இலைக்குளியல்)",
-        tagline: "Signature banana-leaf sunlight bath for intensive natural detox",
-        description:
-          "Kumar Nature Cure Hospital's iconic signature treatment. The body is wrapped comfortably in fresh green banana leaves under gentle morning sunlight. The therapeutic micro-greenhouse effect induces deep sweat, flushing stagnant cellular toxins, accelerating fat metabolism, and infusing natural chlorophyll.",
-        benefits: [
-          "Deep cellular detoxification through intensive natural perspiration",
-          "Infuses organic plant chlorophyll and bio-nutrients into the skin",
-          "Stimulates metabolic fat breakdown and tones subcutaneous layer",
-          "Clears skin blemishes and produces a revitalized natural glow",
-          "Leaves the body feeling remarkably light, energetic, and refreshed"
-        ],
-        duration: "30 - 45 mins",
-        indications: ["Weight Loss / Obesity", "Sluggish Metabolism", "Toxemia", "Dull Skin", "Chronic Fatigue"],
-        popular: true,
-      },
-      {
-        id: "naturopathy-treatment",
-        name: "Naturopathy Treatment (இயற்கை மருத்துவம்)",
-        tagline: "Drugless root-cause healing through the 5 elements of nature",
-        description:
-          "A complete drugless healing philosophy based on Panchamahabhutas (Space, Air, Fire, Water, Earth). Combines therapeutic fasting, raw juice therapy, natural diet correction, and lifestyle counseling to eliminate morbid toxins and empower the body's innate self-healing intelligence.",
-        benefits: [
-          "Completely drugless, natural & free of side effects",
-          "Treats the root cause of chronic illness rather than masking symptoms",
-          "Normalizes blood sugar, blood pressure, and cholesterol naturally",
-          "Rejuvenates vital organs: liver, kidneys, colon, and skin",
-          "Restores natural vitality, digestion, and restorative sleep"
-        ],
-        duration: "Personalized Protocol",
-        indications: ["Diabetes Mellitus", "Hypertension", "Digestive Disorders", "Obesity", "Allergies"],
-        popular: true,
-      },
       {
         id: "massage-therapy",
         name: "Massage Therapy (மசாஜ் சிகிச்சை)",
@@ -196,6 +198,57 @@ export const treatmentCategories: TreatmentCategory[] = [
         ],
         duration: "45 - 60 mins",
         indications: ["Cervical & Lumbar Pain", "Sciatica", "Insomnia", "Anxiety & Fatigue", "Muscle Spasms"],
+        popular: true,
+      },
+      {
+        id: "acupuncture",
+        name: "Acupuncture (அக்குபஞ்சர் சிகிச்சை)",
+        tagline: "Sterile meridian needling for instant pain & neuro-energy balance",
+        description:
+          "Gentle insertion of ultra-fine, sterile, single-use stainless steel needles into specific therapeutic acupoints along vital meridians. Stimulates the nervous system, releases pain-relieving endorphins, and balances organ energy naturally.",
+        benefits: [
+          "Rapid, drug-free pain relief for chronic musculoskeletal disorders",
+          "Balances neuro-endocrine and autonomic nervous pathways",
+          "Reduces frequency and severity of migraines and tension headaches",
+          "Relieves sciatica, nerve numbness, and muscular spasms",
+          "Strengthens immune surveillance and internal organ vitality"
+        ],
+        duration: "30 - 45 mins",
+        indications: ["Cervical / Lumbar Spondylosis", "Sciatica", "Migraines", "Paralysis Rehab", "Chronic Pain"],
+        popular: true,
+      },
+      {
+        id: "steam-bath",
+        name: "Steam Bath (நீராவிக்குளியல்)",
+        tagline: "Full-body medicinal herbal sweat therapy for rapid pore detoxification",
+        description:
+          "Full-body exposure to medicinal herbal steam inside a wooden chamber with the head kept comfortably cool outside. Moist heat dilates peripheral blood vessels, induces profuse sweating, and opens millions of skin pores to expel accumulated metabolic waste.",
+        benefits: [
+          "Eliminates deep metabolic toxins through profuse perspiration",
+          "Softens tense muscles and relieves joint stiffness",
+          "Rejuvenates skin texture and clears clogged pores",
+          "Improves peripheral blood and lymphatic circulation",
+          "Assists in weight management and metabolic stimulation"
+        ],
+        duration: "15 - 25 mins",
+        indications: ["Toxin Buildup", "Muscular Aches", "Rheumatism & Arthritis", "Sluggish Metabolism"],
+        popular: true,
+      },
+      {
+        id: "diet-therapy",
+        name: "Diet Therapy (உணவு சிகிச்சை)",
+        tagline: "Living enzyme nutrition, raw juices & organic food therapy",
+        description:
+          "Evidence-based clinical nutrition and therapeutic fasting protocols customized according to individual Prakriti. Utilizing activated sprouts, green alkaline juices, seasonal fruits, and healing broths to detoxify organs and reset metabolism.",
+        benefits: [
+          "Restores optimal alkaline balance across bodily tissues",
+          "Reverses insulin resistance and stabilizes blood glucose naturally",
+          "Accelerates cellular autophagy and systemic toxic elimination",
+          "Alleviates chronic digestive disorders, acidity, and constipation",
+          "Provides sustained natural energy, mental clarity, and vitality"
+        ],
+        duration: "Personalized Protocol (Daily / Residential)",
+        indications: ["Diabetes Mellitus", "Obesity", "Hypertension", "Fatty Liver", "Digestive Disorders"],
         popular: true,
       },
       {
@@ -247,6 +300,23 @@ export const treatmentCategories: TreatmentCategory[] = [
         ],
         duration: "45 - 60 mins",
         indications: ["Spinal Spondylosis", "Asthma & Bronchitis", "Depression & Anxiety", "Thyroid Imbalances"],
+        popular: true,
+      },
+      {
+        id: "plantain-leaf-bath",
+        name: "Plantain-Leaf Bath (வாழை இலைக்குளியல்)",
+        tagline: "Signature banana-leaf sunlight bath for intensive natural detox",
+        description:
+          "Kumar Nature Cure Hospital's iconic signature treatment. The body is wrapped comfortably in fresh green banana leaves under gentle morning sunlight. The therapeutic micro-greenhouse effect induces deep sweat, flushing stagnant cellular toxins, accelerating fat metabolism, and infusing natural chlorophyll.",
+        benefits: [
+          "Deep cellular detoxification through intensive natural perspiration",
+          "Infuses organic plant chlorophyll and bio-nutrients into the skin",
+          "Stimulates metabolic fat breakdown and tones subcutaneous layer",
+          "Clears skin blemishes and produces a revitalized natural glow",
+          "Leaves the body feeling remarkably light, energetic, and refreshed"
+        ],
+        duration: "30 - 45 mins",
+        indications: ["Weight Loss / Obesity", "Sluggish Metabolism", "Toxemia", "Dull Skin", "Chronic Fatigue"],
         popular: true,
       }
     ]

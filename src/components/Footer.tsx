@@ -75,12 +75,22 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <Link href="/treatments" className="text-white/80 hover:text-secondary transition-colors">
-                  Naturopathy Treatment
+                  Massage Therapy
                 </Link>
               </li>
               <li>
                 <Link href="/treatments" className="text-white/80 hover:text-secondary transition-colors">
-                  Massage Therapy
+                  Acupuncture
+                </Link>
+              </li>
+              <li>
+                <Link href="/treatments" className="text-white/80 hover:text-secondary transition-colors">
+                  Steam Bath
+                </Link>
+              </li>
+              <li>
+                <Link href="/treatments" className="text-white/80 hover:text-secondary transition-colors">
+                  Diet Therapy
                 </Link>
               </li>
               <li>

@@ -41,7 +41,7 @@ const categoryIconMap: Record<string, LucideIcon> = {
 
 export default function TreatmentExplorer() {
   const [activeCategoryId, setActiveCategoryId] = useState<string>("specialised");
-  const [selectedTreatmentId, setSelectedTreatmentId] = useState<string>("plantain-leaf-bath");
+  const [selectedTreatmentId, setSelectedTreatmentId] = useState<string>("massage-therapy");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
   const activeCategory = useMemo(() => {

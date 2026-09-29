@@ -44,8 +44,10 @@ export default function About() {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
-                  "Naturopathy Treatment",
                   "Massage therapy",
+                  "Acupuncture",
+                  "Steam bath",
+                  "Diet therapy",
                   "Mud therapy",
                   "Hydrotherapy",
                   "Yoga therapy",

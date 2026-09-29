@@ -260,10 +260,12 @@ export default function AppointmentForm() {
                   >
                     <option value="">Select treatment</option>
                     <option value="General Doctor Consultation">General Doctor Consultation</option>
-                    <option value="Naturopathy Treatment">Naturopathy Treatment (Drugless Detox)</option>
                     <option value="Massage therapy">Massage Therapy</option>
+                    <option value="Acupuncture">Acupuncture Therapy</option>
+                    <option value="Steam bath">Steam Bath (Herbal Steam)</option>
+                    <option value="Diet therapy">Diet Therapy (Clinical Nutrition)</option>
                     <option value="Mud therapy">Mud Therapy & Mud Bath</option>
-                    <option value="Hydrotherapy">Hydrotherapy & Steam Bath</option>
+                    <option value="Hydrotherapy">Hydrotherapy & Spinal Spray</option>
                     <option value="Yoga therapy">Yoga Therapy & Pranayama</option>
                     <option value="Plantain-leaf bath">Plantain-Leaf Bath (Banana Leaf Sun Bath)</option>
                     <option value="Dental Care">Dental Care (Dr. M. Anitha Sukumar, B.D.S.)</option>
