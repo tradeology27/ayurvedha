@@ -15,7 +15,7 @@ export default function ContactPage() {
   return (
     <>
       <PageHeader 
-        title="Contact Our 2 Hospitals" 
+        title="Contact Us" 
         breadcrumb={[{ name: "Contact", path: "/contact" }]} 
         bgImage="/images/contact_hero.jpg"
       />
@@ -23,14 +23,14 @@ export default function ContactPage() {
       {/* Two Campuses Cards */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest text-secondary">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-xs font-bold uppercase tracking-widest text-secondary inline-block mb-1">
               Karur, Tamil Nadu
             </span>
-            <h2 className="text-3xl font-heading font-bold text-primary mt-2">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-primary mt-2 mb-3 tracking-tight">
               Visit or Contact Our Hospital
             </h2>
-            <p className="text-foreground/70 font-light text-sm mt-1">
+            <p className="text-foreground/75 font-light text-base md:text-lg max-w-2xl mx-auto">
               Started in 2003 on Trichy National Highway, ~5km from Karur bus stand.
             </p>
           </div>
