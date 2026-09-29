@@ -93,7 +93,7 @@ export default function TreatmentExplorer() {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
             <input
               type="text"
-              placeholder="Search treatments (e.g., Enema, Mud Pack, Shirodhara, Sciatica)..."
+              placeholder="Search treatments (e.g., Enema, Mud Pack, Yoga, Sciatica)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-12 pr-4 py-3.5 rounded-full border border-gray-200 bg-background/50 focus:outline-none focus:ring-2 focus:ring-secondary/50 text-foreground transition-all shadow-sm"
