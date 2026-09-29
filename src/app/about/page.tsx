@@ -85,11 +85,10 @@ export default function AboutPage() {
                 {[
                   "Started in 2003 with over 20+ years of clinical experience",
                   "10,000 sq.ft. of calm, serene greenery for mind & body peace",
-                  "Specialized in Weight Loss, Pain Management & Natural Detox",
-                  "Full-fledged dental clinic: Aligners, Braces & Root Canal",
-                  "Specialized Plantain-leaf bath, Mud therapy, Yoga & Hydrotherapy",
                   "Comfortable accommodation to suit an individual's budget",
                   "24/7 care supervised by qualified and experienced doctors",
+                  "Specialized Plantain-leaf bath, Mud therapy & Hydrotherapy",
+                  "Full-fledged dental clinic led by experienced dental surgeons",
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3">
                     <CheckCircle2 className="text-secondary shrink-0" size={18} />

@@ -47,18 +47,14 @@ export default function About() {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
-                  "Weight loss treatments",
-                  "Pain management",
-                  "Natural detox & rejuvenation",
-                  "Dental aligners & braces",
-                  "Root canal treatments",
-                  "Naturopathy treatment",
-                  "Mud therapy",
-                  "Yoga therapy",
                   "Massage therapy",
-                  "Hydrotherapy",
-                  "Plantain-leaf bath",
                   "Acupuncture",
+                  "Steam bath",
+                  "Diet therapy",
+                  "Mud therapy",
+                  "Hydrotherapy",
+                  "Yoga therapy",
+                  "Plantain-leaf bath",
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-2.5">
                     <CheckCircle2 className="text-secondary shrink-0" size={18} />
