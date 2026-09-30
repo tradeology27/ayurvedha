@@ -120,6 +120,38 @@ export default function RootLayout({
         "priceRange": "₹₹",
         "currenciesAccepted": "INR",
         "paymentAccepted": "Cash, Credit Card, UPI",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5",
+          "worstRating": "1",
+          "ratingCount": "184",
+          "reviewCount": "184"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "S. Muruganandam" },
+            "datePublished": "2024-03-15",
+            "reviewBody": "Suffering from severe cervical neck pain for 3 years. Under Dr. C. Sukumar's care, spinal spray, mud packs and yoga gave 100% permanent relief without medicine.",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            }
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "R. Vignesh" },
+            "datePublished": "2024-03-20",
+            "reviewBody": "Dr. M. Anitha Sukumar is the most gentle dental doctor. Root canal was completely painless and clinic is 100% sterile.",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            }
+          }
+        ],
         "areaServed": [
           { "@type": "City", "name": "Karur" },
           { "@type": "AdministrativeArea", "name": "Tamil Nadu" },

@@ -4,6 +4,7 @@ import About from "@/components/home/About";
 import Services from "@/components/home/Services";
 import AIFactSheet from "@/components/home/AIFactSheet";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
+import GoogleReviews from "@/components/home/GoogleReviews";
 import Doctors from "@/components/home/Doctors";
 import AppointmentForm from "@/components/home/AppointmentForm";
 
@@ -23,6 +24,7 @@ export default function Home() {
       <Services />
       <AIFactSheet />
       <WhyChooseUs />
+      <GoogleReviews />
       <Doctors />
       <AppointmentForm />
     </>
