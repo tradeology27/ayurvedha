@@ -85,7 +85,7 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-20 max-w-7xl mx-auto">
           {reasons.map((feat, idx) => (
             <motion.div
               key={idx}
@@ -93,7 +93,7 @@ export default function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group relative bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-md border border-white/10 hover:border-white/30 rounded-3xl p-7 transition-all duration-300 flex flex-col justify-start hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] overflow-hidden"
+              className="group relative bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-md border border-white/10 hover:border-white/30 rounded-3xl p-5 sm:p-6 xl:p-7 transition-all duration-300 flex flex-col justify-start hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] overflow-hidden"
             >
               <Link href={feat.link} className="absolute inset-0 z-20 cursor-pointer rounded-3xl">
                 <span className="sr-only">Read more about {feat.title}</span>

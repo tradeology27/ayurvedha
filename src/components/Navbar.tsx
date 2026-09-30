@@ -90,33 +90,33 @@ export default function Navbar() {
           : "bg-primary/80 backdrop-blur-sm py-4 border-b border-white/10"
       }`}
     >
-      <div className="container mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-2">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+        <div className="flex items-center justify-between gap-2 lg:gap-3">
           
-          {/* Logo with proper responsive text */}
-          <Link href="/" className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1 lg:flex-none">
-            <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden shadow-md shrink-0 border-2 border-white/20">
+          {/* Logo with responsive scaling */}
+          <Link href="/" className="flex items-center gap-2 sm:gap-2.5 xl:gap-3 min-w-0 shrink-0">
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 xl:w-12 xl:h-12 rounded-full overflow-hidden shadow-md shrink-0 border-2 border-white/20">
               <Image src="/images/knch_emblem.jpg" alt="KNCH Logo" fill sizes="48px" className="object-cover" />
             </div>
             <div className="flex flex-col min-w-0">
-              <span className={`text-sm sm:text-xl font-heading font-bold leading-tight truncate notranslate ${isDarkNav ? 'text-primary' : 'text-white'}`}>
+              <span className={`text-sm sm:text-base xl:text-xl font-heading font-bold leading-tight truncate notranslate ${isDarkNav ? 'text-primary' : 'text-white'}`}>
                 Kumar Hospital
               </span>
-              <span className={`hidden sm:block text-xs font-semibold tracking-tight whitespace-nowrap notranslate ${isDarkNav ? 'text-secondary' : 'text-secondary'}`}>
+              <span className={`hidden xl:block text-[11px] font-semibold tracking-tight whitespace-nowrap notranslate ${isDarkNav ? 'text-secondary' : 'text-secondary'}`}>
                 Nature Cure & Dental • Est. 2003
               </span>
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7">
+          {/* Desktop Navigation Links (scaled for 1024px+) */}
+          <nav className="hidden lg:flex items-center gap-2.5 xl:gap-5 2xl:gap-7 shrink-0">
             {navLinks.map((link) => {
               const isActive = pathname === link.path;
               return (
                 <Link
                   key={link.name}
                   href={link.path}
-                  className={`text-sm font-medium transition-colors hover:text-secondary ${
+                  className={`text-xs xl:text-sm font-medium transition-colors px-1.5 py-1 hover:text-secondary whitespace-nowrap ${
                     isActive 
                       ? "text-secondary font-bold" 
                       : (isDarkNav ? "text-foreground/80 hover:text-primary" : "text-white/90")
@@ -129,27 +129,27 @@ export default function Navbar() {
           </nav>
 
           {/* Direct Phone & CTA Button (Desktop >= 1024px) */}
-          <div className="hidden lg:flex items-center gap-3 shrink-0">
+          <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
             {/* Custom Language Switcher */}
             <div className="relative shrink-0">
               <select
                 value={currentLang}
                 onChange={(e) => handleLanguageChange(e.target.value)}
-                className={`appearance-none bg-transparent text-xs font-semibold py-2 pl-3 pr-7 rounded-full border transition-all cursor-pointer outline-none notranslate ${
+                className={`appearance-none bg-transparent text-[11px] xl:text-xs font-semibold py-1.5 xl:py-2 pl-2.5 pr-6 xl:pr-7 rounded-full border transition-all cursor-pointer outline-none notranslate ${
                   isDarkNav
                     ? "border-gray-200 text-primary hover:bg-gray-50"
                     : "border-white/30 text-white hover:bg-white/10"
                 }`}
               >
-                <option value="" className="text-black hidden">Languages</option>
+                <option value="" className="text-black hidden">Lang</option>
                 <option value="en" className="text-black">English</option>
                 <option value="ta" className="text-black">தமிழ் (Tamil)</option>
                 <option value="hi" className="text-black">हिन्दी (Hindi)</option>
                 <option value="ml" className="text-black">മലയാളம் (Malayalam)</option>
                 <option value="te" className="text-black">తెలుగు (Telugu)</option>
               </select>
-              <div className={`absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none ${isDarkNav ? "text-primary" : "text-white"}`}>
-                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div className={`absolute right-2 xl:right-2.5 top-1/2 -translate-y-1/2 pointer-events-none ${isDarkNav ? "text-primary" : "text-white"}`}>
+                <svg width="8" height="5" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
@@ -159,21 +159,22 @@ export default function Navbar() {
             
             <a
               href="tel:+918148129709"
-              className={`flex items-center gap-2 text-xs font-semibold py-2 px-4 rounded-full transition-all shadow-md group animate-pulse hover:animate-none shrink-0 ${
+              className={`flex items-center gap-1.5 xl:gap-2 text-[11px] xl:text-xs font-bold py-1.5 xl:py-2 px-3 xl:px-4 rounded-full transition-all shadow-sm group animate-pulse hover:animate-none shrink-0 whitespace-nowrap ${
                 isDarkNav
                   ? "text-white bg-green-600 hover:bg-green-700"
                   : "text-white bg-[#25D366] hover:bg-[#20bd5a]"
               }`}
             >
-              <Phone size={14} className="text-white fill-white shrink-0" />
-              <span className="whitespace-nowrap">Call: 81481 29709</span>
+              <Phone size={13} className="text-white fill-white shrink-0" />
+              <span className="hidden 2xl:inline">Call: </span>
+              <span>81481 29709</span>
             </a>
 
             <Link
               href="/contact"
-              className="bg-secondary hover:bg-secondary/90 text-primary font-bold px-5 py-2.5 rounded-full text-xs sm:text-sm transition-all shadow-sm shrink-0 whitespace-nowrap"
+              className="bg-secondary hover:bg-secondary/90 text-primary font-bold px-3.5 xl:px-5 py-2 xl:py-2.5 rounded-full text-xs xl:text-sm transition-all shadow-sm shrink-0 whitespace-nowrap"
             >
-              Book Consultation
+              <span className="hidden sm:inline">Book </span>Consultation
             </Link>
           </div>
 
