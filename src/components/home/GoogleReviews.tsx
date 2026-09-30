@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, CheckCircle2, ExternalLink, MessageSquareQuote, ShieldCheck, Heart, Sparkles, Calendar } from "lucide-react";
 import { patientReviews, googleRatingSummary } from "@/data/reviews";
@@ -156,8 +157,14 @@ export default function GoogleReviews() {
                   {/* Top Row: User Avatar, Name, Location & Verified Google Badge */}
                   <div className="flex items-start justify-between gap-3 mb-4">
                     <div className="flex items-center gap-3">
-                      <div className={`w-11 h-11 rounded-full ${rev.avatarColor} text-white font-bold flex items-center justify-center text-sm shadow-md shrink-0`}>
-                        {rev.name.charAt(0)}
+                      <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20 shadow-sm shrink-0 bg-stone-100">
+                        <Image
+                          src={rev.avatarImage || "/images/knch_emblem.jpg"}
+                          alt={rev.name}
+                          fill
+                          sizes="48px"
+                          className="object-cover"
+                        />
                       </div>
                       <div>
                         <h4 className="font-heading font-bold text-primary text-sm sm:text-base leading-tight">

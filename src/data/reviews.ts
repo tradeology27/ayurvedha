@@ -8,7 +8,8 @@ export interface PatientReview {
   treatment: string;
   review: string;
   verified: boolean;
-  avatarColor: string;
+  avatarImage: string;
+  initials: string;
 }
 
 export const googleRatingSummary = {
@@ -31,7 +32,8 @@ export const patientReviews: PatientReview[] = [
     treatment: "Cervical Spondylosis & Spine Care",
     review: "I was suffering from severe cervical neck pain and back stiffness for over 3 years. Under Dr. C. Sukumar's care, the spinal spray, mud packs, and clinical yoga gave me 100% permanent relief without a single allopathic tablet. Truly remarkable drugless healing!",
     verified: true,
-    avatarColor: "bg-emerald-600",
+    avatarImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop",
+    initials: "SM",
   },
   {
     id: "rev-2",
@@ -43,7 +45,8 @@ export const patientReviews: PatientReview[] = [
     treatment: "7-Day Residential Nature Cure Stay",
     review: "Spent 7 days at the P.K. Hospital campus in Sengal. The 24 acres of lush greenery, organic raw juices, daily mud bath, and peaceful atmosphere completely rejuvenated my mind and body. The doctor's daily personal attention is exceptional.",
     verified: true,
-    avatarColor: "bg-amber-600",
+    avatarImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=300&auto=format&fit=crop",
+    initials: "KG",
   },
   {
     id: "rev-3",
@@ -55,7 +58,8 @@ export const patientReviews: PatientReview[] = [
     treatment: "Root Canal & Ceramic Crown",
     review: "Dr. M. Anitha Sukumar is the most gentle dental doctor I have ever met. The clinic is 100% sterile and advanced. My root canal was completely painless, and the crown fits perfectly. Highly recommend her for family dental care in Karur!",
     verified: true,
-    avatarColor: "bg-teal-600",
+    avatarImage: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format&fit=crop",
+    initials: "RV",
   },
   {
     id: "rev-4",
@@ -67,7 +71,8 @@ export const patientReviews: PatientReview[] = [
     treatment: "Plantain-Leaf Sun Bath & Detox",
     review: "The signature plantain-leaf bath and herbal steam therapy was a transformative experience. Lost 5 kg in 10 days, my high sugar levels stabilized, and I feel energized. Dr. Sukumar's knowledge in Nature Cure is truly world-class.",
     verified: true,
-    avatarColor: "bg-blue-600",
+    avatarImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=300&auto=format&fit=crop",
+    initials: "PR",
   },
   {
     id: "rev-5",
@@ -79,7 +84,8 @@ export const patientReviews: PatientReview[] = [
     treatment: "Chronic Gastritis & Digestive Detox",
     review: "Suffered from chronic acid reflux and digestive problems for a decade. The honey fasting, diet therapy, and abdominal mud packs cured my issue completely. Clean inpatient cottages with very affordable budget charges.",
     verified: true,
-    avatarColor: "bg-purple-600",
+    avatarImage: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=300&auto=format&fit=crop",
+    initials: "KM",
   },
   {
     id: "rev-6",
@@ -91,6 +97,7 @@ export const patientReviews: PatientReview[] = [
     treatment: "Invisible Aligners & Teeth Scaling",
     review: "Got clear aligners and scaling done by Dr. Anitha. She explained each step patiently. Very modern dental setup with hygienic protocols and polite staff. Best dental care center in Karur!",
     verified: true,
-    avatarColor: "bg-rose-600",
+    avatarImage: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=300&auto=format&fit=crop",
+    initials: "AD",
   },
 ];
