@@ -27,34 +27,36 @@ export default function About() {
 
             <div className="space-y-4 text-foreground/80 font-light leading-relaxed mb-8 text-base md:text-lg">
               <p>
-                <strong>Kumar Nature Cure Hospital</strong> was started in <strong>2003</strong>. It is located at <strong>Shakthi Nagar, Gandhigramam</strong> which is about <strong>5km from Karur bus stand in Trichy National Highway</strong>.
+                <strong>Kumar Nature Cure Hospital</strong> was started in <strong>2003</strong>. It is located at <strong>Shakthi Nagar, Gandhigramam</strong> which is about <strong>3km from Karur bus stand</strong>.
               </p>
               <p>
                 The hospital is situated in about <strong>10,000 sq.ft. of land</strong> surrounded by a calm and serene atmosphere and full of greenery, which provides peace and relaxation of mind and body.
               </p>
-              <p className="bg-emerald-50/70 border-l-4 border-primary p-4 rounded-r-xl text-foreground/90 font-normal text-base leading-relaxed">
-                We specialize in weight loss treatments, pain management, natural detox and rejuvenation, dental aligners, dental braces, and root canal treatments. Alongside these, we offer naturopathy treatment, mud therapy, yoga therapy, massage therapy, hydrotherapy, and plantain-leaf bath, all designed to heal the body in a gentle, natural way.
-              </p>
               <p>
                 <strong>Our hospital</strong> provides modern and comfortable accommodation to suit an individual&apos;s budget. We recommend patients to stay in our premises which is supervised by qualified and experienced doctors.
               </p>
+              <div className="bg-emerald-50/70 border-l-4 border-primary p-4 rounded-r-xl text-foreground/90 font-normal text-base leading-relaxed">
+                <p>
+                  We specialize in <strong>weight loss treatments</strong>, <strong>pain management</strong>, <strong>natural detox and rejuvenation</strong>, <strong>dental aligners</strong>, <strong>dental braces</strong>, and <strong>root canal treatments</strong>.
+                </p>
+              </div>
             </div>
 
-            {/* Specialised Treatments List */}
+            {/* Naturopathy Treatments List with Bullet Points */}
             <div className="bg-background rounded-2xl p-5 sm:p-6 border border-gray-200/80 mb-8">
               <h3 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-primary mb-3.5">
-                We Do Offer Specialised Treatments Like:
+                We Offer Naturopathy Treatments Which Include:
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3.5">
                 {[
+                  "Mud therapy",
+                  "Yoga therapy",
                   "Massage therapy",
-                  "Acupuncture",
+                  "Hydrotherapy",
+                  "Plantain-leaf bath",
                   "Steam bath",
                   "Diet therapy",
-                  "Mud therapy",
-                  "Hydrotherapy",
-                  "Yoga therapy",
-                  "Plantain-leaf bath",
+                  "Acupuncture",
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-2.5">
                     <CheckCircle2 className="text-secondary shrink-0" size={18} />
@@ -62,6 +64,9 @@ export default function About() {
                   </div>
                 ))}
               </div>
+              <p className="text-xs sm:text-sm text-foreground/75 font-medium italic border-t border-gray-200/60 pt-3">
+                All designed to heal the body in a gentle, natural way.
+              </p>
             </div>
 
             {/* Action Buttons */}
@@ -109,7 +114,7 @@ export default function About() {
                   Kumar Nature Cure Hospital
                 </p>
                 <p className="text-white/80 text-xs">
-                  Main Center • Shakthi Nagar (Trichy Highway, 5km from Bus Stand)
+                  Main Center • Shakthi Nagar (Trichy Highway, 3km from Bus Stand)
                 </p>
               </div>
             </div>

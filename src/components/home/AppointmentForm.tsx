@@ -90,7 +90,7 @@ export default function AppointmentForm() {
                     <h4 className="font-bold text-white">Main Location</h4>
                     <p className="text-white/70 text-xs mt-0.5 leading-relaxed">
                       Shakthi Nagar, Gandhigramam, Karur<br />
-                      Trichy National Highway (~5km from Bus Stand)
+                      Trichy National Highway (~3km from Bus Stand)
                     </p>
                   </div>
                 </div>

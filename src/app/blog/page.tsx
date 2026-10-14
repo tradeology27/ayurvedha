@@ -34,7 +34,7 @@ const blogPosts = [
     excerpt: "All disease begins in poor digestion and toxemia. Learn 5 essential dietary rules for natural detoxification and strong immunity.",
     image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2000&auto=format&fit=crop",
     date: "May 10, 2024",
-    author: "Dr. M. Anitha Sukumar, BDS, DNYS",
+    author: "Dr. M. Anitha Sukumar, BDS",
     category: "Diet & Nutrition",
   },
 ];

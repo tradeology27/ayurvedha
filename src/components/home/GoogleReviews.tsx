@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { Star, CheckCircle2, ExternalLink, MessageSquareQuote, ShieldCheck, Heart, Sparkles, Calendar } from "lucide-react";
+import { motion } from "framer-motion";
+import { Star, CheckCircle2, ExternalLink, MessageSquareQuote, Sparkles, Calendar } from "lucide-react";
 import { patientReviews, googleRatingSummary } from "@/data/reviews";
 import Link from "next/link";
 
@@ -32,12 +31,6 @@ function GoogleIcon({ className = "w-5 h-5" }: { className?: string }) {
 }
 
 export default function GoogleReviews() {
-  const [activeFilter, setActiveFilter] = useState<"all" | "naturopathy" | "stay" | "dental">("all");
-
-  const filteredReviews = activeFilter === "all"
-    ? patientReviews
-    : patientReviews.filter((r) => r.department === activeFilter);
-
   return (
     <section className="py-20 md:py-28 bg-gradient-to-b from-stone-50 via-white to-background relative overflow-hidden border-t border-gray-100">
       {/* Decorative background glows */}
@@ -118,101 +111,76 @@ export default function GoogleReviews() {
           </div>
         </div>
 
-        {/* Category Filter Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10">
-          {[
-            { id: "all", label: "All Reviews (6)" },
-            { id: "naturopathy", label: "🌿 Nature Cure & Spine Care (2)" },
-            { id: "stay", label: "🏡 24-Acre Residential Stay (2)" },
-            { id: "dental", label: "🦷 Dental Care Clinic (2)" },
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveFilter(tab.id as any)}
-              className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
-                activeFilter === tab.id
-                  ? "bg-primary text-white shadow-md"
-                  : "bg-white text-foreground/75 border border-gray-200 hover:border-secondary hover:text-primary shadow-2xs"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Reviews Grid */}
+        {/* Reviews Grid (Direct display without filters) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
-          <AnimatePresence mode="popLayout">
-            {filteredReviews.map((rev, idx) => (
-              <motion.div
-                key={rev.id}
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.35, delay: idx * 0.05 }}
-                className="bg-white rounded-3xl p-6 sm:p-7 border border-gray-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5"
-              >
-                <div>
-                  {/* Top Row: User Avatar, Name, Location & Verified Google Badge */}
-                  <div className="flex items-start justify-between gap-3 mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20 shadow-sm shrink-0 bg-stone-100">
-                        <Image
-                          src={rev.avatarImage || "/images/knch_emblem.jpg"}
-                          alt={rev.name}
-                          fill
-                          sizes="48px"
-                          className="object-cover"
-                        />
-                      </div>
-                      <div>
-                        <h4 className="font-heading font-bold text-primary text-sm sm:text-base leading-tight">
-                          {rev.name}
-                        </h4>
-                        <p className="text-[11px] text-foreground/60 font-medium">
-                          {rev.location} • <span className="text-foreground/45">{rev.date}</span>
-                        </p>
-                      </div>
+          {patientReviews.map((rev, idx) => (
+            <motion.div
+              key={rev.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.35, delay: idx * 0.05 }}
+              className="bg-white rounded-3xl p-6 sm:p-7 border border-gray-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5"
+            >
+              <div>
+                {/* Top Row: User Avatar, Name, Location & Verified Google Badge */}
+                <div className="flex items-start justify-between gap-3 mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20 shadow-sm shrink-0 bg-stone-100">
+                      <Image
+                        src={rev.avatarImage || "/images/knch_emblem.jpg"}
+                        alt={rev.name}
+                        fill
+                        sizes="48px"
+                        className="object-cover"
+                      />
                     </div>
-
-                    <div className="flex items-center gap-1 bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-0.5 rounded-full border border-blue-100 shrink-0">
-                      <GoogleIcon className="w-3.5 h-3.5" />
-                      <span>Verified</span>
+                    <div>
+                      <h4 className="font-heading font-bold text-primary text-sm sm:text-base leading-tight">
+                        {rev.name}
+                      </h4>
+                      <p className="text-[11px] text-foreground/60 font-medium">
+                        {rev.location} • <span className="text-foreground/45">{rev.date}</span>
+                      </p>
                     </div>
                   </div>
 
-                  {/* Star Rating & Treatment Tag */}
-                  <div className="flex items-center justify-between gap-2 mb-3 pb-3 border-b border-gray-100">
-                    <div className="flex items-center gap-0.5 text-amber-400">
-                      {[...Array(rev.rating)].map((_, i) => (
-                        <Star key={i} size={15} className="fill-amber-400 text-amber-400" />
-                      ))}
-                    </div>
-                    <span className="text-[10px] font-bold text-secondary bg-secondary/10 px-2.5 py-1 rounded-full uppercase tracking-wider truncate max-w-[160px]">
-                      {rev.treatment}
-                    </span>
-                  </div>
-
-                  {/* Review Text */}
-                  <div className="relative">
-                    <MessageSquareQuote size={20} className="text-gray-200 absolute -top-1 -left-1 pointer-events-none" />
-                    <p className="text-xs sm:text-sm text-foreground/80 font-normal leading-relaxed pl-4 italic">
-                      &ldquo;{rev.review}&rdquo;
-                    </p>
+                  <div className="flex items-center gap-1 bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-0.5 rounded-full border border-blue-100 shrink-0">
+                    <GoogleIcon className="w-3.5 h-3.5" />
+                    <span>Verified</span>
                   </div>
                 </div>
 
-                {/* Card Footer: Verified Trust Indicator */}
-                <div className="mt-5 pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-foreground/60">
-                  <span className="flex items-center gap-1 text-emerald-700 font-semibold">
-                    <CheckCircle2 size={13} className="text-emerald-600" /> Verified Recovery
+                {/* Star Rating & Treatment Tag */}
+                <div className="flex items-center justify-between gap-2 mb-3 pb-3 border-b border-gray-100">
+                  <div className="flex items-center gap-0.5 text-amber-400">
+                    {[...Array(rev.rating)].map((_, i) => (
+                      <Star key={i} size={15} className="fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+                  <span className="text-[10px] font-bold text-secondary bg-secondary/10 px-2.5 py-1 rounded-full uppercase tracking-wider truncate max-w-[160px]">
+                    {rev.treatment}
                   </span>
-                  <span className="text-[10px] text-foreground/50">Google Reviews</span>
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+
+                {/* Review Text */}
+                <div className="relative">
+                  <MessageSquareQuote size={20} className="text-gray-200 absolute -top-1 -left-1 pointer-events-none" />
+                  <p className="text-xs sm:text-sm text-foreground/80 font-normal leading-relaxed pl-4 italic">
+                    &ldquo;{rev.review}&rdquo;
+                  </p>
+                </div>
+              </div>
+
+              {/* Card Footer: Verified Trust Indicator */}
+              <div className="mt-5 pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-foreground/60">
+                <span className="flex items-center gap-1 text-emerald-700 font-semibold">
+                  <CheckCircle2 size={13} className="text-emerald-600" /> Verified Recovery
+                </span>
+                <span className="text-[10px] text-foreground/50">Google Reviews</span>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* Direct Action Bar: Write a Review on Google & Book Appointment */}

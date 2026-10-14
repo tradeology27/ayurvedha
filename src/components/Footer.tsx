@@ -240,12 +240,44 @@ export default function Footer() {
           <Link href="/contact" className="text-white/80 hover:text-secondary transition-colors">Contact</Link>
         </div>
 
-        {/* Bottom copyright */}
-        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-light text-white/60">
-          <p>
-            &copy; {new Date().getFullYear()} Kumar Nature Cure Hospital. All rights reserved.
-          </p>
-          <p className="flex items-center gap-1">
+        {/* Bottom copyright & Attribution */}
+        <div className="border-t border-white/10 pt-6 flex flex-col lg:flex-row items-center justify-between gap-4 text-xs font-light text-white/70">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
+            <p>
+              &copy; {new Date().getFullYear()} Kumar Nature Cure Hospital.
+            </p>
+            <span className="hidden sm:inline text-white/30">•</span>
+            <a
+              href="https://www.iinfovision.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-secondary/40 text-white/80 hover:text-white transition-all group shadow-sm"
+              title="I Info Vision - IT Solutions & Web Development"
+            >
+              <Image
+                src="/images/i-info-vision-logo.png"
+                alt="I Info Vision"
+                width={20}
+                height={20}
+                className="w-5 h-5 rounded-full object-cover shrink-0 shadow-sm ring-1 ring-white/20"
+              />
+              <span className="text-[11px] sm:text-xs tracking-wide">
+                Developed by{" "}
+                <span className="font-semibold text-white group-hover:text-secondary transition-colors">
+                  I Info Vision
+                </span>
+                <span className="text-white/40 mx-1.5">•</span>
+                <span>
+                  All rights reserved by{" "}
+                  <span className="font-medium text-white group-hover:text-secondary transition-colors">
+                    I Info Vision
+                  </span>
+                </span>
+              </span>
+            </a>
+          </div>
+
+          <p className="flex items-center gap-1.5 text-xs text-white/60">
             <span>Natural drugless healing with care</span>
             <Heart size={12} className="text-secondary fill-secondary" />
             <span>Karur, Tamil Nadu</span>

@@ -71,14 +71,17 @@ export default function AboutPage() {
                 Founded in <strong>2003</strong>, <strong>Kumar Nature Cure Hospital (KNCH)</strong> was born out of a profound vision to offer pure, drugless healing to people suffering from chronic diseases, spinal conditions, stress, and lifestyle disorders.
               </p>
 
-              <div className="bg-emerald-50/80 border-l-4 border-primary p-4 rounded-r-2xl">
+              <div className="bg-emerald-50/80 border-l-4 border-primary p-4 rounded-r-2xl space-y-3">
                 <p className="text-foreground/90 text-sm md:text-base leading-relaxed font-normal">
-                  We specialize in weight loss treatments, pain management, natural detox and rejuvenation, dental aligners, dental braces, and root canal treatments. Alongside these, we offer naturopathy treatment, mud therapy, yoga therapy, massage therapy, hydrotherapy, and plantain-leaf bath, all designed to heal the body in a gentle, natural way.
+                  We specialize in <strong>weight loss treatments</strong>, <strong>pain management</strong>, <strong>natural detox and rejuvenation</strong>, <strong>dental aligners</strong>, <strong>dental braces</strong>, and <strong>root canal treatments</strong>.
+                </p>
+                <p className="text-foreground/90 text-sm md:text-base leading-relaxed font-normal">
+                  <strong>Our hospital</strong> provides modern and comfortable accommodation to suit an individual&apos;s budget. We recommend patients to stay in our premises which is supervised by qualified and experienced doctors.
                 </p>
               </div>
 
               <p className="text-foreground/80 font-light leading-relaxed">
-                Our main center at <strong>Shakthi Nagar, Gandhigramam</strong> (located on Trichy National Highway, ~5km from Karur bus stand) brings comprehensive natural care and dental services close to the heart of Karur. In addition, our <strong>24 acres serene greenery campus at P.K. Hospital (started in 2017)</strong> provides patients with a peaceful sanctuary away from noise, pollution, and daily stress.
+                Our main center at <strong>Shakthi Nagar, Gandhigramam</strong> (located on Trichy National Highway, ~3km from Karur bus stand) brings comprehensive natural care and dental services close to the heart of Karur. In addition, our <strong>24 acres serene greenery campus at P.K. Hospital (started in 2017)</strong> provides patients with a peaceful sanctuary away from noise, pollution, and daily stress.
               </p>
 
               <div className="space-y-3 pt-2">

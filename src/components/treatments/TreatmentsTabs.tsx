@@ -43,7 +43,7 @@ const TABS: TabItem[] = [
     id: "dental",
     title: "Dental Care Clinic",
     tamilTitle: "பல் மருத்துவ சிகிச்சை",
-    tagline: "Comprehensive oral care by Dr. M. Anitha Sukumar, B.D.S., D.N.Y.S.",
+    tagline: "Comprehensive oral care by Dr. M. Anitha Sukumar, B.D.S.",
     icon: Smile,
     badge: "20+ Years",
   },

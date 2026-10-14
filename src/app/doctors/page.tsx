@@ -7,7 +7,7 @@ import { Phone, Clock, MapPin, CheckCircle2, Stethoscope, Sparkles, Calendar } f
 
 export const metadata: Metadata = {
   title: "Specialist Doctors | Dr. C. Sukumar & Dr. M. Anitha Sukumar",
-  description: "Meet Dr. C. Sukumar (BNYS, Naturopathy Specialist) and Dr. M. Anitha Sukumar (BDS, DNYS, Dental Specialist). Over 20 years of clinical healthcare excellence in Karur.",
+  description: "Meet Dr. C. Sukumar (BNYS, Naturopathy Specialist) and Dr. M. Anitha Sukumar (BDS, Dental Specialist). Over 20 years of clinical healthcare excellence in Karur.",
   alternates: {
     canonical: "/doctors",
   },

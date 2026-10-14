@@ -211,7 +211,7 @@ export default function DentalShowcase() {
                   KNCH Advanced Dental Clinic
                 </div>
                 <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary">
-                  Dr. M. Anitha Sukumar, B.D.S., D.N.Y.S.
+                  Dr. M. Anitha Sukumar, B.D.S.
                 </h3>
                 <p className="text-foreground/75 text-sm md:text-base mt-1">
                   Dental Surgeon & Vice President &bull; <strong>20+ Years of Clinical Dental Excellence</strong>

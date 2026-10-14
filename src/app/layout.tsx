@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     "Diet Therapy Tamil Nadu",
     "இயற்கை மருத்துவமனை கரூர்"
   ],
-  authors: [{ name: "Dr. C. Sukumar, BNYS" }, { name: "Dr. M. Anitha Sukumar, BDS, DNYS" }],
+  authors: [{ name: "Dr. C. Sukumar, BNYS" }, { name: "Dr. M. Anitha Sukumar, BDS" }],
   creator: "Kumar Nature Cure Hospital",
   publisher: "Kumar Nature Cure Hospital",
   alternates: {
@@ -247,9 +247,9 @@ export default function RootLayout({
         "@id": "https://www.knchkarur.com/#doctor-anitha",
         "name": "Dr. M. Anitha Sukumar",
         "jobTitle": "Co-Founder & Dental Specialist",
-        "honorificSuffix": "BDS, DNYS",
-        "description": "Specialized Dental Surgeon and Naturopath providing integrated oral healthcare and holistic lifestyle treatments.",
-        "medicalSpecialty": "Dental Surgery and Naturopathy",
+        "honorificSuffix": "BDS",
+        "description": "Specialized Dental Surgeon providing integrated oral healthcare and holistic dental wellness.",
+        "medicalSpecialty": "Dental Surgery",
         "worksFor": { "@id": "https://www.knchkarur.com/#hospital" }
       },
       {

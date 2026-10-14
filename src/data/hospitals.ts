@@ -32,9 +32,9 @@ export const hospitalBranches: HospitalBranch[] = [
     image: "/images/kumar_hospital_main.jpg",
     badge: "Est. 2003 • Main Hospital",
     description:
-      "Started in 2003, our main hospital is located at Shakthi Nagar, Gandhigramam, just 5 km from Karur Bus Stand on the Trichy National Highway. Equipped with multi-specialty nature cure therapy suites, dental care, hydrotherapy, and comfortable residential rooms.",
+      "Started in 2003, our main hospital is located at Shakthi Nagar, Gandhigramam, just 3 km from Karur Bus Stand on the Trichy National Highway. Equipped with multi-specialty nature cure therapy suites, dental care, hydrotherapy, and comfortable residential rooms.",
     features: [
-      "5 km from Karur Bus Stand (Trichy National Highway)",
+      "3 km from Karur Bus Stand (Trichy National Highway)",
       "Daily Outpatient & Inpatient Consultations",
       "Specialised Naturopathy, Yoga, Acupuncture & Dental Clinic",
       "Comfortable accommodation to suit an individual's budget",
@@ -50,7 +50,7 @@ export const hospitalBranches: HospitalBranch[] = [
     ],
     address: {
       line1: "Shakthi Nagar, Gandhigramam",
-      area: "Trichy National Highway (5km from Bus Stand)",
+      area: "Trichy National Highway (3km from Bus Stand)",
       city: "Karur",
       landmark: "Near Gandhigramam",
       pincode: "639004"
