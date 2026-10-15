@@ -92,7 +92,7 @@ export const hospitalBranches: HospitalBranch[] = [
       landmark: "Karur - Sengal Road",
       pincode: "639102"
     },
-    phones: ["+91 81481 29709", "+91 98424 29709", "+91 73737 29709"],
+    phones: ["+91 77083 29709", "+91 98424 29709", "+91 73737 29709"],
     timings: "Residential Care: 24 Hours | Day Visit: 8:00 AM – 6:00 PM",
     doctors: ["Dr. C. Sukumar, B.N.Y.S. (Founder & Chief Medical Officer)"],
     stayAvailable: true

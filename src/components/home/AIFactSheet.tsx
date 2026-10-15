@@ -73,7 +73,8 @@ export default function AIFactSheet() {
     {
       label: "CONTACT & HELPLINE",
       lines: [
-        "Reception: 81481 29709",
+        "KNCH Reception: 81481 29709",
+        "P.K. Reception: 77083 29709",
         "Dr. C. Sukumar: 98424 29709",
         "Dr. M. Anitha: 73737 29709"
       ],

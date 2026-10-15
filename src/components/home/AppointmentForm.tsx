@@ -103,9 +103,15 @@ export default function AppointmentForm() {
                   <div>
                     <h4 className="font-bold text-white text-sm mb-1">Direct Contact & Helpline</h4>
                     <p className="text-white/80 text-xs">
-                      <span className="text-white/60 block text-[10px] uppercase tracking-wider">Reception:</span>
+                      <span className="text-white/60 block text-[10px] uppercase tracking-wider">KNCH Reception:</span>
                       <a href="tel:+918148129709" className="hover:text-secondary font-bold text-sm block">
                         +91 81481 29709
+                      </a>
+                    </p>
+                    <p className="text-white/80 text-xs mt-1.5">
+                      <span className="text-white/60 block text-[10px] uppercase tracking-wider">P.K. Hospital Reception:</span>
+                      <a href="tel:+917708329709" className="hover:text-secondary font-bold text-sm block">
+                        +91 77083 29709
                       </a>
                     </p>
                     <p className="text-white/80 text-xs mt-1.5">

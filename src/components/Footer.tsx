@@ -163,9 +163,14 @@ export default function Footer() {
                 >
                   P.K.Hospital Nature cure -Yoga-Dental, Karur - Sengal Rd, Sengal, Tamil Nadu 639102, India
                 </a>
-                <p className="text-secondary text-xs mt-2 font-semibold flex items-center gap-1 uppercase tracking-wider">
-                  <Bed size={12} /> Nature Retreat & Residential Stay
-                </p>
+                <div className="flex items-center justify-between mt-2 pt-2 border-t border-white/10">
+                  <p className="text-secondary text-[11px] font-semibold flex items-center gap-1 uppercase tracking-wider">
+                    <Bed size={12} /> Nature Retreat & Residential
+                  </p>
+                  <a href="tel:+917708329709" className="text-white hover:text-secondary font-bold text-xs flex items-center gap-1 transition-colors">
+                    <Phone size={11} className="text-secondary" /> 77083 29709
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -180,9 +185,15 @@ export default function Footer() {
                 <Phone className="text-secondary shrink-0 mt-0.5" size={16} />
                 <div className="text-white/90 space-y-2.5">
                   <div>
-                    <span className="text-white/60 text-[11px] uppercase tracking-wider block">Reception</span>
+                    <span className="text-white/60 text-[11px] uppercase tracking-wider block">KNCH Reception</span>
                     <a href="tel:+918148129709" className="hover:text-secondary block font-bold text-sm">
                       81481 29709
+                    </a>
+                  </div>
+                  <div>
+                    <span className="text-white/60 text-[11px] uppercase tracking-wider block">P.K. Hospital Reception</span>
+                    <a href="tel:+917708329709" className="hover:text-secondary block font-bold text-sm">
+                      77083 29709
                     </a>
                   </div>
                   <div>

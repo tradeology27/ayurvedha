@@ -6,7 +6,7 @@ import { MapPin, Phone, Clock, Mail, Globe, ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact & Appointments | Kumar Nature Cure Hospital & P.K. Hospital",
-  description: "Contact Kumar Nature Cure Hospital (Gandhigramam, Karur) and P.K. Hospital (Karur - Sengal Rd). Call Reception: 81481 29709, Dr. C. Sukumar: 98424 29709, Dr. M. Anitha: 73737 29709.",
+  description: "Contact Kumar Nature Cure Hospital (Gandhigramam, Karur) and P.K. Hospital (Karur - Sengal Rd). Call KNCH Reception: 81481 29709, PK Reception: 77083 29709, Dr. C. Sukumar: 98424 29709, Dr. M. Anitha: 73737 29709.",
   alternates: {
     canonical: "/contact",
   },
@@ -162,9 +162,9 @@ export default function ContactPage() {
                   <Phone size={18} className="text-primary shrink-0 mt-0.5" />
                   <div className="space-y-1.5">
                     <div>
-                      <span className="text-[11px] text-foreground/60 uppercase tracking-wider block">Reception</span>
-                      <a href="tel:+918148129709" className="hover:text-primary font-bold block text-sm">
-                        +91 81481 29709
+                      <span className="text-[11px] text-foreground/60 uppercase tracking-wider block">PK Hospital Reception</span>
+                      <a href="tel:+917708329709" className="hover:text-primary font-bold block text-sm">
+                        +91 77083 29709
                       </a>
                     </div>
                     <div>
