@@ -69,18 +69,64 @@ body {
   color: inherit !important;
 }
 
-/* Hide Google Translate Tooltip and Highlights */
-#goog-gt-tt, .goog-te-balloon-frame {
-  display: none !important;
-}
+/* ========================================================
+   Google Translate: Completely Disable Hover Highlight & Tooltips
+   ======================================================== */
 
-.goog-text-highlight {
-  background: none !important;
+/* Prevent Google Translate from receiving mouse hover events on translated font tags */
+font {
+  background: transparent !important;
+  background-color: transparent !important;
   box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  pointer-events: none !important;
 }
 
-.VIpgJd-yAWNEb-hvhgNd {
+/* Ensure interactive parent elements work properly */
+a, button, input, textarea, select {
+  pointer-events: auto !important;
+}
+
+a font, button font {
+  pointer-events: none !important;
+}
+
+/* Neutralize all Google Translate text highlight classes (legacy and modern VIpgJd) */
+.goog-text-highlight,
+font.goog-text-highlight,
+span.goog-text-highlight,
+[class*="goog-text-highlight"],
+[class*="VIpgJd-yAWNEb-VIpgJd-fmcmS-sn54Q"],
+[class*="VIpgJd-yAWNEb"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  pointer-events: none !important;
+}
+
+/* Hide Google Translate tooltip, popup balloon and original-text containers */
+#goog-gt-tt,
+#goog-gt-tt *,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover,
+.VIpgJd-yAWNEb-hvhgNd,
+.VIpgJd-yAWNEb-L7lbkb,
+.VIpgJd-yAWNEb-rBEGl-sHeUDb,
+[class*="VIpgJd-yAWNEb-L7lbkb"],
+[class*="VIpgJd-yAWNEb-hvhgNd"],
+[class*="VIpgJd-ZVi9kf"],
+iframe.VIpgJd-ZVi9kf-O3GGIe {
   display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
 }
 
 /* Ensure translated Tamil/Indic text wraps cleanly across mobile viewports */

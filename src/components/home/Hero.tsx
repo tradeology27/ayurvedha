@@ -72,7 +72,7 @@ export default function Hero() {
           {/* Big Majestic Headline with Kinetic Impact & Shimmer */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-[84px] font-heading font-extrabold text-white mb-2 leading-[1.12] tracking-tight drop-shadow-2xl break-words px-2"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-[84px] font-heading font-extrabold text-white mb-2 leading-[1.12] tracking-tight drop-shadow-2xl break-words px-2 select-none"
           >
             Kumar Hospital <br /> 
             <span className="bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-200 bg-clip-text text-transparent animate-shimmer drop-shadow-lg">
@@ -83,7 +83,7 @@ export default function Hero() {
           {/* Tamil Subtitle with Warm Gold Tint */}
           <motion.p
             variants={itemVariants}
-            className="text-amber-200 font-bold text-sm sm:text-base md:text-lg tracking-wider drop-shadow-md mt-4 uppercase px-2"
+            className="text-amber-200 font-bold text-sm sm:text-base md:text-lg tracking-wider drop-shadow-md mt-4 uppercase px-2 select-none"
           >
             குமார் இயற்கை மற்றும் பல் மருத்துவமனை
           </motion.p>

@@ -308,6 +308,22 @@ export default function RootLayout({
               }
             }
             window.googleTranslateElementInit = googleTranslateElementInit;
+
+            // Suppress Google Translate mouse hover highlight and tooltip trigger
+            if (typeof window !== 'undefined') {
+              var suppressHighlight = function(e) {
+                var target = e.target;
+                if (!target) return;
+                var tag = (target.tagName || '').toUpperCase();
+                var className = typeof target.className === 'string' ? target.className : '';
+                if (tag === 'FONT' || className.indexOf('goog-text-highlight') !== -1 || className.indexOf('VIpgJd') !== -1) {
+                  e.stopImmediatePropagation();
+                }
+              };
+              document.addEventListener('mouseover', suppressHighlight, true);
+              document.addEventListener('mouseenter', suppressHighlight, true);
+              document.addEventListener('mousemove', suppressHighlight, true);
+            }
           `}
         </Script>
       </body>
