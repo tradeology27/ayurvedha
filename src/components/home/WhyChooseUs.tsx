@@ -127,37 +127,37 @@ export default function WhyChooseUs() {
           {/* Subtle background pattern in stats box */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y sm:divide-y-0 sm:divide-x divide-gray-200/60 relative z-10">
-            <div className="pt-4 sm:pt-0 px-2 group">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-primary to-green-700 mb-2 transform group-hover:scale-105 transition-transform duration-300">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 text-center relative z-10">
+            <div className="p-3 sm:px-2 group border-r border-b sm:border-b-0 border-gray-200/60">
+              <div className="text-3xl sm:text-5xl md:text-6xl font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-primary to-green-700 mb-1.5 sm:mb-2 transform group-hover:scale-105 transition-transform duration-300">
                 20+
               </div>
-              <p className="text-sm font-extrabold text-foreground/80 uppercase tracking-wider">Years Experience</p>
-              <p className="text-xs text-foreground/50 mt-1 font-medium">Est. 2003</p>
+              <p className="text-xs sm:text-sm font-extrabold text-foreground/80 uppercase tracking-wider">Years Experience</p>
+              <p className="text-[11px] sm:text-xs text-foreground/50 mt-0.5 sm:mt-1 font-medium">Est. 2003</p>
             </div>
 
-            <div className="pt-4 sm:pt-0 px-2 group">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-amber-400 to-orange-500 mb-2 transform group-hover:scale-105 transition-transform duration-300">
+            <div className="p-3 sm:px-2 group border-b sm:border-b-0 md:border-r border-gray-200/60">
+              <div className="text-3xl sm:text-5xl md:text-6xl font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-amber-400 to-orange-500 mb-1.5 sm:mb-2 transform group-hover:scale-105 transition-transform duration-300">
                 100%
               </div>
-              <p className="text-sm font-extrabold text-foreground/80 uppercase tracking-wider">Medicine-Free</p>
-              <p className="text-xs text-foreground/50 mt-1 font-medium">No Drugs & No Surgery</p>
+              <p className="text-xs sm:text-sm font-extrabold text-foreground/80 uppercase tracking-wider">Medicine-Free</p>
+              <p className="text-[11px] sm:text-xs text-foreground/50 mt-0.5 sm:mt-1 font-medium">No Drugs & No Surgery</p>
             </div>
 
-            <div className="pt-4 sm:pt-0 px-2 group">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-primary to-green-700 mb-2 transform group-hover:scale-105 transition-transform duration-300">
+            <div className="p-3 sm:px-2 group border-r border-gray-200/60">
+              <div className="text-3xl sm:text-5xl md:text-6xl font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-primary to-green-700 mb-1.5 sm:mb-2 transform group-hover:scale-105 transition-transform duration-300">
                 50+
               </div>
-              <p className="text-sm font-extrabold text-foreground/80 uppercase tracking-wider">Modern Treatments</p>
-              <p className="text-xs text-foreground/50 mt-1 font-medium">Drugless Therapies</p>
+              <p className="text-xs sm:text-sm font-extrabold text-foreground/80 uppercase tracking-wider">Modern Treatments</p>
+              <p className="text-[11px] sm:text-xs text-foreground/50 mt-0.5 sm:mt-1 font-medium">Drugless Therapies</p>
             </div>
 
-            <div className="pt-4 sm:pt-0 px-2 group">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-amber-400 to-orange-500 mb-2 transform group-hover:scale-105 transition-transform duration-300">
+            <div className="p-3 sm:px-2 group">
+              <div className="text-3xl sm:text-5xl md:text-6xl font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-amber-400 to-orange-500 mb-1.5 sm:mb-2 transform group-hover:scale-105 transition-transform duration-300">
                 10K
               </div>
-              <p className="text-sm font-extrabold text-foreground/80 uppercase tracking-wider">Sq.Ft Green Land</p>
-              <p className="text-xs text-foreground/50 mt-1 font-medium">Calm & Serene</p>
+              <p className="text-xs sm:text-sm font-extrabold text-foreground/80 uppercase tracking-wider">Sq.Ft Green Land</p>
+              <p className="text-[11px] sm:text-xs text-foreground/50 mt-0.5 sm:mt-1 font-medium">Calm & Serene</p>
             </div>
           </div>
         </motion.div>

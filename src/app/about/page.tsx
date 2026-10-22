@@ -35,7 +35,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center max-w-6xl mx-auto">
             
             {/* Real Photo of P.K. Greenery Campus */}
-            <div className="relative h-[480px] rounded-3xl overflow-hidden shadow-2xl border-4 border-background">
+            <div className="relative h-[300px] sm:h-[420px] md:h-[480px] rounded-3xl overflow-hidden shadow-2xl border-4 border-background">
               <Image 
                 src="/images/pk_hospital_green_campus.jpg" 
                 alt="P.K.Hospital Nature cure -Yoga-Dental 24 Acres Greenery Campus" 
@@ -100,16 +100,16 @@ export default function AboutPage() {
                 ))}
               </div>
 
-              <div className="pt-4 flex flex-wrap gap-4">
+              <div className="pt-4 flex flex-col sm:flex-row flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="px-8 py-3.5 bg-primary text-white hover:bg-primary/90 rounded-full font-medium text-sm transition-all shadow-md"
+                  className="w-full sm:w-auto text-center px-8 py-3.5 bg-primary text-white hover:bg-primary/90 rounded-full font-medium text-sm transition-all shadow-md"
                 >
                   Book Inpatient / OPD Visit
                 </Link>
                 <a
                   href="tel:+918148129709"
-                  className="px-6 py-3.5 border border-primary text-primary hover:bg-primary hover:text-white rounded-full font-medium text-sm transition-all"
+                  className="w-full sm:w-auto text-center px-6 py-3.5 border border-primary text-primary hover:bg-primary hover:text-white rounded-full font-medium text-sm transition-all"
                 >
                   Call Dr. C. Sukumar
                 </a>

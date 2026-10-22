@@ -196,12 +196,12 @@ export default function GoogleReviews() {
               Your feedback inspires others on their path to natural health and drugless healing. Leave a Google Review for Kumar Nature Cure Hospital & Dental Care.
             </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
               <a
                 href={googleRatingSummary.googleMapsReviewUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-white text-primary hover:bg-white/90 font-bold px-6 py-3 rounded-full text-xs sm:text-sm transition-all shadow-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-primary hover:bg-white/90 font-bold px-6 py-3 rounded-full text-xs sm:text-sm transition-all shadow-md text-center"
               >
                 <GoogleIcon className="w-4 h-4" />
                 <span>Write a Google Review</span>
@@ -210,7 +210,7 @@ export default function GoogleReviews() {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-secondary text-primary hover:bg-secondary/90 font-bold px-6 py-3 rounded-full text-xs sm:text-sm transition-all shadow-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-secondary text-primary hover:bg-secondary/90 font-bold px-6 py-3 rounded-full text-xs sm:text-sm transition-all shadow-md text-center"
               >
                 <Calendar size={14} />
                 <span>Book Consultation Online</span>

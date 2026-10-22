@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -111,8 +112,6 @@ export const metadata: Metadata = {
   },
   category: "Medical & Health",
 };
-
-import Script from "next/script";
 
 export default function RootLayout({
   children,
@@ -295,6 +294,21 @@ export default function RootLayout({
         <meta name="ICBM" content="10.9574, 78.0809" />
       </head>
       <body className={`${inter.variable} ${playfair.variable} antialiased flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden`}>
+        {/* Google Analytics 4 (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VH2BL1WTMK"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-VH2BL1WTMK');
+          `}
+        </Script>
+
         <Navbar />
         <main className="flex-grow">
           {children}

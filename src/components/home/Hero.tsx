@@ -72,7 +72,7 @@ export default function Hero() {
           {/* Big Majestic Headline with Kinetic Impact & Shimmer */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-[84px] font-heading font-extrabold text-white mb-2 leading-[1.12] tracking-tight drop-shadow-2xl break-words px-2 select-none"
+            className="text-3xl sm:text-6xl md:text-7xl lg:text-[84px] font-heading font-extrabold text-white mb-2 leading-[1.12] tracking-tight drop-shadow-2xl break-words px-2 select-none"
           >
             Kumar Hospital <br /> 
             <span className="bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-200 bg-clip-text text-transparent animate-shimmer drop-shadow-lg">

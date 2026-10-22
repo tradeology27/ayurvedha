@@ -46,7 +46,7 @@ export default function ContactPage() {
             <span className="text-xs font-bold uppercase tracking-widest text-secondary block mb-1">
               Karur, Tamil Nadu
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-primary mt-2 mb-3 tracking-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-heading font-bold text-primary mt-2 mb-3 tracking-tight">
               Visit or Contact Our Hospital
             </h1>
           </div>

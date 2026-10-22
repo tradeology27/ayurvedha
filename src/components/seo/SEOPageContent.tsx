@@ -48,6 +48,7 @@ export default function SEOPageContent({ pageData }: SEOPageContentProps) {
   const activeBranches = hospitalBranches.filter((b) => 
     pageData.hospitalsCovered.includes(b.id as "knch-main" | "pk-green-campus")
   );
+  const displayBranches = activeBranches.length > 0 ? activeBranches : hospitalBranches;
 
   const whatsappMessage = encodeURIComponent(
     `Hello Kumar Nature Cure Hospital! I found your page regarding "${pageData.title}" from ${pageData.targetLocation.name}. I would like to enquire about consultation & treatments.`
@@ -95,7 +96,7 @@ export default function SEOPageContent({ pageData }: SEOPageContentProps) {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white leading-tight">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white leading-tight break-words">
               {pageData.headline}
             </h1>
 
@@ -410,7 +411,7 @@ export default function SEOPageContent({ pageData }: SEOPageContentProps) {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {activeBranches.map((branch) => (
+            {displayBranches.map((branch) => (
               <div 
                 key={branch.id}
                 className="bg-white rounded-3xl overflow-hidden border border-primary/15 shadow-sm hover:shadow-md transition-shadow flex flex-col"
@@ -614,8 +615,8 @@ export default function SEOPageContent({ pageData }: SEOPageContentProps) {
       ======================================================== */}
       <section className="py-16 bg-primary/5 border-t border-primary/10" id="appointment">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-10">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-8">
               <span className="text-xs font-bold uppercase tracking-widest text-secondary block mb-1">
                 Take Your First Step
               </span>
@@ -627,7 +628,12 @@ export default function SEOPageContent({ pageData }: SEOPageContentProps) {
               </p>
             </div>
 
-            <AppointmentForm />
+            <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-gray-100">
+              <AppointmentForm 
+                compact={true}
+                defaultHospital={pageData.hospitalsCovered.includes("pk-green-campus") ? "pk-hospital" : "knch-main"}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -663,18 +669,21 @@ export default function SEOPageContent({ pageData }: SEOPageContentProps) {
             <button
               type="button"
               onClick={() => setShowAppointmentModal(false)}
-              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground flex items-center justify-center font-bold"
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground flex items-center justify-center font-bold z-10"
               aria-label="Close Modal"
             >
               ✕
             </button>
-            <h3 className="text-xl font-heading font-bold text-primary mb-2">
+            <h3 className="text-xl font-heading font-bold text-primary mb-1">
               Schedule Your Visit
             </h3>
             <p className="text-xs text-foreground/70 mb-4">
               Inpatient and outpatient bookings for {pageData.targetLocation.name} patients.
             </p>
-            <AppointmentForm />
+            <AppointmentForm 
+              compact={true}
+              defaultHospital={pageData.hospitalsCovered.includes("pk-green-campus") ? "pk-hospital" : "knch-main"}
+            />
           </div>
         </div>
       )}

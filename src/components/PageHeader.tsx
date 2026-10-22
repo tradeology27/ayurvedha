@@ -32,11 +32,11 @@ export default function PageHeader({ title, breadcrumb, bgImage = "https://image
       </div>
 
       <div className="container mx-auto px-4 text-center z-10 relative">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 drop-shadow-xl">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4 sm:mb-6 drop-shadow-xl break-words px-2">
           {title}
         </h1>
         
-        <nav className="flex items-center justify-center gap-2 text-sm md:text-base font-medium">
+        <nav className="flex items-center justify-center flex-wrap gap-2 text-xs sm:text-sm md:text-base font-medium">
           <Link href="/" className="text-white/80 hover:text-white transition-colors">
             Home
           </Link>

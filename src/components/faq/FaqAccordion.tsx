@@ -20,11 +20,11 @@ export default function FaqAccordion({ items }: { items: FAQItem[] }) {
           className="border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:border-primary/30 transition-colors"
         >
           <button
-            className="w-full px-6 py-4 flex items-center justify-between text-left bg-background hover:bg-gray-50 transition-colors"
+            className="w-full px-4 sm:px-6 py-3.5 sm:py-4 flex items-center justify-between gap-3 text-left bg-background hover:bg-gray-50 transition-colors"
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
             aria-expanded={openIndex === index}
           >
-            <span className="font-heading font-bold text-primary text-lg">
+            <span className="font-heading font-bold text-primary text-base sm:text-lg">
               {faq.question}
             </span>
             <ChevronDown 
@@ -39,7 +39,7 @@ export default function FaqAccordion({ items }: { items: FAQItem[] }) {
                 exit={{ height: 0, opacity: 0 }}
                 className="overflow-hidden"
               >
-                <div className="px-6 py-4 text-foreground/75 font-light leading-relaxed bg-white border-t border-gray-100">
+                <div className="px-4 sm:px-6 py-3.5 sm:py-4 text-sm sm:text-base text-foreground/75 font-light leading-relaxed bg-white border-t border-gray-100">
                   {faq.answer}
                 </div>
               </motion.div>

@@ -18,7 +18,17 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-export default function AppointmentForm() {
+export interface AppointmentFormProps {
+  compact?: boolean;
+  defaultHospital?: string;
+  defaultTreatment?: string;
+}
+
+export default function AppointmentForm({
+  compact = false,
+  defaultHospital = "knch-main",
+  defaultTreatment = "",
+}: AppointmentFormProps = {}) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -30,7 +40,8 @@ export default function AppointmentForm() {
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      hospital: "knch-main",
+      hospital: defaultHospital,
+      treatment: defaultTreatment,
     }
   });
 
@@ -60,6 +71,172 @@ export default function AppointmentForm() {
       setIsSuccess(false);
     }, 6000);
   };
+
+  if (compact) {
+    return (
+      <div className="relative bg-white w-full">
+        {isSuccess && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="absolute inset-0 flex flex-col items-center justify-center bg-white/95 backdrop-blur-sm z-10 text-center p-6 rounded-2xl"
+          >
+            <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-3 text-green-600">
+              <CheckCircle2 size={32} />
+            </div>
+            <h3 className="text-xl font-heading font-bold text-primary mb-1">
+              Appointment Request Received!
+            </h3>
+            <p className="text-foreground/75 text-xs max-w-sm">
+              Thank you. Our hospital team will call you back shortly on your provided phone number to confirm your schedule.
+            </p>
+          </motion.div>
+        )}
+
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            {/* Full Name */}
+            <div className="space-y-1">
+              <label htmlFor="name-compact" className="text-xs font-bold uppercase tracking-wider text-foreground/80">
+                Patient Name *
+              </label>
+              <input
+                id="name-compact"
+                type="text"
+                {...register("name")}
+                placeholder="Enter your name"
+                className={`w-full px-3.5 py-2.5 rounded-xl border bg-background/50 focus:outline-none focus:ring-2 focus:ring-secondary/50 text-sm transition-all ${
+                  errors.name ? "border-red-500" : "border-gray-200"
+                }`}
+              />
+              {errors.name && (
+                <p className="text-red-500 text-xs">{errors.name.message}</p>
+              )}
+            </div>
+
+            {/* Phone Number */}
+            <div className="space-y-1">
+              <label htmlFor="phone-compact" className="text-xs font-bold uppercase tracking-wider text-foreground/80">
+                Phone Number *
+              </label>
+              <input
+                id="phone-compact"
+                type="tel"
+                {...register("phone")}
+                placeholder="e.g. 81481 29709"
+                className={`w-full px-3.5 py-2.5 rounded-xl border bg-background/50 focus:outline-none focus:ring-2 focus:ring-secondary/50 text-sm transition-all ${
+                  errors.phone ? "border-red-500" : "border-gray-200"
+                }`}
+              />
+              {errors.phone && (
+                <p className="text-red-500 text-xs">{errors.phone.message}</p>
+              )}
+            </div>
+          </div>
+
+          {/* Hospital Center Selection */}
+          <div className="space-y-1">
+            <label htmlFor="hospital-compact" className="text-xs font-bold uppercase tracking-wider text-foreground/80">
+              Hospital Center *
+            </label>
+            <select
+              id="hospital-compact"
+              {...register("hospital")}
+              className={`w-full px-3.5 py-2.5 rounded-xl border bg-background/50 focus:outline-none focus:ring-2 focus:ring-secondary/50 text-sm transition-all ${
+                errors.hospital ? "border-red-500" : "border-gray-200"
+              }`}
+            >
+              <option value="knch-main">Kumar Nature Cure Hospital (Gandhigramam, Karur)</option>
+              <option value="pk-hospital">P.K.Hospital Nature cure -Yoga-Dental (Karur - Sengal Rd, Sengal)</option>
+            </select>
+            {errors.hospital && (
+              <p className="text-red-500 text-xs">{errors.hospital.message}</p>
+            )}
+          </div>
+
+          {/* Health Concerns */}
+          <div className="space-y-1">
+            <label htmlFor="message-compact" className="text-xs font-bold uppercase tracking-wider text-foreground/80">
+              Describe Health Concerns / Symptoms *
+            </label>
+            <textarea
+              id="message-compact"
+              {...register("message")}
+              rows={2}
+              placeholder="e.g. Back pain, diabetes, digestive problem, stay requirement..."
+              className={`w-full px-3.5 py-2.5 rounded-xl border bg-background/50 focus:outline-none focus:ring-2 focus:ring-secondary/50 text-sm transition-all resize-none ${
+                errors.message ? "border-red-500" : "border-gray-200"
+              }`}
+            />
+            {errors.message && (
+              <p className="text-red-500 text-xs">{errors.message.message}</p>
+            )}
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            {/* Treatment Selection */}
+            <div className="space-y-1">
+              <label htmlFor="treatment-compact" className="text-xs font-bold uppercase tracking-wider text-foreground/80">
+                Treatment (Optional)
+              </label>
+              <select
+                id="treatment-compact"
+                {...register("treatment")}
+                className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 bg-background/50 focus:outline-none focus:ring-2 focus:ring-secondary/50 text-sm transition-all"
+              >
+                <option value="">Select treatment</option>
+                <option value="General Doctor Consultation">General Doctor Consultation</option>
+                <option value="Massage therapy">Massage Therapy</option>
+                <option value="Acupuncture">Acupuncture Therapy</option>
+                <option value="Steam bath">Steam Bath (Herbal Steam)</option>
+                <option value="Diet therapy">Diet Therapy (Clinical Nutrition)</option>
+                <option value="Mud therapy">Mud Therapy & Mud Bath</option>
+                <option value="Hydrotherapy">Hydrotherapy & Spinal Spray</option>
+                <option value="Yoga therapy">Yoga Therapy & Pranayama</option>
+                <option value="Plantain-leaf bath">Plantain-Leaf Bath (Banana Leaf Sun Bath)</option>
+                <option value="Dental Care">Dental Care (Dr. M. Anitha Sukumar, B.D.S.)</option>
+                <option value="Residential Inpatient Stay">Residential Inpatient Stay</option>
+              </select>
+            </div>
+
+            {/* Date */}
+            <div className="space-y-1">
+              <label htmlFor="date-compact" className="text-xs font-bold uppercase tracking-wider text-foreground/80">
+                Preferred Date *
+              </label>
+              <input
+                id="date-compact"
+                type="date"
+                {...register("date")}
+                className={`w-full px-3.5 py-2.5 rounded-xl border bg-background/50 focus:outline-none focus:ring-2 focus:ring-secondary/50 text-sm transition-all ${
+                  errors.date ? "border-red-500" : "border-gray-200"
+                }`}
+              />
+              {errors.date && (
+                <p className="text-red-500 text-xs">{errors.date.message}</p>
+              )}
+            </div>
+          </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full py-3.5 px-6 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl text-sm transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
+          >
+            {isSubmitting ? (
+              <>
+                <Loader2 size={16} className="animate-spin" />
+                <span>Submitting Request...</span>
+              </>
+            ) : (
+              <span>Request Consultation / Stay</span>
+            )}
+          </button>
+        </form>
+      </div>
+    );
+  }
 
   return (
     <section id="appointment" className="py-24 bg-white relative overflow-hidden">

@@ -32,7 +32,6 @@ export interface SEOPageData {
   hospitalsCovered: ("knch-main" | "pk-green-campus")[];
 }
 
-import { karurFinkodePagesData } from "./karurFinkodePages";
 
 const curatedSeoPagesData: SEOPageData[] = [
   // ==========================================
@@ -3747,24 +3746,57 @@ const curatedSeoPagesData: SEOPageData[] = [
 }
 ];
 
-export const seoPagesData: SEOPageData[] = [
-  ...curatedSeoPagesData,
-  ...karurFinkodePagesData,
-];
+export const activeSEOSlugs = [
+  // 1. Karur Localities (14 pages)
+  "best-naturopathy-hospital-in-karur",
+  "nature-cure-hospital-gandhigramam-karur",
+  "pk-hospital-nature-cure-sengal-karur",
+  "naturopathy-hospital-thanthonimalai-karur",
+  "naturopathy-hospital-vengamedu-karur",
+  "naturopathy-hospital-pasupathipalayam-karur",
+  "naturopathy-hospital-kulithalai",
+  "naturopathy-hospital-aravakurichi",
+  "naturopathy-hospital-pallapatti",
+  "naturopathy-hospital-pugalur-velayuthampalayam",
+  "naturopathy-hospital-mayanur",
+  "naturopathy-hospital-paramathi-velur",
+  "naturopathy-hospital-mohanur",
+  "dr-c-sukumar-naturopathy-doctor-karur",
+
+  // 2. Dental Care Wing (2 pages)
+  "best-dental-hospital-in-karur",
+  "dental-hospitals-around-me-karur",
+
+  // 3. Specialized Nature Cure Treatments (7 pages)
+  "mud-therapy-hospital-tamil-nadu",
+  "plantain-leaf-bath-tamil-nadu",
+  "hydrotherapy-center-tamil-nadu",
+  "chronic-disease-reversal-naturopathy",
+  "diabetes-reversal-naturopathy-karur",
+  "spine-back-pain-spondylosis-treatment-karur",
+  "knee-arthritis-joint-pain-treatment-karur",
+
+  // 4. Neighboring Feeder Cities with Direct Karur Highway Access (7 pages)
+  "naturopathy-hospital-trichy",
+  "naturopathy-hospital-namakkal",
+  "naturopathy-hospital-dindigul",
+  "naturopathy-hospital-erode",
+  "naturopathy-hospital-salem",
+  "naturopathy-hospital-tirupur",
+  "naturopathy-hospital-coimbatore"
+] as const;
+
+export const seoPagesData: SEOPageData[] = curatedSeoPagesData.filter((page) =>
+  (activeSEOSlugs as readonly string[]).includes(page.slug)
+);
 
 export function getSEOPageBySlug(slug: string): SEOPageData | undefined {
   if (slug === 'dental-hospitals-around-me') {
     return seoPagesData.find((page) => page.slug === 'dental-hospitals-around-me-karur');
   }
-  if (slug === 'international-patients') {
-    return seoPagesData.find((page) => page.slug === 'international-patients-nature-cure');
-  }
   return seoPagesData.find((page) => page.slug === slug);
 }
 
 export function getAllSEOSlugs(): string[] {
-  const slugs = seoPagesData.map((page) => page.slug);
-  if (!slugs.includes('dental-hospitals-around-me')) slugs.push('dental-hospitals-around-me');
-  if (!slugs.includes('international-patients')) slugs.push('international-patients');
-  return slugs;
+  return seoPagesData.map((page) => page.slug);
 }

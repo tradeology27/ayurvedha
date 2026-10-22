@@ -31,12 +31,12 @@ export default function GalleryViewer({ items }: { items: GalleryItem[] }) {
         </p>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mt-10">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-8 sm:mt-10">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-8 py-3.5 rounded-full text-sm font-bold transition-all shadow-sm flex items-center gap-2 ${
+              className={`px-5 sm:px-8 py-2.5 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold transition-all shadow-sm flex items-center gap-2 ${
                 activeCategory === cat
                   ? "bg-primary text-white shadow-lg scale-105"
                   : "bg-white text-foreground/70 hover:bg-gray-50 border border-gray-200"
@@ -92,18 +92,18 @@ export default function GalleryViewer({ items }: { items: GalleryItem[] }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-xl"
+            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-xl overflow-y-auto"
             onClick={() => setSelectedImage(null)}
           >
             <button 
-              className="absolute top-6 right-6 text-white/70 hover:text-white p-3 transition-colors bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-md z-10"
+              className="fixed top-4 right-4 sm:top-6 sm:right-6 text-white/70 hover:text-white p-2.5 sm:p-3 transition-colors bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-md z-20"
               onClick={(e) => {
                 e.stopPropagation();
                 setSelectedImage(null);
               }}
               aria-label="Close image modal"
             >
-              <X size={24} />
+              <X size={22} className="sm:w-6 sm:h-6" />
             </button>
             
             <motion.div 
@@ -111,10 +111,10 @@ export default function GalleryViewer({ items }: { items: GalleryItem[] }) {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-5xl bg-black/40 rounded-3xl overflow-hidden p-2 sm:p-4" 
+              className="relative w-full max-w-5xl bg-black/40 rounded-3xl overflow-hidden p-2 sm:p-4 my-auto" 
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative w-full h-[65vh] sm:h-[75vh] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative w-full h-[45vh] sm:h-[65vh] md:h-[72vh] rounded-2xl overflow-hidden shadow-2xl">
                 <Image 
                   src={selectedImage.src} 
                   alt={selectedImage.title} 
@@ -124,11 +124,11 @@ export default function GalleryViewer({ items }: { items: GalleryItem[] }) {
                   priority
                 />
               </div>
-              <div className="bg-white/10 backdrop-blur-md p-5 rounded-2xl mt-4 text-center border border-white/10 shadow-lg">
-                <h4 className="text-2xl md:text-3xl font-heading font-bold mb-2 text-white drop-shadow-md">{selectedImage.title}</h4>
-                <p className="text-white/90 text-sm md:text-base font-light max-w-2xl mx-auto drop-shadow">{selectedImage.description}</p>
-                <div className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-amber-300 uppercase tracking-widest bg-amber-400/20 border border-amber-400/30 px-4 py-1.5 rounded-full shadow-sm">
-                  <MapPin size={14} /> {selectedImage.category}
+              <div className="bg-white/10 backdrop-blur-md p-4 sm:p-5 rounded-2xl mt-3 sm:mt-4 text-center border border-white/10 shadow-lg">
+                <h4 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold mb-1.5 sm:mb-2 text-white drop-shadow-md">{selectedImage.title}</h4>
+                <p className="text-white/90 text-xs sm:text-sm md:text-base font-light max-w-2xl mx-auto drop-shadow">{selectedImage.description}</p>
+                <div className="mt-3 sm:mt-4 inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-amber-300 uppercase tracking-widest bg-amber-400/20 border border-amber-400/30 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-sm">
+                  <MapPin size={13} /> {selectedImage.category}
                 </div>
               </div>
             </motion.div>

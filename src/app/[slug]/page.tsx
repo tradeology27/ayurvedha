@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const canonicalUrl = `https://www.knchkarur.com/${params.slug}`;
+  const canonicalUrl = `https://www.knchkarur.com/${page.slug}`;
 
   return {
     title: page.metaTitle,
@@ -79,7 +79,7 @@ export default function DynamicRootSEOPage({ params }: PageProps) {
   }
 
   const baseUrl = "https://www.knchkarur.com";
-  const currentUrl = `${baseUrl}/${params.slug}`;
+  const currentUrl = `${baseUrl}/${page.slug}`;
 
   // Hospital Schema (Strictly Authentic Karur Address)
   const hospitalSchema = {

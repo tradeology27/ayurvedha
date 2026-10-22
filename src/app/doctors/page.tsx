@@ -49,14 +49,24 @@ export default function DoctorsPage() {
                   {/* LEFT SIDE: PHOTO, BADGE, AREAS OF EXPERTISE & CALL BUTTON */}
                   <div className="w-full sm:w-[45%] lg:w-[43%] shrink-0 p-5 sm:p-6 flex flex-col justify-between bg-stone-50/80 border-b sm:border-b-0 sm:border-r border-gray-100">
                     <div className="space-y-3">
-                      {/* Photo Frame (Unified 4:5 aspect ratio) */}
-                      <div className="relative w-full rounded-2xl overflow-hidden shadow-md border-2 border-white bg-white aspect-[4/5]">
+                      {/* Mobile-only Doctor Name Header */}
+                      <div className="text-center sm:hidden pb-1">
+                        <h3 className="text-xl font-heading font-bold text-primary leading-tight">
+                          {doc.name}
+                        </h3>
+                        <p className="text-secondary font-bold text-xs mt-0.5">
+                          {doc.qualifications}
+                        </p>
+                      </div>
+
+                      {/* Photo Frame (Unified 4:5 aspect ratio, max-w on mobile for optimal proportion) */}
+                      <div className="relative w-full max-w-[240px] sm:max-w-none mx-auto rounded-2xl overflow-hidden shadow-md border-2 border-white bg-white aspect-[4/5]">
                         <Image
                           src={doc.image}
                           alt={doc.name}
                           fill
                           priority
-                          sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 320px"
+                          sizes="(max-width: 640px) 240px, (max-width: 1024px) 45vw, 320px"
                           className="object-cover object-top"
                         />
                       </div>
@@ -77,7 +87,7 @@ export default function DoctorsPage() {
                         </p>
                       </div>
 
-                      {/* Areas of Expertise (Moved to Left Column) */}
+                      {/* Areas of Expertise */}
                       <div className="bg-white rounded-xl p-3 border border-gray-200/80 shadow-sm space-y-1.5">
                         <p className="text-[11px] font-bold uppercase tracking-wider text-primary">
                           Areas of Expertise:
@@ -105,14 +115,16 @@ export default function DoctorsPage() {
                   {/* RIGHT SIDE: CONTENT, PHILOSOPHY, BIO & TIMINGS */}
                   <div className="w-full sm:w-[55%] lg:w-[57%] p-5 sm:p-6 lg:p-7 flex flex-col justify-between flex-grow">
                     <div>
-                      {/* Doctor Name & Qualifications */}
-                      <h3 className="text-xl sm:text-2xl font-heading font-bold text-primary mb-1">
-                        {doc.name}
-                      </h3>
-                      <p className="text-secondary font-bold text-xs sm:text-sm mb-0.5">
-                        {doc.qualifications} {doc.registrationNo && `• ${doc.registrationNo}`}
-                      </p>
-                      <p className="text-foreground/60 text-[11px] sm:text-xs font-medium mb-3">
+                      {/* Doctor Name & Qualifications (Visible on sm screens and up) */}
+                      <div className="hidden sm:block">
+                        <h3 className="text-xl sm:text-2xl font-heading font-bold text-primary mb-1">
+                          {doc.name}
+                        </h3>
+                        <p className="text-secondary font-bold text-xs sm:text-sm mb-0.5">
+                          {doc.qualifications} {doc.registrationNo && `• ${doc.registrationNo}`}
+                        </p>
+                      </div>
+                      <p className="text-foreground/60 text-[11px] sm:text-xs font-medium mb-3 mt-1 sm:mt-0">
                         {doc.university}
                       </p>
 

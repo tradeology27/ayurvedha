@@ -384,6 +384,7 @@ export default function HealthShopShowcase() {
                   drag={totalPages > 1 ? "x" : false}
                   dragConstraints={{ left: 0, right: 0 }}
                   dragElastic={0.2}
+                  style={{ touchAction: "pan-y" }}
                   onDragEnd={(_, info) => {
                     if (info.offset.x < -50) {
                       handleNextSlide();
