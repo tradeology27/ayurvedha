@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+    // Treatments Hub & Separate Department Pages
     {
       url: `${baseUrl}/treatments`,
       lastModified: currentDate,
@@ -26,13 +27,44 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: `${baseUrl}/treatments/naturopathy`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/treatments/dental`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/treatments/health-shop`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.90,
+    },
+    {
       url: `${baseUrl}/doctors`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+    // Gallery Hub & Separate Campus Pages
     {
       url: `${baseUrl}/gallery`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/gallery/kumar-nature-cure-hospital`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/gallery/pk-hospital`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.85,

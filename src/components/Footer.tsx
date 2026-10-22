@@ -114,12 +114,17 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/treatments?tab=dental" className="text-white/80 hover:text-secondary transition-colors">
+                <Link href="/treatments/naturopathy" className="text-white/80 hover:text-secondary transition-colors">
+                  Naturopathy Treatments
+                </Link>
+              </li>
+              <li>
+                <Link href="/treatments/dental" className="text-white/80 hover:text-secondary transition-colors">
                   Dental Care Clinic
                 </Link>
               </li>
               <li>
-                <Link href="/treatments?tab=health-shop" className="text-white/80 hover:text-secondary transition-colors">
+                <Link href="/treatments/health-shop" className="text-white/80 hover:text-secondary transition-colors">
                   KNCH Health Shop
                 </Link>
               </li>
@@ -145,9 +150,14 @@ export default function Footer() {
                 >
                   Kumar Hospital - Nature Cure - Yoga - Dental, Kumar Hospital, Sakthi Nagar, Gandhigramam, Karur, Tamil Nadu 639004
                 </a>
-                <p className="text-secondary text-xs mt-2 font-semibold flex items-center gap-1 uppercase tracking-wider">
-                  <Bed size={12} /> Outpatient & Inpatient Care
-                </p>
+                <div className="flex items-center justify-between mt-2 pt-2 border-t border-white/10">
+                  <p className="text-secondary text-xs font-semibold flex items-center gap-1 uppercase tracking-wider">
+                    <Bed size={12} /> Outpatient &amp; Inpatient Care
+                  </p>
+                  <Link href="/gallery/kumar-nature-cure-hospital" className="text-white/80 hover:text-secondary text-[11px] font-medium transition-colors">
+                    View Photos &rarr;
+                  </Link>
+                </div>
               </div>
 
               {/* PK Hospital Location */}
@@ -165,11 +175,11 @@ export default function Footer() {
                 </a>
                 <div className="flex items-center justify-between mt-2 pt-2 border-t border-white/10">
                   <p className="text-secondary text-[11px] font-semibold flex items-center gap-1 uppercase tracking-wider">
-                    <Bed size={12} /> Nature Retreat & Residential
+                    <Bed size={12} /> Nature Retreat &amp; Residential
                   </p>
-                  <a href="tel:+917708329709" className="text-white hover:text-secondary font-bold text-xs flex items-center gap-1 transition-colors">
-                    <Phone size={11} className="text-secondary" /> 77083 29709
-                  </a>
+                  <Link href="/gallery/pk-hospital" className="text-white/80 hover:text-secondary text-[11px] font-medium transition-colors">
+                    View Photos &rarr;
+                  </Link>
                 </div>
               </div>
             </div>
