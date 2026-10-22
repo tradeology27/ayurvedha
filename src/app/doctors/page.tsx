@@ -165,13 +165,19 @@ export default function DoctorsPage() {
                       </div>
                     </div>
 
-                    {/* Book Consultation Button */}
-                    <div className="pt-3.5 border-t border-gray-100 mt-4">
+                    {/* Action Buttons: View Profile & Book Consultation */}
+                    <div className="pt-3.5 border-t border-gray-100 mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <Link
+                        href={`/doctors/${doc.id}`}
+                        className="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white text-[11px] font-bold uppercase tracking-wider transition-all text-center"
+                      >
+                        View Profile &rarr;
+                      </Link>
                       <Link
                         href={`/contact?doctor=${encodeURIComponent(doc.name)}`}
                         className="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-full bg-primary hover:bg-primary/90 text-white text-[11px] font-bold uppercase tracking-wider transition-all shadow-sm text-center"
                       >
-                        <Calendar size={12} /> Book Consultation
+                        <Calendar size={12} /> Book Consult
                       </Link>
                     </div>
                   </div>

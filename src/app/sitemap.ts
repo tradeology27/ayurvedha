@@ -44,11 +44,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.90,
     },
+    // Hospitals Hub & Separate Campus Pages
+    {
+      url: `${baseUrl}/hospitals`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.90,
+    },
+    {
+      url: `${baseUrl}/hospitals/kumar-nature-cure-hospital`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.90,
+    },
+    {
+      url: `${baseUrl}/hospitals/pk-hospital`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.90,
+    },
     {
       url: `${baseUrl}/doctors`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/doctors/dr-c-sukumar`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/doctors/dr-m-anitha-sukumar`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.85,
     },
     // Gallery Hub & Separate Campus Pages
     {

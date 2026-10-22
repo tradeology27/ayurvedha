@@ -103,19 +103,27 @@ export default function HospitalsSection() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                <div className="mt-auto space-y-2.5 pt-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <Link
+                      href={hospital.id === "knch-main" ? "/hospitals/kumar-nature-cure-hospital" : "/hospitals/pk-hospital"}
+                      className="flex items-center justify-center gap-1.5 py-3 px-4 rounded-xl bg-primary text-white hover:bg-primary/90 font-medium text-xs sm:text-sm transition-all shadow-md"
+                    >
+                      Explore Campus <ArrowRight size={14} />
+                    </Link>
+                    <Link
+                      href={`/contact?hospital=${encodeURIComponent(hospital.name)}`}
+                      className="flex items-center justify-center gap-1.5 py-3 px-4 rounded-xl bg-secondary text-primary hover:bg-secondary/90 font-bold text-xs sm:text-sm transition-all shadow-md"
+                    >
+                      Book Consult
+                    </Link>
+                  </div>
                   <a
                     href={`tel:${hospital.phones[0].replace(/\s+/g, '')}`}
-                    className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-primary text-primary hover:bg-primary hover:text-white font-medium text-sm transition-all"
+                    className="w-full flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-xl border border-primary/30 text-primary hover:bg-primary hover:text-white font-medium text-xs transition-all text-center"
                   >
-                    <Phone size={15} /> Call Hospital
+                    <Phone size={13} /> Call {hospital.phones[0]}
                   </a>
-                  <Link
-                    href={`/contact?hospital=${encodeURIComponent(hospital.name)}`}
-                    className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-primary text-white hover:bg-primary/90 font-medium text-sm transition-all shadow-md"
-                  >
-                    Book Consult <ArrowRight size={15} />
-                  </Link>
                 </div>
               </div>
             </motion.div>

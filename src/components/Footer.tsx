@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Clock, Bed, Heart, Sparkles, Mail, Globe } from "lucide-react";
+import { MapPin, Phone, Clock, Heart, Sparkles, Mail, Globe } from "lucide-react";
 
 const FacebookIcon = ({ size = 24, className = "" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -150,12 +150,12 @@ export default function Footer() {
                 >
                   Kumar Hospital - Nature Cure - Yoga - Dental, Kumar Hospital, Sakthi Nagar, Gandhigramam, Karur, Tamil Nadu 639004
                 </a>
-                <div className="flex items-center justify-between mt-2 pt-2 border-t border-white/10">
-                  <p className="text-secondary text-xs font-semibold flex items-center gap-1 uppercase tracking-wider">
-                    <Bed size={12} /> Outpatient &amp; Inpatient Care
-                  </p>
+                <div className="flex items-center justify-between mt-2 pt-2 border-t border-white/10 gap-2">
+                  <Link href="/hospitals/kumar-nature-cure-hospital" className="text-secondary hover:underline text-[11px] font-bold">
+                    Campus Details &rarr;
+                  </Link>
                   <Link href="/gallery/kumar-nature-cure-hospital" className="text-white/80 hover:text-secondary text-[11px] font-medium transition-colors">
-                    View Photos &rarr;
+                    Photos &rarr;
                   </Link>
                 </div>
               </div>
@@ -173,12 +173,12 @@ export default function Footer() {
                 >
                   P.K.Hospital Nature cure -Yoga-Dental, Karur - Sengal Rd, Sengal, Tamil Nadu 639102, India
                 </a>
-                <div className="flex items-center justify-between mt-2 pt-2 border-t border-white/10">
-                  <p className="text-secondary text-[11px] font-semibold flex items-center gap-1 uppercase tracking-wider">
-                    <Bed size={12} /> Nature Retreat &amp; Residential
-                  </p>
+                <div className="flex items-center justify-between mt-2 pt-2 border-t border-white/10 gap-2">
+                  <Link href="/hospitals/pk-hospital" className="text-secondary hover:underline text-[11px] font-bold">
+                    Retreat Details &rarr;
+                  </Link>
                   <Link href="/gallery/pk-hospital" className="text-white/80 hover:text-secondary text-[11px] font-medium transition-colors">
-                    View Photos &rarr;
+                    Photos &rarr;
                   </Link>
                 </div>
               </div>
@@ -254,6 +254,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-6 pb-6 flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm font-medium">
           <Link href="/" className="text-white/80 hover:text-secondary transition-colors">Home</Link>
           <Link href="/about" className="text-white/80 hover:text-secondary transition-colors">About Us</Link>
+          <Link href="/hospitals" className="text-white/80 hover:text-secondary transition-colors">Hospitals</Link>
           <Link href="/treatments" className="text-white/80 hover:text-secondary transition-colors">Treatments</Link>
           <Link href="/doctors" className="text-white/80 hover:text-secondary transition-colors">Doctors</Link>
           <Link href="/gallery" className="text-white/80 hover:text-secondary transition-colors">Gallery</Link>
